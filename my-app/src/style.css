@@ -96,8 +96,23 @@ img {
 
 /* HEADER FOOTER =================================== */
 /* LAYOUT =========================================== */
-body {
-  background-color: pink;
+.signup h1,
+.signup p {
+  text-align: center;
+}
+
+.signup h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.signup {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.signup .submitButton {
+  margin: 1rem auto;
 }
 
 /* ACCESSIBILITY =================================== */
@@ -112,5 +127,14 @@ body {
 }
 
 /* FORMS =========================================== */
+.signup form label,
+.signup form input {
+  display: block;
+}
+
+.signup form {
+  border: 1px solid black;
+  padding: 1rem;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,10 @@
-function App() {
+import React from 'react'
+import SignUp from './SignUp/SignUp.js'
+
+const App = props => {
   return (
     <div className="App">
-      <p>App working tested</p>
+      <SignUp />
     </div>
   );
 }
