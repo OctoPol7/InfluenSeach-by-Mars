@@ -3,18 +3,19 @@ import TextInput from './TextInput.js'
 import EmailInput from './EmailInput.js'
 import PasswordInput from './PasswordInput.js'
 import SubmitButton from './SubmitButton.js'
+import UserTypeDropdown from './UserTypeDropdown.js'
 
 const SignUp = props => {
     return(
         <div className="signup">
         <h1>Sign Up</h1>
         <form>
-            <TextInput label="User Type"/>
-            <TextInput label="User Name"/>
-            <EmailInput label="Email"/>
-            <PasswordInput label="Password"/>
-            <PasswordInput label="Re-Confirm Password"/>
-            <SubmitButton label="Sign Up" />
+            <UserTypeDropdown label="User Type" name="userType"/>
+            <TextInput label="User Name" name="userName"/>
+            <EmailInput label="Email" name="email"/>
+            <PasswordInput label="Password" name="password"/>
+            <PasswordInput label="Re-Confirm Password" name="reconfirmPassword"/>
+            <SubmitButton label="Sign Up" name="signupButton"/>
             <p>Already a user? <a href="#">Log in</a></p>
         </form>
         </div>
