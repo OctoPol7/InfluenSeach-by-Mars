@@ -7,27 +7,27 @@ const UserSchema = new Schema({
     userType: {
         type: [{type: String}],
         enum: ["lite", "standard", "pro"],
-        require: true
+        required: true
     },
     userName: {
         type: String,
         minlength: 1,
         maxlength: 30,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
         minlength: 8,
-        require: true
+        required: true
     },
     reconfirmPassword: {
         type: String,
         minlength: 8,
-        require: true
+        required: true
     }
     
 })
