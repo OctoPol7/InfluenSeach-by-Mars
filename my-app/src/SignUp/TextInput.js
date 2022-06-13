@@ -4,7 +4,7 @@ const TextInput = props => {
     return(
         <label>
 			{props.label}
-			<input type="text" name={props.label} />
+			<input type="text" name={props.name} />
 		</label>
     )
 }

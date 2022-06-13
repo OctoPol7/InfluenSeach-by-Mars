@@ -4,7 +4,7 @@ const PasswordInput = props => {
     return(
         <label>
 			{props.label}
-			<input type="password" name={props.label} />
+			<input type="password" name={props.name} />
 		</label>
     )
 }
