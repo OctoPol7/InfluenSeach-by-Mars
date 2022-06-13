@@ -16,3 +16,15 @@ const { User } = require('./models/User.js')
 app.post('/users', (req, res) => {
     let user = new User(req.body)
 })
+
+app.get('/', (req,res)=>{
+ 
+    res.sendFile('index.html', {root: __dirname})
+
+});
+
+app.get('/signup', (req,res)=>{
+ 
+    res.sendFile('index.html', {root: __dirname})
+
+});
