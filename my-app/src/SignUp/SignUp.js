@@ -9,14 +9,14 @@ const SignUp = props => {
     return(
         <div className="signup">
         <h1>Sign Up</h1>
-        <form>
+        <form action="/users" method="POST">
             <UserTypeDropdown label="User Type" name="userType"/>
             <TextInput label="User Name" name="userName"/>
             <EmailInput label="Email" name="email"/>
             <PasswordInput label="Password" name="password"/>
             <PasswordInput label="Re-Confirm Password" name="reconfirmPassword"/>
             <SubmitButton label="Sign Up" name="signupButton"/>
-            <p>Already a user? <a href="#">Log in</a></p>
+            <p>Already a user? <a href="login">Log in</a></p>
         </form>
         </div>
     )
