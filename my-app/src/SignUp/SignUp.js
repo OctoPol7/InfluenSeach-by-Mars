@@ -16,8 +16,9 @@ const SignUp = props => {
             <PasswordInput label="Password" name="password"/>
             <PasswordInput label="Re-Confirm Password" name="reconfirmPassword"/>
             <SubmitButton label="Sign Up" name="signupButton"/>
-            <p>Already a user? <a href="login">Log in</a></p>
+            
         </form>
+        <p>Already a user? <a href="login">Log in</a></p>
         </div>
     )
 }
