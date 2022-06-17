@@ -9,7 +9,7 @@ const App = props => {
   return (
     <div className="App">
       
-      <SearchPage />
+      {/* <SearchPage /> */}
      
       {/* <SignUp />
 
@@ -18,7 +18,7 @@ const App = props => {
     
       <Creatorpage /> */}
 
-      {/* <SearchResult /> */}
+      <SearchResult />
     </div>
   );
 }
