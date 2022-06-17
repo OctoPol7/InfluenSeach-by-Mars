@@ -1,12 +1,14 @@
 import React from 'react'
-import Creatorpage from './CreatorPage/Creatorpage.js';
 import SignUp from './SignUp/SignUp.js'
+import SearchPage from './SearchPage/SearchPage.js'
+import './sass/style.scss';
 
 const App = props => {
   return (
     <div className="App">
-      <SignUp />
-      <Creatorpage />
+      {/* <SignUp /> */}
+      
+      <SearchPage />
 
     </div>
   );
