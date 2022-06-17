@@ -1,7 +1,8 @@
 import React from 'react'
 import SignUp from './SignUp/SignUp.js'
 import SearchPage from './SearchPage/SearchPage.js'
-import './sass/style.scss';
+import LogIn from './LogIn/LogIn.js'
+
 
 const App = props => {
   return (
@@ -9,6 +10,13 @@ const App = props => {
       {/* <SignUp /> */}
       
       <SearchPage />
+     
+      {/* <SignUp />
+
+
+      <LogIn />
+    
+      <Creatorpage /> */}
 
     </div>
   );
