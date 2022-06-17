@@ -6,6 +6,7 @@ import Tag from './Tag.js'
 import CountryDropdown from './CountryDropdown.js'
 import Checkbox from './Checkbox.js'
 import SortByDropdown from './SortByDropdown.js'
+import InfluCard from '../SearchPage/InfluCard.js'
 
 const SearchResult = props => {
     return(
@@ -41,8 +42,20 @@ const SearchResult = props => {
                 <Checkbox name="Travel"/>
             </div>
             <div>
-                <h2>250+ creators found</h2>
-                <SortByDropdown />
+                <div>
+                    <h2>250+ creators found</h2>
+                    <SortByDropdown />
+                </div>
+                <div>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                </div>   
             </div>
         </div>
     )

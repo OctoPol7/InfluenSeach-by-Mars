@@ -22,6 +22,9 @@ const InfluCard = props => {
 
         <div className='tag_div' style={{display:'flex',flexDirection:'row'}}>
             <Tag name="Lifestyle"/>
+            <Tag name="Lifestyle"/>
+            <Tag name="Lifestyle"/>
+            <Tag name="Lifestyle"/>
         </div>
 
       </div>

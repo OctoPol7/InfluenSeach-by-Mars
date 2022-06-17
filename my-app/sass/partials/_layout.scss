@@ -16,3 +16,90 @@
 .signup .submitButton {
     margin: 1rem auto;
 }
+
+
+
+
+
+.searchpage .search_box {
+    height: 500px;
+    background-color:lightblue;
+    text-align: center;
+    padding: 40px;
+}
+
+.searchpage .search_inp_div {
+    background-color: white;
+    width: 841px;
+    margin: 20px auto;
+    padding: 10px 26px;
+    border-radius: 10px;
+}
+
+.searchpage .reset_circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid grey;
+    margin-right: 5px;
+}
+
+.searchpage .search_input {
+    width: 500px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.searchpage .filtertag{
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color:white;
+    margin:5px;
+    border-radius: 5px;
+}
+
+.searchpage .influ_div{
+    border: 1px solid;
+    width: 300px;
+    height: 400px;
+    margin: 30px;
+}
+
+.searchpage .influ_count_div{
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+
+.searchpage .tag_div{
+    padding: 20px;
+}
+
+.searchpage .influ_count_div div{
+    padding: 20px;
+}
+
+.searchpage .pro_pic{
+    width:100px;
+    border-radius: 100%;
+}
+
+.searchpage .tag{
+    width: 100px;
+    height: 32px;
+    color: grey;
+    border-radius: 20px;
+    border: 1px solid;
+    margin: 5px;
+}
+
+.searchpage .btn{
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+   margin: 40px;
+   font-size: 20px;
+    color: white;
+}
