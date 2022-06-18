@@ -2,7 +2,7 @@ import React from 'react'
 
 const SortByDropdown = props => {
     return(
-        <>
+        <div>
             <label for="sortby">Sort by:</label>
 
             <select name="sortby">
@@ -12,7 +12,7 @@ const SortByDropdown = props => {
                 <option value="lowest-to-highest">Subscriber Count (Lowest to Highest)</option>
             </select>
 
-        </>
+        </div>
     )
 }
 

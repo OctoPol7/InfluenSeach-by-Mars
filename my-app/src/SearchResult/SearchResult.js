@@ -15,7 +15,7 @@ const SearchResult = props => {
            <div className="filters">
                 <SearchInput name="filter-search" placeholder="New Search"/>
                 <h2>Filters</h2>
-                <div>
+                <div className="apply-filters-div">
                     <p>Search Results For</p>
                    <ResetInput />
                    <ul>
@@ -42,11 +42,11 @@ const SearchResult = props => {
                 <Checkbox name="Travel"/>
             </div>
             <div>
-                <div>
+                <div class="sort-by-grid">
                     <h2>250+ creators found</h2>
                     <SortByDropdown />
                 </div>
-                <div>
+                <div class="results">
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>

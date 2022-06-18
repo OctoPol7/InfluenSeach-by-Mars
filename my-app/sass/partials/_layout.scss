@@ -17,10 +17,6 @@
     margin: 1rem auto;
 }
 
-
-
-
-
 .searchpage .search_box {
     height: 500px;
     background-color:lightblue;
@@ -61,6 +57,11 @@
 }
 
 .searchpage .influ_div{
+    display:flex;
+    flex-direction:column; 
+    justify-content:center;
+    align-items:center;
+    height:200;
     border: 1px solid;
     width: 300px;
     height: 400px;
@@ -68,21 +69,23 @@
 }
 
 .searchpage .influ_count_div{
+    width:50%;
+    display:flex;
+    flex-direction:row;
     border-bottom: 1px solid;
     border-top: 1px solid;
 }
 
 .searchpage .tag_div{
     padding: 20px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    align-items:center;
 }
 
 .searchpage .influ_count_div div{
     padding: 20px;
-}
-
-.searchpage .pro_pic{
-    width:100px;
-    border-radius: 100%;
 }
 
 .searchpage .tag{
@@ -102,4 +105,116 @@
    margin: 40px;
    font-size: 20px;
     color: white;
+}
+
+.search-result {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.search-result .header{
+    grid-column: 1/-1;
+}
+
+.search-result .sort-by-grid {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.search-result .sort-by-grid  select {
+    border: none;
+    max-width: fit-content;
+}
+
+.search-result .results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.search-result .results .influ_div {
+    margin: 0.5rem;
+    border: 1px solid darkgrey;
+}
+
+.search-result .results h2 {
+    text-align: center;
+}
+
+
+.search-result .influ_count_div {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.search-result .influ_count_div div {
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    padding-left: 0.5rem;
+}
+
+.search-result .influ_count_div div:last-of-type {
+    border-left: 1px solid darkgray;
+}
+
+.search-result .tag {
+    border: 1px solid darkgrey;
+    border-radius: 12px;
+    max-width: fit-content;
+    padding: 0 0.25rem;
+    margin: 0.25rem;
+}
+
+.search-result .tag_div {
+    padding-left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.search-result .filters {
+    padding: 1rem;
+}
+
+.search-result .filters input:first-of-type {
+    border-radius: 20px;
+    border-color: darkgrey;
+}
+
+.search-result .filters .reset-button {
+    border:none;
+    background-color: white;
+}
+
+.search-result .apply-filters-div {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.search-result .filters ul button {
+    border-radius: 40%;
+    border: none;
+    padding: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.233);
+    color:white;
+}
+
+.search-result .filters li {
+    background-color: black;
+    color: white;
+    border-radius: 18px;
+}
+
+.search-result .apply-filters-div ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.search-result .apply-filters-div li {
+    padding: 0 0.5rem;
+    margin: 0.25rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }

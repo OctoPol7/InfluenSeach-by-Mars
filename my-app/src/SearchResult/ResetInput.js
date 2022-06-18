@@ -2,7 +2,7 @@ import React from 'react'
 
 const ResetInput = props => {
     return(
-		<input type="reset" value="Reset" />
+		<input type="reset" value="Reset" class="reset-button"/>
     )
 }
 

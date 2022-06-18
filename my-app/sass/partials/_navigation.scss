@@ -10,3 +10,18 @@
     margin-right: 100px;
     margin-top: 30px;
 }
+
+.header .nav, .tag_div .tag, .search-result .filters ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header li {
+    padding: 1rem;
+}
+
+.header ul {
+    display: flex;
+    flex-flow: row nowrap;
+}

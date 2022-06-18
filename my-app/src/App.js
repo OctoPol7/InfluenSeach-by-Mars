@@ -8,6 +8,8 @@ import SearchResult from './SearchResult/SearchResult.js'
 const App = props => {
   return (
     <div className="App">
+
+      
       {/* <SearchPage /> */}
      
       {/* <SignUp />
