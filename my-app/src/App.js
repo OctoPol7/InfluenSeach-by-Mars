@@ -10,14 +10,7 @@ const App = props => {
     <div className="App">
 
       
-      {/* <SearchPage /> */}
      
-      {/* <SignUp />
-
-
-      <LogIn />
-    
-      <Creatorpage /> */}
 
       <SearchResult />
     </div>

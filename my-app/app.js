@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
+
+//import routes
+const searchRoute = require('./routes/search');
 
 const db = require('./db/connection.js');
 
@@ -10,6 +14,10 @@ db.once('open', ()=>{
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+//Routes which should handle requests to API
+app.use('/search', searchRoute);
 
 const { User } = require('./models/User.js')
 
@@ -49,3 +57,5 @@ app.get('/users', (req, res) => {
         }
     })
 })
+
+module.exports = app;
