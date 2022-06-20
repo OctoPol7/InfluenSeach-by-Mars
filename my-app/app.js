@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
 //import routes
 const searchRoute = require('./routes/search');
+const userRoutes = require('./routes/user');
 
 const db = require('./db/connection.js');
 
@@ -17,47 +19,12 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(morgan('dev'));
 
 //Routes which should handle requests to API
 app.use('/search', searchRoute);
 
-const { User } = require('./models/User.js')
-
-app.post('/users', (req, res) => {
-    let user = new User(req.body)
-    console.log('nice job!!')
-
-    user.save(error=>{
-        if(error) {
-            res.send(500).json(error)
-        } else {
-            res.status(201).json({
-                message: "Successfully Signed Up",
-                data: user
-            })
-        }
-    })
-})
-
-app.get('/users', (req, res) => {
-    let dbQuery = User.find({})
-
-    if(req.query.userName != undefined){
-        dbQuery = User.find({"unserName": req.query.userName})
-    } else if (req.query.userType != undefined) {
-        dbQuery = User.find({"userType": req.query.userType})
-    }
-    
-    dbQuery
-    .sort('userName')
-    .select('userName email')
-    .exec((error, result) => {
-        if(error) {
-            res.send(500).json(error)
-        } else {
-            res.json(result)
-        }
-    })
-})
+//Routes which should handle requests to DB
+app.use('/user', userRoutes);
 
 //module.exports = app;
