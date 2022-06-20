@@ -1,15 +1,25 @@
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors')
+
+//import routes
+const searchRoute = require('./routes/search');
 
 const db = require('./db/connection.js');
 
 db.once('open', ()=>{
     console.log("Connected to database!");
-    const server = app.listen(3000, ()=>console.log("listening"));
+    const server = app.listen(4000, ()=>console.log("listening"));
 });
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(cors());
+
+//Routes which should handle requests to API
+app.use('/search', searchRoute);
 
 const { User } = require('./models/User.js')
 
@@ -49,3 +59,5 @@ app.get('/users', (req, res) => {
         }
     })
 })
+
+//module.exports = app;
