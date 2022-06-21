@@ -17,13 +17,7 @@ router.post("/signup", (req, res, next) => {
         return res.status(409).json({
           message: "Email already exists!",
         });
-      }
-      //   if (user.length >= 1) {
-      //     return res.status(409).json({
-      //       message: "UserName already exists!",
-      //     });
-      //   }
-      else {
+      } else {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
           if (err) {
             return res.status(500).json({
