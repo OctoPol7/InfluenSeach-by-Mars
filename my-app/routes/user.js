@@ -8,7 +8,9 @@ const User = require("../models/user");
 
 // code obtained from youtube course follow along
 // Building a RESTful API with Node.js
-// https://www.youtube.com/playlist?list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q
+// https://www.youtube.com/playlist?list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q //for SignUp
+// https://www.youtube.com/watch?v=0D5EEKH97NA&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=12 //for LogIn
+
 router.post("/signup", (req, res, next) => {
   User.find({ email: req.body.email, userName: req.body.userName })
     .exec()
@@ -47,6 +49,39 @@ router.post("/signup", (req, res, next) => {
           }
         });
       }
+    });
+});
+
+router.post("/login", (req, res, next) => {
+  User.find({ email: req.body.email, userName: req.body.userName })
+    .exec()
+    .then((user) => {
+      if (user.length < 1) {
+        return res.status(401).json({
+          message: "Authentication failed",
+        });
+      }
+      bcrypt.compare(req.body.password, user[0].password, (err, result) => {
+        if (err) {
+          return res.status(401).json({
+            message: "Authentication failed",
+          });
+        }
+        if (result) {
+          return res.status(200).json({
+            message: "Authentication successful",
+          });
+        }
+        res.status(401).json({
+          message: "Authentication failed",
+        });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
     });
 });
 
