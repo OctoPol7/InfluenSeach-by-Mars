@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Step_one from './Step_one.js'
-import Step_two from './Step_two.js'
-import Step_three from './Step_three.js'
+import StepOne from './StepOne.js'
+import StepTwo from './StepTwo.js'
+import StepThree from './StepThree.js'
 import NextBtn from './NextBtn.js'
 
 
@@ -33,14 +33,14 @@ const SearchContainer = props => {
   
     const RenderStep = ()=> {
     
-      if (step==0) {
-        return <Step_one />;
+      if (step===0) {
+        return <StepOne />;
       }
-      else if(step==1){
-        return <Step_two />;
+      else if(step===1){
+        return <StepTwo />;
       }
-      else if(step==2){
-        return <Step_three />;
+      else if(step===2){
+        return <StepThree />;
       }
     
     }
