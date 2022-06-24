@@ -4,6 +4,7 @@ import SearchPage from "./SearchPage/SearchPage.js";
 import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
+import SingleCampaign from "./SingleCampaign.js"
 
 const App = (props) => {
   return (
@@ -14,6 +15,7 @@ const App = (props) => {
 
       {/* <SearchResult />  */}
       {/* <GetSearch /> */}
+      <SingleCampaign />
     </div>
   );
 };
