@@ -8,10 +8,11 @@ import GetSearch from "./GetSearch.js";
 const App = (props) => {
   return (
     <div className="App">
-      <SignUp />
-      <LogIn />
+      {/* <SearchPage /> */}
+      {/* <SignUp />
+      <LogIn />*/}
 
-      <SearchResult />
+      {/* <SearchResult />  */}
       {/* <GetSearch /> */}
     </div>
   );
