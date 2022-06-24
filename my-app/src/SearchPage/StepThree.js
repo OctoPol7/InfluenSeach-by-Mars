@@ -3,7 +3,7 @@ import FilterTag from './FilterTag.js';
 import SearchInput from './SearchInput.js';
 
 
-const Step_three = props => {
+const StepThree = props => {
     return<>
        <p> Step 3/3 </p>
 
@@ -31,4 +31,4 @@ const Step_three = props => {
 
 
 
-export default Step_three;
+export default StepThree;
