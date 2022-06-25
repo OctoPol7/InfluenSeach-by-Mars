@@ -3,6 +3,8 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const PORT = 4000;
+require('dotenv').config();
 
 //import routes
 const searchRoute = require("./routes/search");
@@ -12,7 +14,7 @@ const db = require("./db/connection.js");
 
 db.once("open", () => {
   console.log("Connected to database!");
-  const server = app.listen(4000, () => console.log("listening"));
+  const server = app.listen(PORT, () => console.log(`Sever running on PORT ${PORT}`));
 });
 
 app.use(express.static("public"));
