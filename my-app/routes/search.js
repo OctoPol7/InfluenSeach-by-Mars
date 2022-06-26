@@ -2,9 +2,10 @@ const express = require("express");
 const axios = require("axios");
 const { response } = require("express");
 const router = express.Router();
+require('dotenv').config();
 //const app = require("../app.js");
 
-const apiKey = "AIzaSyDkGoypG9zMnDtDWqBAydQKT0xKZZbv_vI";
+const apiKey = process.env.KEY;
 
 // router.use((req, res, next) => {
 //   next();
