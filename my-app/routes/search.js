@@ -24,15 +24,29 @@ router.get("/:part/:searchPhrase/:type/:publishedAfter/:maxResults/:orderBy/:reg
   const searchRequest = `https://youtube.googleapis.com/youtube/v3/search?${part}&${publishedAfter}&${searchPhrase}&${type}&${order}&${maxResults}&${regionCode}&key=${apiKey}`;
   console.log(searchRequest)
 
-  let data = await axios.get(searchRequest).then((response) => {
-    console.log(response.data.items)
+  let searchResult = await axios.get(searchRequest).then((response) => {
+    //console.log(response.data.items)
     return response.data.items;
   })
   .catch((error) => {
-    console.log("This is the error!!!!!!!!!!!: ")
+    console.log(error)
   })
+  // store response result channel id's in an array
+  let channelIds = searchResult.map(channel => channel.snippet.channelId);
+    console.log("********channel id's***********");
+    console.log(channelIds);
 
-   res.json(data);
+  // get channels statistics
+  const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;
+  let channelsDetails = await axios.get(getChannels).then((response) => {
+    console.log(response.data.items);
+    return response.data.items;
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+  
+   res.json(channelsDetails);
 });
 
 module.exports = router;

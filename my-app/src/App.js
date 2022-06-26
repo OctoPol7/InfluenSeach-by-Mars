@@ -12,7 +12,7 @@ const App = (props) => {
       <LogIn />
 
       <SearchResult />
-      {/* <GetSearch /> */}
+      <GetSearch />
     </div>
   );
 };

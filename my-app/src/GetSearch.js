@@ -11,7 +11,7 @@ const GetSearch = props => {
             const part = 'snippet';
             const publishedAfter = '2022-06-10T00%3A00%3A00Z';
             const searchPhrase = 'Gaming'; 
-            const type = 'channel'
+            const type = 'video';
             const maxResults = '10';
             const orderBy = 'viewCount';
             const regionCode = 'CA';
