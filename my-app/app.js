@@ -3,8 +3,10 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const PORT = 4000;
+
 require('dotenv').config();
+
+const PORT = process.env.BACKENDPORT;
 
 //import routes
 const searchRoute = require("./routes/search");
