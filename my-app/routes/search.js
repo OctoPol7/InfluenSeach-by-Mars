@@ -7,13 +7,9 @@ require('dotenv').config();
 
 const apiKey = process.env.KEY;
 
-// router.use((req, res, next) => {
-//   next();
-// })
-
 router.get("/:part/:searchPhrase/:type/:publishedAfter/:maxResults/:orderBy/:regionCode", async (req, res) => {
   
-  console.log(req.params);
+  //console.log(req.params);
 
   const part = "part=snippet";
   const publishedAfter = "publishedAfter="+req.params.publishedAfter;
@@ -23,7 +19,7 @@ router.get("/:part/:searchPhrase/:type/:publishedAfter/:maxResults/:orderBy/:reg
   const order = "order="+req.params.orderBy;
   const regionCode = "regionCode="+req.params.regionCode;
   const searchRequest = `https://youtube.googleapis.com/youtube/v3/search?${part}&${publishedAfter}&${searchPhrase}&${type}&${order}&${maxResults}&${regionCode}&key=${apiKey}`;
-  console.log(searchRequest)
+  //console.log(searchRequest)
 
   let searchResult = await axios.get(searchRequest).then((response) => {
     //console.log(response.data.items)
@@ -34,8 +30,8 @@ router.get("/:part/:searchPhrase/:type/:publishedAfter/:maxResults/:orderBy/:reg
   })
   // store response result channel id's in an array
   let channelIds = searchResult.map(channel => channel.snippet.channelId);
-    console.log("********channel id's***********");
-    console.log(channelIds);
+    // console.log("********channel id's***********");
+    // console.log(channelIds);
 
   // get channels statistics
   const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;
