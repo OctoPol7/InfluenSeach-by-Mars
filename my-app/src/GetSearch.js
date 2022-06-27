@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
 
@@ -7,14 +8,23 @@ const GetSearch = props => {
 
     useEffect(()=>{
       async function loadSearch(){
-        await fetch('http://localhost:4000/search')
-      .then(results => results)
+            const part = 'snippet';
+            const publishedAfter = '2022-06-10T00%3A00%3A00Z';
+            const searchPhrase = 'Gaming'; 
+            const type = 'video';
+            const maxResults = '10';
+            const orderBy = 'viewCount';
+            const regionCode = 'CA';
+            const url = `http://localhost:4000/search/${part}/${searchPhrase}/${type}/${publishedAfter}/${maxResults}/${orderBy}/${regionCode}`;
+
+      await axios.get(url)
       .then(resData => {
-        console.log(resData.json());
-        //setSearch(resData.json());
+        console.log(resData);
+        setSearch(resData);
         setLoading(false);
+      }).catch((error) => {
+        console.log(error);
       })
-      .catch(error=>console.log(error));
     }
     loadSearch();
     },[]);
