@@ -5,7 +5,7 @@ import Tag from './Tag.js';
 const InfluCard = props => {
     return<>
       <div className='influ_div'>
-        <div>
+        <div >
             <img className='pro_pic' src='https://www.fairtravel4u.org/wp-content/uploads/2018/06/sample-profile-pic.png'></img>
             <h2>{props.influ_name}</h2>
         </div>
@@ -21,7 +21,6 @@ const InfluCard = props => {
         </div>
 
         <ul className='tag_div'>
-            <Tag name="Lifestyle"/>
             <Tag name="Lifestyle"/>
             <Tag name="Lifestyle"/>
             <Tag name="Lifestyle"/>

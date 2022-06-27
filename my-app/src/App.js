@@ -6,15 +6,17 @@ import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
+import CampaignHomePage from './CampaignHomePage/HomePage.js';
+import './sass/style.scss'
 
 const App = (props) => {
   return (
     <div className="App">
-      <Route path="/search">
+       <Route path="/search">
         <SearchPage />
       </Route>
 
-      <Route path="/signup">
+       <Route path="/signup">
         <SignUp />
       </Route>
 
@@ -26,13 +28,16 @@ const App = (props) => {
         <SearchResult />
       </Route>
 
-      <Route path="/getserach">
+      <Route path="/getsearch">
         <GetSearch />
       </Route>
 
       <Route path="/singlecampaign">
         <SingleCampaign />
-      </Route>
+      </Route>  
+      <Route path="/campaign">
+       <CampaignHomePage/>
+       </Route>
     </div>
   );
 };
