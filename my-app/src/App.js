@@ -13,6 +13,7 @@ const App = (props) => {
 
       <SearchResult />
       {/* <GetSearch /> */}
+      <SearchPage />
     </div>
   );
 };
