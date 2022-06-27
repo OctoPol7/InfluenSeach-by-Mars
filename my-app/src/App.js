@@ -14,11 +14,6 @@ const App = (props) => {
         <SearchPage />
       </Route>
 
-<<<<<<< HEAD
-      <SearchResult />
-      {/* <GetSearch /> */}
-      <SearchPage />
-=======
       <Route path="/signup">
         <SignUp />
       </Route>
@@ -38,7 +33,6 @@ const App = (props) => {
       <Route path="/singlecampaign">
         <SingleCampaign />
       </Route>
->>>>>>> c48c98f934af7412667a0e040a1a0b070b954ce4
     </div>
   );
 };
