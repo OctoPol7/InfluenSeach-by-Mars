@@ -5,7 +5,7 @@ const Checkbox = props => {
         <>
             <div>
                 <input type="checkbox" id={props.name} name={props.name} />
-                <label for={props.name}>{props.name}</label>
+                <label htmlFor={props.name}>{props.name}</label>
             </div>
         </>
     )
