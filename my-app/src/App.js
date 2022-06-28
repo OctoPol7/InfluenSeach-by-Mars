@@ -6,8 +6,8 @@ import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
-import CampaignHomePage from './CampaignHomePage/HomePage.js';
-import './sass/style.scss'
+import CampaignPage from './CampaignPage/Campaign.js';
+// import './sass/style.scss'
 
 const App = (props) => {
   return (
@@ -36,7 +36,7 @@ const App = (props) => {
         <SingleCampaign />
       </Route>  
       <Route path="/campaign">
-       <CampaignHomePage/>
+       <CampaignPage/>
        </Route>
     </div>
   );

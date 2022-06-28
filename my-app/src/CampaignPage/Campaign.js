@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Header from '../header.js'
+import Header from '../Header.js'
 import CampStatContner from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
@@ -8,7 +8,7 @@ import Modal from './Modal';
 
 
 
-const HomePage = props => {
+const Campaign = props => {
 
     const [modalshow,setModalShow] = useState(false);
 
@@ -77,4 +77,4 @@ const HomePage = props => {
     
 }
 
-export default HomePage;
+export default Campaign;
