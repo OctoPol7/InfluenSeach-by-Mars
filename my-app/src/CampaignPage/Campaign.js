@@ -5,7 +5,7 @@ import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import Inputs from './Inputs';
 import Modal from './Modal';
-import TopHeader from '../SearchPage/TopHeader.js';
+
 
 
 const HomePage = props => {
@@ -20,7 +20,7 @@ const HomePage = props => {
 
     return<>
 
-        <TopHeader />
+        <Header />
         <CampStatContner/>
         <CurCampContner/>
         
