@@ -18,7 +18,8 @@ const Campaign = props => {
     }
 
 
-    return<>
+    return
+    <div className='campaign-page'>
 
         <Header />
         <CampStatContner/>
@@ -73,7 +74,7 @@ const Campaign = props => {
       
         
 
-    </>   
+    </div>   
     
 }
 
