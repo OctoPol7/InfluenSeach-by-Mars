@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import StepOne from './StepOne.js'
 import StepTwo from './StepTwo.js'
@@ -48,11 +48,15 @@ const SearchContainer = props => {
       }
       else if (step === 2){
         return (
+          
+          <Route path="/search">
           <Redirect
             to="/searchresult"
             keywordArray={props.keywordArray}
             locationArray={props.locationArray}
           />
+          </Route>
+        
           // <StepThree
           //   keyword={props.keyword}
           //   setKeyword={props.setKeyword}
