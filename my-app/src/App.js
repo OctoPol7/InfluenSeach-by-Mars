@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route } from "react-router-dom";
+
 import SignUp from "./SignUp/SignUp.js";
 import SearchPage from "./SearchPage/SearchPage.js";
 import LogIn from "./LogIn/LogIn.js";
@@ -10,10 +11,27 @@ import CampaignPage from './CampaignPage/Campaign.js';
 // import './sass/style.scss'
 
 const App = (props) => {
+  const [locationArray, setLocationArray] = useState([]);
+  const [keywordArray, setKeywordArray] = useState([]);
+  
   return (
     <div className="App">
-       <Route path="/search">
-        <SearchPage />
+      <Route path="/search">
+        <SearchPage
+          keywordArray={keywordArray}
+          locationArray={locationArray}
+          setKeywordArray={setKeywordArray}
+          setLocationArray={setLocationArray}
+        />
+      </Route>
+
+      <Route path="/searchresult">
+        <SearchResult
+          keywordArray={keywordArray}
+          locationArray={locationArray}
+          setKeywordArray={setKeywordArray}
+          setLocationArray={setLocationArray}
+        />
       </Route>
 
        <Route path="/signup">
@@ -22,10 +40,6 @@ const App = (props) => {
 
       <Route path="/login">
         <LogIn />
-      </Route>
-
-      <Route path="/searchresult">
-        <SearchResult />
       </Route>
 
       <Route path="/getsearch">
