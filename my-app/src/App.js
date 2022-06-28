@@ -11,7 +11,7 @@ import SingleCampaign from './SingleCampaign/SingleCampaign.js'
 const App = (props) => {
   const [locationArray, setLocationArray] = useState([]);
   const [keywordArray, setKeywordArray] = useState([]);
-
+  
   return (
     <div className="App">
       <Route path="/search">

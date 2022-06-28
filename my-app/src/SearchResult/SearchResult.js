@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../header.js'
 import SearchInput from './SearchInput.js'
 import ResetInput from './ResetInput.js'
@@ -7,8 +7,18 @@ import CountryDropdown from './CountryDropdown.js'
 import Checkbox from './Checkbox.js'
 import SortByDropdown from './SortByDropdown.js'
 import InfluCard from '../SearchPage/InfluCard.js'
+import GetSearch from '../GetSearch.js'
 
 const SearchResult = props => {
+  const [searchPhrase, setSearchPhrase] = useState(props.keywordArray.join(' '));
+  const [results, setResults] = useState([]);
+
+  const grabResults = (resData) => {
+    console.log("FROM ResultPage");
+    console.log(resData.data);
+    setResults(resData.data);
+  }
+
     return (
       <div className="search-result">
         <Header />
@@ -54,52 +64,23 @@ const SearchResult = props => {
           <Checkbox name="Design" />
           <Checkbox name="Travel" />
         </div>
+
         <div>
+          <GetSearch searchPhrase={searchPhrase} grabResults={grabResults} />
           <div class="sort-by-grid">
             <h2>250+ creators found</h2>
             <SortByDropdown />
           </div>
+
           <div class="results">
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
-            <InfluCard
-              sub_count={2346677}
-              video_count={3456}
-              influ_name="Joan Doe"
-            />
+            {results.map((result) => (
+              <InfluCard
+                sub_count={result.statistics.subscriberCount}
+                video_count={result.statistics.videoCount}
+                influ_name={result.brandingSettings.channel.title}
+                influ_img={result.brandingSettings.image.bannerExternalUrl}
+              />
+            ))}
           </div>
         </div>
       </div>
