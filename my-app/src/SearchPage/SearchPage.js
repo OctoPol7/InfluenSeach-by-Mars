@@ -7,6 +7,7 @@ import InfluContainer from './InfluContainer.js'
 import SearchResult from "../SearchResult/SearchResult";
 
 
+
 const SearchPage = props => {
 
   const grabKeyword = (key) => {

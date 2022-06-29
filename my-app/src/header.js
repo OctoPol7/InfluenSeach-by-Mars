@@ -1,6 +1,6 @@
 import React from 'react'
 
-const header = props => {
+const Header = props => {
     return(
         <div className="header">
              {/* Add logo here */}
@@ -13,4 +13,4 @@ const header = props => {
     )
 }
 
-export default header
+export default Header
