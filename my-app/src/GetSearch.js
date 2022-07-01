@@ -12,7 +12,7 @@ const GetSearch = props => {
             const publishedAfter = '2022-06-10T00%3A00%3A00Z';
             const searchPhrase = 'Gaming'; 
             const type = 'video';
-            const maxResults = '10';
+            const maxResults = '50';
             const orderBy = 'viewCount';
             const regionCode = 'CA';
             const url = `http://localhost:4000/search/${part}/${searchPhrase}/${type}/${publishedAfter}/${maxResults}/${orderBy}/${regionCode}`;
