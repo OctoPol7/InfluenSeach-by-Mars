@@ -179,6 +179,22 @@
          {
             "topic": "Movies",
             "id": "/m/02vxn"
+         },
+         {
+            "topic": "Lifestyle",
+            "id": "/m/019_rr"
+         },
+         {
+            "topic": "Fashion",
+            "id": "/m/032tl"
+         },
+         {
+            "topic": "Fitness",
+            "id": "/m/027x7n"
+         },
+         {
+            "topic": "Food",
+            "id": "/m/02wbm"
          }
 
     ]
