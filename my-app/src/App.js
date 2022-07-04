@@ -8,7 +8,7 @@ import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
 import CampaignPage from './CampaignPage/Campaign.js';
-import './sass/style.scss'
+// import './sass/style.scss'
 
 const App = (props) => {
   const [locationArray, setLocationArray] = useState([]);
