@@ -17,95 +17,6 @@
     margin: 1rem auto;
 }
 
-.searchpage .search_box {
-    height: 500px;
-    background-color:lightblue;
-    text-align: center;
-    padding: 40px;
-}
-
-.searchpage .search_inp_div {
-    background-color: white;
-    width: 841px;
-    margin: 20px auto;
-    padding: 10px 26px;
-    border-radius: 10px;
-}
-
-.searchpage .reset_circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    border: 2px solid grey;
-    margin-right: 5px;
-}
-
-.searchpage .search_input {
-    width: 500px;
-    height: 50px;
-    background-color: transparent;
-    border: none;
-}
-
-.searchpage .filtertag{
-    width: 100px;
-    height: 40px;
-    background-color: black;
-    color:white;
-    margin:5px;
-    border-radius: 5px;
-}
-//searchpage influencercard styling
-
-.searchpage .influ_div{
-    display:flex;
-    flex-direction:column; 
-    justify-content:center;
-    align-items:center;
-    height:200;
-    border: 1px solid;
-    width: 300px;
-    height: 400px;
-    margin: 30px;
-}
-
-.searchpage .influ_count_div{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-
-}
-
-.searchpage .tag_div{
-    padding: 20px;
-    display:flex;
-    flex-flow:row wrap;
-    justify-content:center;
-    align-items:center;
-}
-
-.searchpage .influ_count_div div{
-    padding: 20px;
-}
-
-.searchpage .tag{
-    width: 100px;
-    height: 32px;
-    color: grey;
-    border-radius: 20px;
-    border: 1px solid;
-    margin: 5px;
-}
-
-.searchpage .btn{
-    width: 200px;
-    height: 50px;
-    background-color: black;
-    border-radius: 25px;
-   margin: 40px;
-   font-size: 20px;
-    color: white;
-}
-
 .search-result {
     display: grid;
     grid-template-columns: 25% 75%;
@@ -219,18 +130,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
 }
-// Tags styling
-.tag{
-width: 100px;
-height: 32px;
-color: grey;
-border-radius: 20px;
-border: 1px solid;
-margin: 5px;
-list-style: none;
-text-align: center;
 
-}
 
 // Campaign Home page styling
 .pad20{
@@ -368,25 +268,39 @@ text-align: center;
     margin-top: 25px;
 }
 
-//search influencercard styling
-.searchpage .results .influ_div {
-    margin: 0.5rem;
-    border: 1px solid darkgrey;
-}
-
-.searchpage .results h2 {
-    text-align: center;
-}
 
 
-.searchpage .influ_count_div {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+
+
+
+
+
+//SEARCH PAGE STYLING
+
+body {
+    font-family: sans-serif;
 }
 
-.searchpage .influ_count_div div:last-of-type {
-    border-left: 1px solid darkgray;
+.searchpage .background{
+    background-color:#E5E8EF;
 }
+.searchpage .influ{
+    display:flex;
+    flex-direction:column;
+    padding:90;
+}
+.searchpage .influ h1{
+   margin-top:20;
+   margin-bottom:20;
+   margin-left: 10px;
+   padding: 10px;
+}
+.searchpage .influ .influ-cards{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap: 32px;
+ }
 
 .searchpage .tag {
     border: 1px solid darkgrey;
@@ -394,10 +308,189 @@ text-align: center;
     max-width: fit-content;
     padding: 0 0.25rem;
     margin: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #FBE3DC;
+    border: 1px solid #ED8F74;
+    border-radius: 50px;
 }
+
+//searchpage influencercard styling
+
+.searchpage .influ_div{
+    display:flex;
+    flex-direction:column; 
+    justify-content:center;
+    align-items:center;
+   
+    width: 350px;
+    height: 400px;
+    margin: 30px;
+}
+
+.searchpage .influ_count_div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+
+}
+.searchpage .influ_count_div div:last-of-type {
+        border-left: 1px solid darkgray;
+    }
+.searchpage  .influ_count_div div{
+        padding-left: 70px;
+    }
+    .searchpage .influ_div{
+    
+        width: 400px;
+        height: 400px;
+        margin: 10px;
+        margin-left: 20px;
+        background: linear-gradient(126.5deg, #FFFFFF 0%, #F2F5FC 96.54%);
+    box-shadow: 5px 8px 15px rgba(20, 41, 90, 0.1);
+    border-radius: 4px;
+    }
+    
+.searchpage .tag_div {
+    padding-left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: -100px;
+
+}
+.search_box {
+    min-height: 500px;
+    // background-color: lightblue;
+    background: linear-gradient(264.44deg, rgba(228, 87, 46, 0.15) 3.99%, rgba(90, 13, 254, 0.15) 56.08%, rgba(18, 0, 55, 0.15) 109.51%);   text-align: center;
+    padding: 40px;
+}
+
+.sub_head {
+    margin: 20px 0;
+}
+
+.search_inp_div {
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px rgba(39, 15, 80, 0.2);
+    border-radius: 4px;
+
+    max-width: 841px;
+    margin: 20px auto;
+    padding: 10px 26px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+
+.search_input {
+    max-width: 500px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.filter{
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color:white;
+    margin:5px;
+    border-radius: 5px;
+}
+ 
+
+.tag_div{
+    padding: 20px;
+}
+
+
+.pro_pic{
+    width:100px;
+    border-radius: 100%;
+}
+
+
+
+.btn{
+    width: 140px;
+    height: 44px;
+    // background-color: black;
+    background: #E4572E;
+    // border-radius: 25px;
+    margin: 40px;
+    font-size: 20px;
+    color: white;
+    border-radius: 500px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .searchpage .search_box h1{
+        font-size: 20px;
+    }
+
+    .menubtn{
+        display: block;
+    }
+
+    .nav ul li{
+        display: inherit;
+        text-align: center;
+        border-bottom: 1px solid grey;
+    }
+
+
+
+    .nav{
+        margin-right:10px
+    }
+
+    .nav ul{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        // stacks the li tags vertically 
+        flex-direction: column;
+       // makes menu span full height and width
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        border-top: 1px solid black;
+        padding: 0;
+        display: none;
+    }
+
+    .nav.expanded ul {
+        display: block;
+      }
+  }
+  .searchpage .influ .influ-div{
+      margin-left: 70px;
+  }
+  .searchpage .influ .influ-cards {
+    margin-left: 20px;
+}
+//  .searchpage .filtertag{
+//     width: 100px;
+//     height: 40px;
+//     background-color: black;
+//     color:white;
+//     margin:5px;
+//     border-radius: 5px;
+// }
+// .searchpage .btn{
+//     width: 200px;
+//     height: 50px;
+//     background-color: black;
+//     border-radius: 25px;
+//    margin: 40px;
+//    font-size: 20px;
+//     color: white;
+// }
 
 
 

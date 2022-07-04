@@ -17,7 +17,7 @@ const StepOne = props => {
 
     return (
       <>
-        <p>Step 1/3</p>
+        <p>Step 1/2</p>
         <h2>Which industry / space do you want to explore creators in?</h2>
 
         {/* <SearchInput
@@ -40,7 +40,7 @@ const StepOne = props => {
               value={keyword}
               onChange={keywordHandler}
             />
-            <button type="submit">Add</button>
+            {/* <button type="submit">Add</button> */}
           </form>
 
           {props.keywordArray.map((key) => (
@@ -51,7 +51,7 @@ const StepOne = props => {
             <FilterTag name={loc} />
           ))}
 
-          <label
+           {/* <label
             style={{
               display: "flex",
               justifyContent: "center",
@@ -61,7 +61,8 @@ const StepOne = props => {
             <div className="reset_circle" onClick={props.resetButton}>
               Reset
             </div>
-          </label>
+          </label>  */}
+          
         </div>
       </>
     );

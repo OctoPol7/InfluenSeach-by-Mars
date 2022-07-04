@@ -41,7 +41,7 @@ const [keyword, setKeyword] = useState("");
 
     return (
       <>
-        <p>Step 1/3</p>
+        <p>Step 1/2</p>
         <h2>Which geographical locations do you want to target?</h2>
 
         {/* <SearchInput
@@ -64,7 +64,7 @@ const [keyword, setKeyword] = useState("");
               value={keyword}
               onChange={keywordHandler}
             />
-            <button type="submit">Add</button>
+            {/* <button type="submit">Add</button> */}
           </form>
 
           {props.keywordArray.map((key) => (
@@ -75,17 +75,17 @@ const [keyword, setKeyword] = useState("");
             <FilterTag name={loc} />
           ))}
 
-          <label
+          {/* <label
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-          >
-            <div className="reset_circle" onClick={props.resetButton}>
+          > */}
+            {/* <div className="reset_circle" onClick={props.resetButton}>
               Reset
-            </div>
-          </label>
+            </div> */}
+          {/* </label> */}
         </div>
       </>
     );
