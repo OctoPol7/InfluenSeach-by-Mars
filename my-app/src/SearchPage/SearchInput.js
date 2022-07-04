@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 
 const SearchInput = props => {
@@ -25,7 +25,7 @@ const SearchInput = props => {
             justifyContent: "space-between",
           }}
         >
-          <form onSubmit={addHandler}>
+          {/* <form onSubmit={addHandler}>
             <input
               className="search_input"
               type="text"
@@ -42,11 +42,12 @@ const SearchInput = props => {
               justifyContent: "center",
               alignItems: "center",
             }}
-          >
-            <div className="reset_circle" onClick={props.resetButton}>
+          > */}
+            {/* <div className="reset_circle" onClick={props.resetButton}>
               Reset
-            </div>
-          </label>
+            </div> */}
+          {/* </label> */}
+          <NextBtn onClick={updateStep} name="Next" />
         </div>
       </>
     );

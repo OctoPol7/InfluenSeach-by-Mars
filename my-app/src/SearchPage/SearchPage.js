@@ -35,9 +35,11 @@ const SearchPage = props => {
           grabLocation={grabLocation}
           resetButton={resetButton}
         />
+        <div className="background">
         <InfluContainer />
 
         
+      </div>
       </div>
     );      
 }
