@@ -123,6 +123,30 @@
          {
             "topic": "Boxing",
             "id": "/m/01cgz"
+         },
+         {
+            "topic": "Cricket",
+            "id": "/m/09xp_"
+         },
+         {
+            "topic": "Football",
+            "id": "/m/02vx4"
+         },
+         {
+            "topic": "Golf",
+            "id": "/m/037hz"
+         },
+         {
+            "topic": "Ice hockey",
+            "id": "/m/03tmr"
+         },
+         {
+            "topic": "Mixed martial arts",
+            "id": "/m/01h7lh"
+         },
+         {
+            "topic": "Motorsport",
+            "id": "/m/0410tth"
          }
 
     ]
