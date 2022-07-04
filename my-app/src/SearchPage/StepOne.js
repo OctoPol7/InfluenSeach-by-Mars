@@ -17,7 +17,7 @@ const StepOne = props => {
 
     return (
       <>
-        <p>Step 1/3</p>
+        <p>Step 1/2</p>
         <h2>Which industry / space do you want to explore creators in?</h2>
 
         {/* <SearchInput
