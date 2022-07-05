@@ -374,12 +374,17 @@
 }
 
 .searchpage .search_input {
-    max-width: 500px;
     height: 40px;
     background-color: transparent;
     border: none;
     width: 100%;
 }
+
+// .searchpage .search_inp_div {
+//     display: "flex";
+//     flex-direction: "row";
+//     justify-content: "space-between";
+// }
 
 .searchpage .filter{
     width: 100px;
@@ -388,6 +393,16 @@
     color:white;
     margin:5px;
     border-radius: 5px;
+}
+
+.searchpage .search_inp_div .filtertag {
+    padding: 0.25rem;
+    margin-right: 1rem;
+}
+
+.searchpage .search_inp_div .search-filters {
+    display: flex;
+    flex-flow: row wrap;
 }
  
 .searchpage .tag_div{
@@ -407,6 +422,7 @@
     font-size: 20px;
     color: white;
     border-radius: 500px;
+    border: none;
 }
 
 .searchpage .influ-cards li {

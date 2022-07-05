@@ -102,15 +102,6 @@ select {
   padding: 0;
 }
 
-.header li {
-  padding: 1rem;
-}
-
-.header ul {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 .nav {
   float: right;
   margin-right: 100px;
@@ -121,7 +112,10 @@ select {
   font-family: sans-serif;
   display: inline;
   font-size: 27px;
-  padding-right: 30px;
+}
+
+.nav li:first-of-type {
+  padding-right: 2rem;
 }
 
 /* MEDIA ============================================ */
@@ -140,10 +134,28 @@ img {
   padding: 2rem;
 }
 
+.searchpage .filtertag button img {
+  display: inline-block;
+}
+
+.searchpage .filtertag button {
+  border-radius: 50%;
+  border: none;
+}
+
 /* HEADER FOOTER =================================== */
 .header {
   height: 100px;
   background-color: #E5E8EF;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 1rem;
+}
+
+.header ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
 }
 
 .nav ul {
@@ -153,7 +165,7 @@ img {
 .nav li {
   display: inline;
   font-size: 27px;
-  padding-right: 30px;
+  color: #485063;
 }
 
 .nav {
@@ -162,10 +174,24 @@ img {
   margin-top: 30px;
 }
 
+.nav li .active {
+  color: #E4572E;
+  text-decoration: none;
+}
+
 .menubtn {
   float: right;
   display: none;
   background-color: #E4572E;
+}
+
+.header h1 {
+  align-self: center;
+  color: linear-gradient(90deg, #E4572E 4.7%, #5A0DFE 50.55%, #120037 100%);
+}
+
+.header li {
+  align-self: center;
 }
 
 /* LAYOUT =========================================== */
@@ -531,7 +557,6 @@ img {
 }
 
 .searchpage .search_input {
-  max-width: 500px;
   height: 40px;
   background-color: transparent;
   border: none;
@@ -545,6 +570,16 @@ img {
   color: white;
   margin: 5px;
   border-radius: 5px;
+}
+
+.searchpage .search_inp_div .filtertag {
+  padding: 0.25rem;
+  margin-right: 1rem;
+}
+
+.searchpage .search_inp_div .search-filters {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .searchpage .tag_div {
@@ -564,6 +599,7 @@ img {
   font-size: 20px;
   color: white;
   border-radius: 500px;
+  border: none;
 }
 
 .searchpage .influ-cards li {

@@ -25,13 +25,7 @@ const StepOne = props => {
           resetButton={props.resetButton}
         /> */}
         <div
-          className="search_inp_div"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+          className="search_inp_div">
           <form onSubmit={addHandler}>
             <input
               className="search_input"
@@ -40,11 +34,9 @@ const StepOne = props => {
               value={keyword}
               onChange={keywordHandler}
             />
-            <button type="submit" style={{ display: "none" }}>
-              Add
-            </button>
           </form>
 
+        <div className="search-filters">
           {props.keywordArray.map((key) => (
             <FilterTag
               name={key}
@@ -60,19 +52,7 @@ const StepOne = props => {
           ) : (
             <></>
           )}
-
-           {/* <label
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div className="reset_circle" onClick={props.resetButton}>
-              Reset
-            </div>
-          </label>  */}
-          
+        </div>
         </div>
       </>
     );

@@ -6,12 +6,12 @@ const Header = props => {
     return (
       <div className="header">
         {/* Add logo here */}
+        <h1>InfluenSearch</h1>
         <ul className="nav">
           <li>
             <NavLink to="/search">Search</NavLink>
           </li>
           <li>Campaigns </li>
-          <li>Log In </li>
         </ul>
       </div>
     );

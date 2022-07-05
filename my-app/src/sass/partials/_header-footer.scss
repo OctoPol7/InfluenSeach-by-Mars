@@ -1,22 +1,48 @@
 .header {
     height: 100px;
     background-color:#E5E8EF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
 }
+
+.header ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
  .nav ul{
     display: block;
 }
+
 .nav li {
     display: inline;
     font-size: 27px;
-    padding-right: 30px;
+    color: #485063;
 }
 .nav {
     float: right;
     margin-right: 100px;
     margin-top: 30px;
 }
+
+.nav li .active {
+    color:#E4572E;
+    text-decoration: none;
+}
+
 .menubtn{
     float: right;
     display: none;
     background-color: #E4572E;
+}
+
+.header h1 {
+    align-self: center;
+    color: linear-gradient(90deg, #E4572E 4.7%, #5A0DFE 50.55%, #120037 100%);
+}
+
+.header li {
+    align-self: center;
 }
