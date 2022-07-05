@@ -475,16 +475,13 @@ const Tag = props => {
 
     const found = youTubeTopicIds.find((obj) => (obj.id === props.name));
 
-    console.log(found);
-//     if (topicid.id === props.name) {
-//         setTopic(topicid.topic);
+    // console.log(found);
+
         return (
           <>
             {found === undefined ? <></> : <li className="tag">{found.topic}</li>}
-            {/* style={{display:'flex',justifyContent:'center',alignItems:'center'}} */}
           </>
         );
-// }
 
   }
 

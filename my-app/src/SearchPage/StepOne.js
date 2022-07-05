@@ -38,12 +38,9 @@ const StepOne = props => {
 
         <div className="search-filters">
           {props.keywordArray.map((key) => (
-            <FilterTag
-              name={key}
-              keywordArray={props.keywordArray}
-              removeKeyword={props.removeKeyword}
-            />
+            <FilterTag name={key} removeKeyword={props.removeKeyword} />
           ))}
+
           {props.location ? (
             <FilterTag
               name={JSON.parse(props.location).country}
@@ -52,7 +49,19 @@ const StepOne = props => {
           ) : (
             <></>
           )}
-        </div>
+
+          <label
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="reset_circle" onClick={props.resetButton}>
+              Reset
+            </div>
+          </label> 
+
         </div>
       </>
     );
