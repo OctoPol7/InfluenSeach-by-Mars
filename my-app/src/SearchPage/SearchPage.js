@@ -42,7 +42,9 @@ const SearchPage = props => {
           resetButton={resetButton}
         />
         <div className="background">
-        <InfluContainer />
+          <div className=" max-width-div">
+            <InfluContainer />
+          </div>
       </div>
       </div>
     );      

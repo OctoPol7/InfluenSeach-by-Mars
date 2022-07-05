@@ -1,8 +1,16 @@
+.login form label,
+.login form input,
 .signup form label, 
 .signup form input {
     display: block;
 }
 
+.login .submit-button-div input,
+.signup .submit-button-div input {
+    display: unset;
+}
+
+.login form,
 .signup form {
     border: 1px solid black;
     padding: 1rem;

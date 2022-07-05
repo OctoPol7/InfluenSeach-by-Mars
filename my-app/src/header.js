@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = props => {
     return (
-      <div className="header">
+      <div className='header-background'>
+      <div className="header header-max-width-div">
         {/* Add logo here */}
         <h1>InfluenSearch</h1>
         <ul className="nav">
@@ -13,6 +14,7 @@ const Header = props => {
           </li>
           <li>Campaigns </li>
         </ul>
+      </div>
       </div>
     );
 

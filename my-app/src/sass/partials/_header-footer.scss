@@ -1,6 +1,9 @@
+.header-background {
+    background-color:#E5E8EF;
+}
+
 .header {
     height: 100px;
-    background-color:#E5E8EF;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 1rem;
@@ -27,9 +30,15 @@
     margin-top: 30px;
 }
 
-.nav li .active {
+.nav li .active,
+.nav a:active {
     color:#E4572E;
     text-decoration: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #485063;
 }
 
 .menubtn{
@@ -40,7 +49,7 @@
 
 .header h1 {
     align-self: center;
-    color: linear-gradient(90deg, #E4572E 4.7%, #5A0DFE 50.55%, #120037 100%);
+    padding-left: 1rem;
 }
 
 .header li {
