@@ -29,7 +29,7 @@ const Header = props => {
                 <li>Search </li>
                 <li>Campaigns </li>
                 <li>Log In </li> 
-            </ul>   */}      
+            </ul>       
             <div  className={
           isNavExpanded ? "nav expanded" : "nav"
         }>
