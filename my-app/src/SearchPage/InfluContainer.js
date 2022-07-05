@@ -5,7 +5,6 @@ import { useState } from "react";
 
 
 const InfluContainer = props => {
-<<<<<<< HEAD
     const [results, setResults] = useState([]);
 
     const grabResults = (resData) => {
@@ -15,12 +14,12 @@ const InfluContainer = props => {
     };
 
     return (
-      <div style={{ display: "flex", flexDirection: "column", padding: 90 }}>
-        <h1 style={{ marginTop: 20, marginBottom: 20 }}>
+      <div className='trending-influencers'>
+        <h1>
           Trending Influencers this week
         </h1>
         <GetTrending grabResults={grabResults} />
-        <ul style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+        <ul className='first-ul'>
           {results.map((result) => (
             <InfluCard
               sub_count={result.statistics.subscriberCount}
@@ -31,8 +30,8 @@ const InfluContainer = props => {
             />
           ))}
         </ul>
-=======
-    return<>
+
+        {/* return<>
     
     <div className='influ'>
      <h1 >Trending Influencers this week</h1>
@@ -48,8 +47,8 @@ const InfluContainer = props => {
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-      <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
->>>>>>> d44713eb085e1a05f916e4f069c1f1c3d9d531ec
+      <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/> */}
+
       </div>
     );
 }

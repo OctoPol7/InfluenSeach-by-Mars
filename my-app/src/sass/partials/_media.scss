@@ -4,12 +4,20 @@ img {
     height: auto;
 }
 
-.searchpage .pro_pic{
-    width:100px;
-    border-radius: 100%;
-}
-
+.searchpage .pro_pic,
 .search-result .results img {
     border-radius: 50%;
     padding: 2rem;
+    margin: 0 auto;
+}
+
+.search-result .searched-keywords button img,
+.searchpage .filtertag button img {
+    display: inline-block;
+}
+
+.search-result .searched-keywords button,
+.searchpage .filtertag button {
+    border-radius: 50%;
+    border: none;
 }
