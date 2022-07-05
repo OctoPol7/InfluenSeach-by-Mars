@@ -76,26 +76,11 @@ const SearchContainer = props => {
           <div className="search_box">
             <h1>Find influencer for your next campaign</h1>
             <p className="sub_head">
-              Serach the right influencers in 3 simple steps
+              Search the right influencer in 2 simple steps
             </p>
 
             <RenderStep />
-            {/* <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              
-            </div> */}
-            {/* <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            {/* <div>
               {props.locationArray.map((loc) => (
                 <FilterTag name={loc} />
               ))}

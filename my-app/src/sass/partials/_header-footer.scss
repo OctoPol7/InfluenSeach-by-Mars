@@ -1,33 +1,57 @@
-// .searchpage .header {
-//     height: 100px;
-//     background-color: rgb(178, 236, 145);
-// }
-
-// .searchpage .sub_head {
-//     margin: 20px 0;
-// }
-
-// header
-.header {
-    height: 100px;
+.header-background {
     background-color:#E5E8EF;
 }
+
+.header {
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+}
+
+.header ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
  .nav ul{
     display: block;
 }
+
 .nav li {
-    font-family: sans-serif;
     display: inline;
     font-size: 27px;
-    padding-right: 30px;
+    color: #485063;
 }
 .nav {
     float: right;
     margin-right: 100px;
     margin-top: 30px;
 }
+
+.nav li .active,
+.nav a:active {
+    color:#E4572E;
+    text-decoration: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #485063;
+}
+
 .menubtn{
     float: right;
     display: none;
     background-color: #E4572E;
+}
+
+.header h1 {
+    align-self: center;
+    padding-left: 1rem;
+}
+
+.header li {
+    align-self: center;
 }

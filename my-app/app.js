@@ -12,6 +12,7 @@ const PORT = process.env.BACKENDPORT;
 const searchRoute = require("./routes/search");
 const userRoutes = require("./routes/user");
 const creatorRoute = require("./routes/getCreatorDetails");
+const campaignsRoute = require("./routes/campaigns");
 
 const db = require("./db/connection.js");
 
@@ -32,5 +33,6 @@ app.use("/creatordetails", creatorRoute);
 
 //Routes which should handle requests to DB
 app.use("/user", userRoutes);
+app.use("/campaigns", campaignsRoute);
 
 //module.exports = app;

@@ -17,14 +17,7 @@ const SearchInput = props => {
 
     return (
       <>
-        <div
-          className="search_inp_div"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="search_inp_div">
           {/* <form onSubmit={addHandler}>
             <input
               className="search_input"
@@ -35,18 +28,8 @@ const SearchInput = props => {
             />
             <button type="submit">Add</button>
           </form>
+          */}
 
-          <label
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          > */}
-            {/* <div className="reset_circle" onClick={props.resetButton}>
-              Reset
-            </div> */}
-          {/* </label> */}
           <NextBtn onClick={updateStep} name="Next" />
         </div>
       </>

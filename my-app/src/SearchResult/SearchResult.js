@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Header from '../Header.js'
-import SearchInput from './SearchInput.js'
 import ResetInput from './ResetInput.js'
 import Tag from './Tag.js'
 import CountryDropdown from './CountryDropdown.js'
@@ -35,6 +34,7 @@ const SearchResult = props => {
     return (
       <div className="search-result">
         <Header />
+
         <div className="filters">
           <form onSubmit={addHandler}>
             <input
@@ -58,11 +58,6 @@ const SearchResult = props => {
               setLocation={props.setLocation}
             />
             <ul>
-              {/* This is all dynamic content. It contains names of filters applied */}
-              {/* <Tag tagname="Gaming "/>
-                    <Tag tagname="Streaming "/>
-                    <Tag tagname="Vancouver "/>
-                    <Tag tagname="Fortnite "/> */}
 
               {props.keywordArray.map((key) => (
                 <Tag tagname={key} />
@@ -70,7 +65,19 @@ const SearchResult = props => {
 
               <Tag tagname={JSON.parse(props.location).country} />
             </ul>
+            <ResetInput
+              keywordArray={props.keywordArray}
+              location={props.location}
+              setKeywordArray={props.setKeywordArray}
+              setLocation={props.setLocation}
+            />
+        </div>
+        </div>
           </div>
+        <div className='apply-filters-div max-width-div'>
+        <div className="filters">
+          <h2>Filters</h2>
+          <div className='choose-area'>
           <h2>Geographic Areas</h2>
           <CountryDropdown
             location={props.location}
@@ -92,7 +99,7 @@ const SearchResult = props => {
           <Checkbox name="Travel" />
         </div>
 
-        <div>
+        <div className='results-container'>
           <GetSearch
             searchPhrase={searchPhrase}
             location={props.location}
@@ -115,6 +122,7 @@ const SearchResult = props => {
             ))}
           </ul>
         </div>
+      </div>
       </div>
     );
 }

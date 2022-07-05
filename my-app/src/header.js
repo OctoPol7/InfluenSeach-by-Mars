@@ -4,15 +4,17 @@ import { NavLink } from "react-router-dom";
 
 const Header = props => {
     return (
-      <div className="header">
+      <div className='header-background'>
+      <div className="header header-max-width-div">
         {/* Add logo here */}
+        <h1>InfluenSearch</h1>
         <ul className="nav">
           <li>
             <NavLink to="/search">Search</NavLink>
           </li>
           <li>Campaigns </li>
-          <li>Log In </li>
         </ul>
+      </div>
       </div>
     );
 
@@ -29,7 +31,7 @@ const Header = props => {
                 <li>Search </li>
                 <li>Campaigns </li>
                 <li>Log In </li> 
-            </ul>   */}      
+            </ul>       
             <div  className={
           isNavExpanded ? "nav expanded" : "nav"
         }>

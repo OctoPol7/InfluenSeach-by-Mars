@@ -15,12 +15,12 @@ const InfluContainer = props => {
     };
 
     return (
-      <div style={{ display: "flex", flexDirection: "column", padding: 90 }}>
-        <h1 style={{ marginTop: 20, marginBottom: 20 }}>
+      <div className='trending-influencers'>
+        <h1>
           Trending Influencers this week
         </h1>
         <GetTrending grabResults={grabResults} />
-        <ul style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+        <ul className='first-ul'>
           {results.map((result) => (
             <InfluCard
               sub_count={result.statistics.subscriberCount}

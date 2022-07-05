@@ -2,9 +2,6 @@ import React from 'react'
 import CurCampCard from './CurCampCard';
 import SearchInput from './SearchInputs';
 
-
-
-
 const CurCampContner = props => {
     return<>
      

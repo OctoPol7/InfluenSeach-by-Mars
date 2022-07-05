@@ -1,3 +1,4 @@
+
 import React, { useState } from "react"
 // import { Route } from "react-router-dom";
 
@@ -5,7 +6,6 @@ import Header from '../Header.js'
 import SearchContainer from './SearchContainer.js'
 import InfluContainer from './InfluContainer.js'
 // import SearchResult from "../SearchResult/SearchResult";
-
 
 
 const SearchPage = props => {
@@ -46,7 +46,9 @@ const SearchPage = props => {
           resetButton={resetButton}
         />
         <div className="background">
-        <InfluContainer />
+          <div className=" max-width-div">
+            <InfluContainer />
+          </div>
       </div>
       </div>
     );      
