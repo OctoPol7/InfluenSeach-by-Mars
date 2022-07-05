@@ -7,6 +7,8 @@ import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
+import CampaignPage from './CampaignPage/Campaign.js';
+// import './sass/style.scss'
 
 const App = (props) => {
   const [locationArray, setLocationArray] = useState([]);
@@ -32,7 +34,7 @@ const App = (props) => {
         />
       </Route>
 
-      <Route path="/signup">
+       <Route path="/signup">
         <SignUp />
       </Route>
 
@@ -46,7 +48,10 @@ const App = (props) => {
 
       <Route path="/singlecampaign">
         <SingleCampaign />
-      </Route>
+      </Route>  
+      <Route path="/campaign">
+       <CampaignPage/>
+       </Route>
     </div>
   );
 };
