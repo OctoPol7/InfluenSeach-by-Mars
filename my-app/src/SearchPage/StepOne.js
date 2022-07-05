@@ -46,12 +46,9 @@ const StepOne = props => {
           </form>
 
           {props.keywordArray.map((key) => (
-            <FilterTag
-              name={key}
-              keywordArray={props.keywordArray}
-              removeKeyword={props.removeKeyword}
-            />
+            <FilterTag name={key} removeKeyword={props.removeKeyword} />
           ))}
+
           {props.location ? (
             <FilterTag
               name={JSON.parse(props.location).country}
@@ -61,7 +58,7 @@ const StepOne = props => {
             <></>
           )}
 
-           {/* <label
+          <label
             style={{
               display: "flex",
               justifyContent: "center",
@@ -71,8 +68,7 @@ const StepOne = props => {
             <div className="reset_circle" onClick={props.resetButton}>
               Reset
             </div>
-          </label>  */}
-          
+          </label> 
         </div>
       </>
     );

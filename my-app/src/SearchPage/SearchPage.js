@@ -1,24 +1,26 @@
 import React, { useState } from "react"
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
 import Header from '../Header.js'
 import SearchContainer from './SearchContainer.js'
 import InfluContainer from './InfluContainer.js'
-import SearchResult from "../SearchResult/SearchResult";
+// import SearchResult from "../SearchResult/SearchResult";
 
 
 
 const SearchPage = props => {
 
   const grabKeyword = (key) => {
-    props.keywordArray.push(key);
+    console.log(key);
+    props.setKeywordArray([...props.keywordArray, key]);
     console.log(props.keywordArray);
   }
 
   const removeKeyword = (key) => {
-    props.keywordArray.splice(props.keywordArray.indexOf(key), 1);
-    props.setKeywordArray(props.keywordArray);
-    
+    const newArray = props.keywordArray;
+    newArray.splice(props.keywordArray.indexOf(key), 1);
+    props.setKeywordArray(newArray);
+    console.log(props.keywordArray);
   };
 
   const grabLocation = (key) => {
@@ -28,7 +30,7 @@ const SearchPage = props => {
 
   const resetButton = () => {
     props.setKeywordArray([]);
-    props.setLocationArray([]);
+    props.setLocation("");
   };
 
     return (
