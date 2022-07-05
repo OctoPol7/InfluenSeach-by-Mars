@@ -34,7 +34,7 @@ const GetSearch = (props) => {
   } else {
     return (
       <>
-        <h1>Search Successful!</h1>
+        {/* <h1>Search Successful!</h1> */}
       </>
     );
   }

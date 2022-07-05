@@ -128,6 +128,7 @@ img {
 .search-result .results img {
   border-radius: 50%;
   padding: 2rem;
+  margin: 0 auto;
 }
 
 .search-result .searched-keywords button img,
@@ -324,6 +325,7 @@ img {
   padding-bottom: 1rem;
 }
 
+.searchpage .trending-influencers .first-ul,
 .searchpage .influ .influ-cards,
 .search-result .results {
   display: grid;
@@ -348,6 +350,19 @@ img {
   width: 100%;
 }
 
+.searchpage .trending-influencers .first-ul {
+  padding: 0;
+}
+
+.searchpage .trending-influencers li {
+  list-style-type: none;
+}
+
+.searchpage .trending-influencers .tag_div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .search-result .influ_count_div div,
 .searchpage .influ_count_div div {
   border-top: 1px solid darkgray;
@@ -367,6 +382,8 @@ img {
   margin: 0.25rem;
 }
 
+.searchpage .trending-influencers .tag_div,
+.searchpage .tag_div,
 .search-result .tag_div {
   padding-left: 0;
   display: flex;
@@ -426,18 +443,22 @@ img {
   border-radius: 18px;
 }
 
+.searchpage .trending-influencers .tag_div,
+.searchpage .tag_div,
 .search-result .apply-filters-div ul {
   display: flex;
   flex-flow: row wrap;
 }
 
 .searchpage .influ-cards li,
-.search-result .apply-filters-div li {
+.search-result .tag_div li {
   padding: 0 0.5rem;
   margin: 0.25rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  background: #FBE3DC;
+  border: 1px solid #ED8F74;
 }
 
 .search-result .results li {
@@ -619,15 +640,6 @@ img {
   border-left: 1px solid darkgray;
 }
 
-.searchpage .tag_div {
-  padding-left: 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  list-style: none;
-  margin-bottom: -100px;
-}
-
 .searchpage .search_box {
   min-height: 500px;
   background: linear-gradient(264.44deg, rgba(228, 87, 46, 0.15) 3.99%, rgba(90, 13, 254, 0.15) 56.08%, rgba(18, 0, 55, 0.15) 109.51%);
@@ -675,10 +687,6 @@ img {
 .searchpage .search_inp_div .search-filters {
   display: flex;
   flex-flow: row wrap;
-}
-
-.searchpage .tag_div {
-  padding: 20px;
 }
 
 .searchpage .btn {
