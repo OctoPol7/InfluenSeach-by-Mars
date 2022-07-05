@@ -26,7 +26,7 @@ const InfluContainer = props => {
               video_count={result.statistics.videoCount}
               influ_name={result.brandingSettings.channel.title}
               influ_img={result.snippet.thumbnails.default.url}
-              // tags={result.topicDetails.topicIds}
+              topic_ids={result.topicDetails.topicIds}
             />
           ))}
         </ul>

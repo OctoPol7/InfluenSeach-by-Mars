@@ -85,8 +85,8 @@ const SearchResult = props => {
                 sub_count={result.statistics.subscriberCount}
                 video_count={result.statistics.videoCount}
                 influ_name={result.brandingSettings.channel.title}
-                // influ_img={result.brandingSettings.image.bannerExternalUrl}
-                // tags={result.topicDetails.topicIds}
+                influ_img={result.snippet.thumbnails.default.url}
+                topic_ids={result.topicDetails.topicIds}
               />
             ))}
           </div>

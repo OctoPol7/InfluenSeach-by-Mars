@@ -30,11 +30,11 @@ const InfluCard = props => {
             </div>
           </div>
 
-          {/* <ul className="tag_div">
-            {props.tags.map((tag) => (
+          <ul className="tag_div">
+            {props.topic_ids.map((tag) => (
               <Tag name={tag} />
             ))}
-          </ul> */}
+          </ul>
         </div>
       </li>
     );
