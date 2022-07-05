@@ -59,4 +59,20 @@ router.patch('/:campaignName/add-creator', (req, res, next) => {
     });
 });
 
+//route to get all campaigns for a user
+router.get('/:username/', (req, res, next) => {
+    const username = req.params.username;
+    campaigns.find({userName: username})
+    .then(result => {
+        console.log(result);
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
+});
+
 module.exports = router;
