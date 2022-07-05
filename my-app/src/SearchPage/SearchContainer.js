@@ -30,9 +30,10 @@ const SearchContainer = props => {
         return (
           <StepOne
             grabKeyword={props.grabKeyword}
+            removeKeyword={props.removeKeyword}
             resetButton={props.resetButton}
             keywordArray={props.keywordArray}
-            locationArray={props.locationArray}
+            location={props.location}
           />
         );
       }
@@ -40,23 +41,27 @@ const SearchContainer = props => {
         return (
           <StepTwo
             grabLocation={props.grabLocation}
+            setLocation={props.setLocation}
+            removeKeyword={props.removeKeyword}
             resetButton={props.resetButton}
             keywordArray={props.keywordArray}
-            locationArray={props.locationArray}
+            location={props.location}
           />
         );
       }
       else if (step === 2){
         return (
-          
           <Route path="/search">
-          <Redirect
-            to="/searchresult"
-            keywordArray={props.keywordArray}
-            locationArray={props.locationArray}
-          />
+            <Redirect
+              to="/searchresult"
+              keywordArray={props.keywordArray}
+              location={props.location}
+              grabLocation={props.grabLocation}
+              setLocation={props.setLocation}
+              grabKeyword={props.grabKeyword}
+            />
           </Route>
-        
+
           // <StepThree
           //   keyword={props.keyword}
           //   setKeyword={props.setKeyword}

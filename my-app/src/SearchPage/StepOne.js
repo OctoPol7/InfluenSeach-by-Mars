@@ -40,16 +40,26 @@ const StepOne = props => {
               value={keyword}
               onChange={keywordHandler}
             />
-            {/* <button type="submit">Add</button> */}
+            <button type="submit" style={{ display: "none" }}>
+              Add
+            </button>
           </form>
 
           {props.keywordArray.map((key) => (
-            <FilterTag name={key} />
+            <FilterTag
+              name={key}
+              keywordArray={props.keywordArray}
+              removeKeyword={props.removeKeyword}
+            />
           ))}
-
-          {props.locationArray.map((loc) => (
-            <FilterTag name={loc} />
-          ))}
+          {props.location ? (
+            <FilterTag
+              name={JSON.parse(props.location).country}
+              location={props.location}
+            />
+          ) : (
+            <></>
+          )}
 
            {/* <label
             style={{

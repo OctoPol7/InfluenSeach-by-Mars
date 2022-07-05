@@ -13,9 +13,15 @@ const SearchPage = props => {
     console.log(props.keywordArray);
   }
 
+  const removeKeyword = (key) => {
+    props.keywordArray.splice(props.keywordArray.indexOf(key), 1);
+    props.setKeywordArray(props.keywordArray);
+    
+  };
+
   const grabLocation = (key) => {
-    props.locationArray.push(key);
-    console.log(props.locationArray);
+    props.setLocation(key);
+    console.log(props.location);
   };
 
   const resetButton = () => {
@@ -28,15 +34,15 @@ const SearchPage = props => {
         <Header />
         <SearchContainer
           keywordArray={props.keywordArray}
-          locationArray={props.locationArray}
+          location={props.location}
+          setLocation={props.setLocation}
           grabKeyword={grabKeyword}
           grabLocation={grabLocation}
+          removeKeyword={removeKeyword}
           resetButton={resetButton}
         />
         <div className="background">
         <InfluContainer />
-
-        
       </div>
       </div>
     );      

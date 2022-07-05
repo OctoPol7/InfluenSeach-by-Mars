@@ -14,7 +14,7 @@ const SearchResult = props => {
   const [results, setResults] = useState([]);
 
   const grabResults = (resData) => {
-    console.log("FROM ResultPage");
+    console.log("FROM ResultPage " + props.location.country);
     console.log(resData.data);
     setResults(resData.data);
   }
@@ -29,9 +29,9 @@ const SearchResult = props => {
             <p>Search Results For</p>
             <ResetInput
               keywordArray={props.keywordArray}
-              locationArray={props.locationArray}
+              location={props.location}
               setKeywordArray={props.setKeywordArray}
-              setLocationArray={props.setLocationArray}
+              setLocation={props.setLocation}
             />
             <ul>
               {/* This is all dynamic content. It contains names of filters applied */}
@@ -44,13 +44,16 @@ const SearchResult = props => {
                 <Tag tagname={key} />
               ))}
 
-              {props.locationArray.map((loc) => (
-                <Tag tagname={loc} />
-              ))}
+              {/* <Tag tagname={JSON.parse(props.location).country} /> */}
             </ul>
           </div>
           <h2>Geographic Areas</h2>
-          <CountryDropdown />
+          <CountryDropdown
+            location={props.location}
+            setLocation={props.setLocation}
+            searchPhrase={searchPhrase}
+            grabResults={grabResults}
+          />
           <h2>Gender</h2>
           <Checkbox name="Male" />
           <Checkbox name="Female" />
@@ -66,19 +69,24 @@ const SearchResult = props => {
         </div>
 
         <div>
-          <GetSearch searchPhrase={searchPhrase} grabResults={grabResults} />
-          <div class="sort-by-grid">
-            <h2>250+ creators found</h2>
+          <GetSearch
+            searchPhrase={searchPhrase}
+            location={props.location}
+            grabResults={grabResults}
+          />
+          <div className="sort-by-grid">
+            <h2>{results.length} creators found</h2>
             <SortByDropdown />
           </div>
 
-          <div class="results">
+          <div className="results">
             {results.map((result) => (
               <InfluCard
                 sub_count={result.statistics.subscriberCount}
                 video_count={result.statistics.videoCount}
                 influ_name={result.brandingSettings.channel.title}
-                influ_img={result.brandingSettings.image.bannerExternalUrl}
+                // influ_img={result.brandingSettings.image.bannerExternalUrl}
+                // tags={result.topicDetails.topicIds}
               />
             ))}
           </div>
