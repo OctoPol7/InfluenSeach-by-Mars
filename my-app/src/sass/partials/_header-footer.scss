@@ -1,8 +1,33 @@
-.searchpage .header {
-    height: 100px;
-    background-color: rgb(236, 145, 145);
-}
+// .searchpage .header {
+//     height: 100px;
+//     background-color: rgb(178, 236, 145);
+// }
 
-.searchpage .sub_head {
-    margin: 20px 0;
+// .searchpage .sub_head {
+//     margin: 20px 0;
+// }
+
+// header
+.header {
+    height: 100px;
+    background-color:#E5E8EF;
+}
+ .nav ul{
+    display: block;
+}
+.nav li {
+    font-family: sans-serif;
+    display: inline;
+    font-size: 27px;
+    padding-right: 30px;
+}
+.nav {
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+}
+.menubtn{
+    float: right;
+    display: none;
+    background-color: #E4572E;
 }
