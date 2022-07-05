@@ -5,7 +5,6 @@ import { useState } from "react";
 
 
 const InfluContainer = props => {
-<<<<<<< HEAD
     const [results, setResults] = useState([]);
 
     const grabResults = (resData) => {
@@ -31,8 +30,8 @@ const InfluContainer = props => {
             />
           ))}
         </ul>
-=======
-    return<>
+
+        {/* return<>
     
     <div className='influ'>
      <h1 >Trending Influencers this week</h1>
@@ -48,8 +47,8 @@ const InfluContainer = props => {
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
       <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-      <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
->>>>>>> d44713eb085e1a05f916e4f069c1f1c3d9d531ec
+      <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/> */}
+
       </div>
     );
 }
