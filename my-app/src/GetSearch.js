@@ -16,7 +16,7 @@ const GetSearch = (props) => {
       const type = "video";
       const maxResults = "20";
       const orderBy = "viewCount";
-      const regionCode = JSON.parse(props.location).code;
+      const regionCode = "CA";
       const url = `http://localhost:4000/search/${part}/${searchPhrase}/${type}/${publishedAfter}/${maxResults}/${orderBy}/${regionCode}`;
 
       await axios

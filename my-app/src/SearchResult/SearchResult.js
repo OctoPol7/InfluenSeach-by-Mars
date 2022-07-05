@@ -44,7 +44,7 @@ const SearchResult = props => {
                 <Tag tagname={key} />
               ))}
 
-              {/* <Tag tagname={JSON.parse(props.location).country} /> */}
+              <Tag tagname={JSON.parse(props.location).country} />
             </ul>
           </div>
           <h2>Geographic Areas</h2>
