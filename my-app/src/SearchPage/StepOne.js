@@ -61,7 +61,7 @@ const StepOne = props => {
             <></>
           )}
 
-          <label
+           {/* <label
             style={{
               display: "flex",
               justifyContent: "center",
@@ -71,7 +71,8 @@ const StepOne = props => {
             <div className="reset_circle" onClick={props.resetButton}>
               Reset
             </div>
-          </label>
+          </label>  */}
+          
         </div>
       </>
     );

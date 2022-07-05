@@ -43,7 +43,9 @@ const SearchPage = props => {
           removeKeyword={removeKeyword}
           resetButton={resetButton}
         />
+        <div className="background">
         <InfluContainer />
+      </div>
       </div>
     );      
 }
