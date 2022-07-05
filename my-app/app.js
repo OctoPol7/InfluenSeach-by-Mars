@@ -12,7 +12,7 @@ const PORT = process.env.BACKENDPORT;
 const searchRoute = require("./routes/search");
 const userRoutes = require("./routes/user");
 const creatorRoute = require("./routes/getCreatorDetails");
-const campaignsRoute = require("./routes/campaings");
+const campaignsRoute = require("./routes/campaigns");
 
 const db = require("./db/connection.js");
 
