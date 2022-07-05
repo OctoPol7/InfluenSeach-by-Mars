@@ -10,9 +10,10 @@ const InfluCard = props => {
             <img
               className="pro_pic"
               src={
-                Error
-                  ? "https://www.nasa.gov/sites/default/files/images/486101main_mars_clouds.jpg"
-                  : props.influ_img
+                // Error
+                //   ? "https://www.nasa.gov/sites/default/files/images/486101main_mars_clouds.jpg"
+                //   : 
+                  props.influ_img
               }
               alt="profile"
             />
@@ -29,11 +30,11 @@ const InfluCard = props => {
             </div>
           </div>
 
-          {/* <ul className="tag_div">
-            {props.tags.map((tag) => (
+          <ul className="tag_div">
+            {props.topic_ids.map((tag) => (
               <Tag name={tag} />
             ))}
-          </ul> */}
+          </ul>
         </div>
       </li>
     );
