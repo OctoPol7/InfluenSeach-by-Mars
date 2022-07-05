@@ -35,7 +35,7 @@ router.get("/:part/:searchPhrase/:type/:publishedAfter/:maxResults/:orderBy/:reg
     // console.log(channelIds);
 
   // get channels statistics
-  const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;
+  const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,topicDetails,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;
   let channelsDetails = await axios.get(getChannels).then((response) => {
     console.log(response.data.items);
     return response.data.items;
