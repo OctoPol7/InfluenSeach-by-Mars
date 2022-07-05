@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/user");
+const User = require("../models/User.js");
 
 // code obtained from youtube course follow along
 // Building a RESTful API with Node.js
@@ -83,6 +83,7 @@ router.post("/login", (req, res, next) => {
           return res.status(200).json({
             message: "Authentication successful",
             token: token,
+            uid: user[0]._id
           });
         }
         res.status(401).json({
