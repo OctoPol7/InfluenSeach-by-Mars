@@ -11,7 +11,7 @@ import CampaignPage from './CampaignPage/Campaign.js';
 // import './sass/style.scss'
 
 const App = (props) => {
-  const [locationArray, setLocationArray] = useState([]);
+  const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
   
   return (
@@ -19,18 +19,18 @@ const App = (props) => {
       <Route path="/search">
         <SearchPage
           keywordArray={keywordArray}
-          locationArray={locationArray}
+          location={location}
           setKeywordArray={setKeywordArray}
-          setLocationArray={setLocationArray}
+          setLocation={setLocation}
         />
       </Route>
 
       <Route path="/searchresult">
         <SearchResult
           keywordArray={keywordArray}
-          locationArray={locationArray}
+          location={location}
           setKeywordArray={setKeywordArray}
-          setLocationArray={setLocationArray}
+          setLocation={setLocation}
         />
       </Route>
 
