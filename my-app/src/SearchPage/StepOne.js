@@ -35,6 +35,7 @@ const StepOne = props => {
               onChange={keywordHandler}
             />
           </form>
+        </div>
 
         <div className="search-filters">
           {props.keywordArray.map((key) => (
@@ -63,7 +64,7 @@ const StepOne = props => {
           </label> 
 
         </div>
-      </>
+        </>
     );
 }
 

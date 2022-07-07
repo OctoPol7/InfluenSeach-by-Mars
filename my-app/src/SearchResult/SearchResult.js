@@ -32,6 +32,7 @@ const SearchResult = props => {
   }
 
     return (
+      <>
       <div className="search-result">
         <Header />
 
@@ -124,6 +125,7 @@ const SearchResult = props => {
         </div>
       </div>
       </div>
+      </>
     );
 }
 
