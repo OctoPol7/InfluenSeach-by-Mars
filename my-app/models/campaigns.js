@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const creatorSchema = mongoose.Schema({
     creatorId: {type: String, required: true},
-    pictureUrl: {type: String},
-    creatorName: {type: String, required: true},
+    // pictureUrl: {type: String},
+    // creatorName: {type: String, required: true},
     dateJoined: {type: Date, required: true},
-    videoUploads: {type: Number},
-    subscribers: {type:Number},
-    tags: [String]
+    // videoUploads: {type: Number},
+    // subscribers: {type:Number},
+    // tags: [String]
   }
 );
 
