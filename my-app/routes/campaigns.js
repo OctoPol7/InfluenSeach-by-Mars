@@ -20,4 +20,7 @@ router.get('/:username/:campaignName', checkAuth, campaignControllers.get_campai
 //route to get all campaigns for a user
 router.get('/:username/', checkAuth ,campaignControllers.get_campaigns);
 
+//route to delete a campaign
+router.delete('/:username/:campaignName/delete-campaign', checkAuth ,campaignControllers.delete_campaign);
+
 module.exports = router;

@@ -101,3 +101,20 @@ exports.get_campaigns = (req, res, next) => {
         });
     });
 }
+
+exports.delete_campaign = (req, res, next) => {
+    const username = req.params.username;
+    const campaignName = req.params.campaignName;
+    campaigns.deleteOne({userName: username, campaignName: campaignName})
+    .then(result => {
+        res.status(200).json({
+            message: 'Campaign deleted!',
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
+}
