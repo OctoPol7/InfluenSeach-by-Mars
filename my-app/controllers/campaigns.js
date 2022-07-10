@@ -4,30 +4,42 @@ const apiKey = process.env.KEY;
 const axios = require("axios");
 
 // function to create a new campaign
-exports.create_campaign = (req, res, next) => {
+exports.create_campaign = async (req, res, next) => {
     const username = req.params.username;
-    const campaign = new campaigns ({
-        _id: new mongoose.Types.ObjectId(),
-        userName: username,
-        campaignName: req.body.campaignName,
-        description: req.body.description,
-        dateCreated: new Date(),
-        tags: req.body.tags,
-        active: true,
-        creators: []
+    const validateName = await campaigns.find({userName: username, campaignName: req.body.campaignName})
+    .exec()
+    .then((result) => {
+        if (result.length >= 1){
+            console.log("Campaign already exists!");
+            return res.status(409).json({
+                message: "Campaign already exists!",
+              });
+        } else {
+            const campaign = new campaigns ({
+                _id: new mongoose.Types.ObjectId(),
+                userName: username,
+                campaignName: req.body.campaignName,
+                description: req.body.description,
+                dateCreated: new Date(),
+                tags: req.body.tags,
+                active: true,
+                creators: []
+            })
+            campaign.save()
+            .then(result => {
+                console.log("Campaign Created!");
+                res.status(200).json({
+                    message: 'Campaign Created!',
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            });
+        }
     })
-    campaign.save()
-    .then(result => {
-        res.status(200).json({
-            message: 'Campaign Created!',
-        });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json({
-            error: err
-        });
-    });
 }
 // function to add a creator to a campaign
 exports.campaign_add_creator = (req, res, next) => {
