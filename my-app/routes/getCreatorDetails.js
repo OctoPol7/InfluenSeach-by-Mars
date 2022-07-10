@@ -1,23 +1,19 @@
 const express = require("express");
 const axios = require("axios");
-const { response } = require("express");
 const router = express.Router();
 require('dotenv').config();
-//const app = require("../app.js");
 
 const apiKey = process.env.KEY;
 
 router.get("/:channelId?", async (req, res) => {
-    //const channelId = req.params.channelId;
-    const channelId = 'UCjvgGbPPn-FgYeguc5nxG4A' //replace this line with the above line
+    const channelId = req.params.channelId;
+    //const channelId = 'UCjvgGbPPn-FgYeguc5nxG4A'
     const type = "type=video";
     const order = 'order=date';
     const maxResults = 'maxResults=5';
-  //console.log(req.params);
     const channelVideos = `https://youtube.googleapis.com/youtube/v3/search?channelId=${channelId}&${type}&${order}&${maxResults}&key=${apiKey}`;
   
     let channelVideosResult = await axios.get(channelVideos).then((response) => {
-        //console.log(response.data.items);
         return response.data.items;
       })
       .catch((error) => {

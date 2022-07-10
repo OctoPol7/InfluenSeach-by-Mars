@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const apiKey = process.env.KEY;
 const axios = require("axios");
 
+// function to create a new campaign
 exports.create_campaign = (req, res, next) => {
     const username = req.params.username;
     const campaign = new campaigns ({
@@ -28,7 +29,7 @@ exports.create_campaign = (req, res, next) => {
         });
     });
 }
-
+// function to add a creator to a campaign
 exports.campaign_add_creator = (req, res, next) => {
     const campaign = req.params.campaignName;
     campaigns.updateOne({campaignName: campaign }, {$push:{creators: {
@@ -48,7 +49,7 @@ exports.campaign_add_creator = (req, res, next) => {
         });
     });
 }
-
+//function to get all the creators from a specific campaign
 exports.get_campaign_creators = async (req, res, next) => {
     const username = req.params.username;
     const campaignName = req.params.campaignName;
