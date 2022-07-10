@@ -77,6 +77,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
 *::before,
 *::after {
@@ -93,6 +94,10 @@ select {
 
 .search-result .influ_count_div div p:last-of-type {
   font-weight: bold;
+}
+
+body {
+  font-family: sans-serif;
 }
 
 /* NAVIGATION ======================================== */
@@ -529,7 +534,7 @@ img {
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-  box-shadow: 1px 5px 15px rgb(57, 245, 192);
+  box-shadow: 1px 5px 15px #39f5c0;
   cursor: pointer;
 }
 
@@ -704,17 +709,21 @@ img {
   .searchpage .search_box h1 {
     font-size: 20px;
   }
+
   .searchpage .menubtn {
     display: block;
   }
+
   .searchpage .nav ul li {
     display: inherit;
     text-align: center;
     border-bottom: 1px solid grey;
   }
+
   .searchpage .nav {
     margin-right: 10px;
   }
+
   .searchpage .nav ul {
     position: absolute;
     top: 80px;
@@ -727,6 +736,7 @@ img {
     padding: 0;
     display: none;
   }
+
   .searchpage .nav .expanded ul {
     display: block;
   }

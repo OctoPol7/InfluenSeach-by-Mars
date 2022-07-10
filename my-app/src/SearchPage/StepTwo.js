@@ -1040,10 +1040,6 @@ const [selectedCountry, setSelectedCountry] = useState("");
         <p>Step 2/2</p>
         <h2>Which geographical locations do you want to target?</h2>
 
-        {/* <SearchInput
-          grabKeyword={props.grabKeyword}
-          resetButton={props.resetButton}
-        /> */}
         <div
           className="search_inp_div">
 
