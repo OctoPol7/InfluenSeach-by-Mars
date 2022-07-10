@@ -4,6 +4,10 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const checkAuth = require("../middleware/check-auth")
 const campaignControllers = require("../controllers/campaigns");
+
+//************************************************************************ */
+//For each request the session token should be passed as Authorization header
+//************************************************************************* */
 // new campaign route
 router.post('/:username/new-campaign', checkAuth, campaignControllers.create_campaign);
 
