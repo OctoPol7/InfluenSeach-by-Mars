@@ -84,6 +84,7 @@ router.post("/login", (req, res, next) => {
           return res.status(200).json({
             message: "Authentication successful",
             token: token,
+            userName: user[0].userName,
             uid: user[0]._id
           });
         }
