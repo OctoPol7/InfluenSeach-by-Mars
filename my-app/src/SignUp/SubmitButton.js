@@ -2,7 +2,7 @@ import React from 'react'
 
 const SubmitButton = props => {
     return(
-			<input type="submit" value={props.label} />
+			<button type="submit" ref={props.ref}>Submit</button>
     )
 }
 

@@ -55,7 +55,7 @@ router.post("/signup", (req, res, next) => {
 
 // Login route
 router.post("/login", (req, res, next) => {
-  User.find({ email: req.body.email, userName: req.body.userName })
+  User.find({ email: req.body.email })
     .exec()
     .then((user) => {
       if (user.length < 1) {
@@ -74,7 +74,7 @@ router.post("/login", (req, res, next) => {
             {
               email: user[0].email,
               userId: user[0]._id,
-              userName: user[0].userName
+              
             },
             process.env.JWT_KEY,
             {
