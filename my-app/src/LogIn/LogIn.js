@@ -19,8 +19,6 @@ const LogIn = props => {
         password: passwordRef.current.value,
       };
 
-      console.log(JSON.stringify(user));
-
       Axios.post(`http://localhost:4000/user/login`, user).then((res)=>{
         if (res) {
           setLoginStatus(res.data.message);
