@@ -4,17 +4,19 @@ import { NavLink } from "react-router-dom";
 
 const Header = props => {
     return (
-      <div className='header-background'>
-      <div className="header header-max-width-div">
-        {/* Add logo here */}
-        <h1>InfluenSearch</h1>
-        <ul className="nav">
-          <li>
-            <NavLink to="/search">Search</NavLink>
-          </li>
-          <li>Campaigns </li>
-        </ul>
-      </div>
+      <div className="header-background">
+        <div className="header header-max-width-div">
+          {/* Add logo here */}
+          <h1>InfluenSearch</h1>
+          <ul className="nav">
+            <li>
+              <NavLink to="/search">Search</NavLink>
+            </li>
+            <li>
+              <NavLink to="/campaign">Campaigns </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     );
 

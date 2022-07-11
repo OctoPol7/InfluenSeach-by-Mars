@@ -7,7 +7,7 @@ import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
-import CampaignPage from './CampaignPage/Campaign.js';
+import Campaign from './CampaignPage/Campaign.js';
 // import './sass/style.scss'
 
 const App = (props) => {
@@ -50,7 +50,7 @@ const App = (props) => {
         <SingleCampaign />
       </Route>  
       <Route path="/campaign">
-       <CampaignPage/>
+       <Campaign/>
        </Route>
     </div>
   );
