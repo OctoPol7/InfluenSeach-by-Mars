@@ -25,8 +25,7 @@ const SignUp = props => {
         Axios.post(`http://localhost:4000/user/signup`, user)
         .then(()=>{
             alert("Congratulations! " + user.userName +" successfully registered ")
-        }
-    );
+        });
     }
 
     return (

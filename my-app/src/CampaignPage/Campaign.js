@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Header from '../Header.js'
+import Checkbox from '../SearchResult/Checkbox.js';
 import CampStatContner from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import Inputs from './Inputs';
-import Modal from './Modal';
+
 
 
 
@@ -12,14 +13,14 @@ const Campaign = props => {
 
     const [modalShow, setModalShow] = useState(false);
 
-    function showmodal() {
-        console.log(modalShow);
+    const showmodal = () => {
+        // console.log(modalShow);
         setModalShow(!modalShow);
     }
 
 
     return (
-      <div className="campaign-page" >
+      <div className="campaign-page">
         <Header />
         <CampStatContner />
         <CurCampContner />
@@ -30,44 +31,45 @@ const Campaign = props => {
           <div className="modal_overlay" style={{ margin: "2rem" }}>
             <div className="modal_content">
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>Create Campaign</h3>
-                <h3
-                  style={{ cursor: "pointer" }}
-                  onClick={() => showmodal()}
-                >
+                <h3>Create a campaign</h3>
+                <h3 style={{ cursor: "pointer" }} onClick={() => showmodal()}>
                   X
                 </h3>
               </div>
 
-              <div className="contnr" style={{maxWidth: '500px'}}>
-                <h4>Campaign Name</h4>
+              <form className="contnr" style={{ maxWidth: "500px" }}>
 
-                <Inputs placeholder="Title" />
+                <Inputs label='Campaign Name:' placeholder="Type your campaign name" />
 
-                <h4>Create Description</h4>
+                <label>Create Description:
+                    <textarea
+                    placeholder="Type text below.."
+                    rows={5}
+                    style={{
+                        width: "100%",
+                        borderRadius: 5,
+                        backgroundColor: "lightgray",
+                    }}
+                    ></textarea>
+                </label>
 
-                <textarea
-                  placeholder="Type text below.."
-                  rows={5}
-                  style={{
-                    width: "100%",
-                    borderRadius: 5,
-                    backgroundColor: "lightgray",
-                  }}
-                ></textarea>
-
-                <h4>Add target Keywords</h4>
-                <div className="modal_inputs">
-                  <div className="mchip">test</div>
-
-                  <div className="mchip">test</div>
-
-                  <div className="mchip">test</div>
-                  <div className="mchip">test</div>
-                </div>
-
-                <button className="cbtn">Create</button>
-              </div>
+                <label className="modal_inputs">
+                    Add target Keywords
+                    <Checkbox name="Lifestyle" cbid="/m/019_rr" />
+                    <Checkbox name="Music" cbid="/m/04rlf" />
+                    <Checkbox name="Entertainment" cbid="/m/02jjt" />
+                    <Checkbox name="Gaming" cbid="/m/0bzvm2" />
+                    <Checkbox name="Sport" cbid="/m/06ntj" />
+                    <Checkbox name="Tourism" cbid="/m/07bxq" />
+                    <Checkbox name="Technology" cbid="/m/07c1v" />
+                    <Checkbox name="Health" cbid="/m/0kt51" />
+                    <Checkbox name="Food" cbid="/m/02wbm" />
+                    <Checkbox name="Beauty" cbid="/m/041xxh" />
+                </label>
+                <button className="cbtn" type="submit">
+                  Create
+                </button>
+              </form>
             </div>
           </div>
         ) : null}
