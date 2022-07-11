@@ -4,7 +4,7 @@ const EmailInput = props => {
     return(
         <label>
 			{props.label}
-			<input type="email" name={props.name} />
+			<input type="email" name={props.name} ref={props.ref}/>
 		</label>
     )
 }
