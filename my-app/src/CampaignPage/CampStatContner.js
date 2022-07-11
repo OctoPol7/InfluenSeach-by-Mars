@@ -6,18 +6,19 @@ import SearchInput from './SearchInputs';
 
 
 const CampStatContner = props => {
-    return<>
-      <div className='pad20'>
-        <h1>Campaign Stats</h1>
-        <div className='statcard_div'>
-          <CampStatCard count={1204}/>
-          <CampStatCard count={1204}/>
-          <CampStatCard count={1204}/>
-        </div>
+    return(
+      <>
+        <div className='pad20' style={{margin: "2rem" }}>
+          <h1>Campaign Stats</h1>
+          <div className='statcard_div' style={{display: "flex", flexFlow: "row nowrap"}}>
+            <CampStatCard count={1204}/>
+            <CampStatCard count={1204}/>
+            <CampStatCard count={1204}/>
+          </div>
 
-      </div>
-     </>
-}
+        </div>
+      </>
+)}
 
 
 

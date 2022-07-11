@@ -4,13 +4,13 @@ import Tag from '../SearchPage/Tag';
 
 const CurCampCard = props => {
     return<>
-      <div className='curcamp_card'>
+      <div className='curcamp_card' style={{flex:'1 0 33%'}}>
         <div className='toblock'>
 
         </div>
         
        
-        <h3 style={{marginTop:10}}>Total Campaign created</h3>
+        <h3 style={{marginTop:10}}>Campaign ABC</h3>
         <p>23 Creators</p>
 
         <div className='chipcont'>

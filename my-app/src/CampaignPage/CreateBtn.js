@@ -2,9 +2,17 @@ import React from 'react'
 
 
 const CreateBtn = props => {
-    return<>
-       <div onClick={props.click}  className='create_btn'>Create Campaign</div>
-     </>
+    return (
+      <>
+        <button
+          onClick={props.click}
+          className="create_btn"
+          style={{ margin: "2rem" }}
+        >
+          Create Campaign
+        </button>
+      </>
+    );
 }
 
 
