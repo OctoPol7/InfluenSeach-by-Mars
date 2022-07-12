@@ -1,13 +1,12 @@
-
-import React from 'react'
+import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from './Logo.svg'
+import Logo from "./Logo.svg";
 
-const Header = props => {
-    return (
-      <div className='header-background'>
+const Header = (props) => {
+  return (
+    <div className="header-background">
       <div className="header header-max-width-div">
-        <img className='logo' src={Logo}></img>
+        <img className="logo" src={Logo}></img>
         <ul className="nav">
           <li>
             <NavLink to="/search">Search</NavLink>
@@ -15,10 +14,11 @@ const Header = props => {
           <li>Campaigns </li>
         </ul>
       </div>
-      </div>
-    );
+    </div>
+  );
 
-{/* import React,{ useState } from 'react'
+  {
+    /* import React,{ useState } from 'react'
 
 const Header = props => {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -26,8 +26,10 @@ const Header = props => {
 
     return(
         <div className="header">
-             {/* {/* Add logo here */}
-            {/* <ul className="nav">
+             {/* {/* Add logo here */
+  }
+  {
+    /* <ul className="nav">
                 <li>Search </li>
                 <li>Campaigns </li>
                 <li>Log In </li> 
@@ -49,8 +51,8 @@ const Header = props => {
        </div>
         </div>
     )
-    */}
+    */
+  }
+};
 
-}
-
-export default Header
+export default Header;

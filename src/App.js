@@ -50,7 +50,7 @@ const App = (props) => {
         <SingleCampaign />
       </Route>  
       <Route path="/campaign">
-       <Campaign />
+       <Campaign/>
        </Route>
     </div>
   );

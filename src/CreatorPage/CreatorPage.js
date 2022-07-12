@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header.js'
+import Header from '../header.js'
 import TopBanner from './TopBanner';
 import GridContainer from './GridContainer';
 

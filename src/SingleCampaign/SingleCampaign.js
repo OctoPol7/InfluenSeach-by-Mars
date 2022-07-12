@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Header.js'
+import Header from '../header.js'
 import SubmitButton from '../SignUp/SubmitButton.js'
 import DeleteButton from './DeleteButton.js'
 import SearchInput from '../SearchResult/SearchInput.js'

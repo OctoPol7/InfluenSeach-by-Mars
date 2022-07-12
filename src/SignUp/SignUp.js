@@ -22,13 +22,10 @@ const SignUp = props => {
           password: passwordRef.current.value
         };
 
-        console.log(JSON.stringify(user))
-
         Axios.post(`http://localhost:4000/user/signup`, user)
         .then(()=>{
             alert("Congratulations! " + user.userName +" successfully registered ")
-        }
-    );
+        });
     }
 
     return (
