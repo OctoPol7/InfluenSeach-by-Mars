@@ -6,7 +6,7 @@ const cors = require("cors");
 
 require('dotenv').config();
 
-const PORT = process.env.BACKENDPORT;
+const PORT = process.env.PORT || 8080;
 
 //import routes
 const searchRoute = require("./routes/search");
@@ -36,3 +36,7 @@ app.use("/user", userRoutes);
 app.use("/campaigns", campaignsRoute);
 
 //module.exports = app;
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'));
+}
