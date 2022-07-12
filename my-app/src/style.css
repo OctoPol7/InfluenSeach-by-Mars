@@ -128,6 +128,11 @@ img {
   height: auto;
 }
 
+.logo {
+  align-self: center;
+  width: 60%;
+}
+
 .searchpage .pro_pic,
 .search-result .results img {
   border-radius: 50%;
