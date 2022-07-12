@@ -16,7 +16,7 @@ const App = (props) => {
   
   return (
     <div className="App">
-      <Route path="/search">
+      <Route path="/">
         <SearchPage
           keywordArray={keywordArray}
           location={location}
