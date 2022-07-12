@@ -11,7 +11,7 @@ import CurCampContner from './CurCampContnr';
 const Campaign = props => {
 
     const [modalShow, setModalShow] = useState(false);
-    const [keywords, setKeywords] = useState([]);
+    // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
         // console.log(modalShow);

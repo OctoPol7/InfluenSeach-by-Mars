@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 const UserTypeDropdown = props => {
 
+    // eslint-disable-next-line no-unused-vars
     const [userType, setUserType] = useState()
 
     const handleUserType = event => {
