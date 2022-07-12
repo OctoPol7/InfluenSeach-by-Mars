@@ -9,6 +9,7 @@ import InfluCard from '../SearchPage/InfluCard.js'
 import GetSearch from '../GetSearch.js'
 
 const SearchResult = props => {
+  // eslint-disable-next-line no-unused-vars
   const [searchPhrase, setSearchPhrase] = useState(props.keywordArray.join(' '));
   const [results, setResults] = useState([]);
   const [keyword, setKeyword] = useState("");

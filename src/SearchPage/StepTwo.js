@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FilterTag from "./FilterTag.js";
 
 
@@ -27,7 +27,7 @@ const StepTwo = props => {
 //     );
 // }
 
-const [selectedCountry, setSelectedCountry] = useState("");
+// const [selectedCountry, setSelectedCountry] = useState("");
 
   
 

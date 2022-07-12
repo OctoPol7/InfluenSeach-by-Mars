@@ -1,6 +1,6 @@
 import React from 'react'
 import CampStatCard from './CampStatCard';
-import CurCampCard from './CurCampCard';
+// import CurCampCard from './CurCampCard';
 
 
 const CampStatContner = props => {

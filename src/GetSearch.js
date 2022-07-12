@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const GetSearch = (props) => {
   const [isLoading, setLoading] = useState(true);
-  const [search, setSearch] = useState();
+  // const [search, setSearch] = useState();
 
   console.log(props.location);
   
@@ -32,6 +32,7 @@ const GetSearch = (props) => {
         });
     }
     loadSearch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //console.log(search);
