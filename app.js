@@ -27,6 +27,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+//test
+app.use("/", "Hello");
+
 //Routes which should handle requests to API
 app.use("/search", searchRoute);
 app.use("/creatordetails", creatorRoute);
