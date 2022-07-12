@@ -1,87 +1,145 @@
 import React, { useState } from 'react'
-import Header from '../Header.js'
+import Header from '../header.js'
+import Checkbox from '../SearchResult/Checkbox.js';
 import CampStatContner from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
-import Inputs from './Inputs';
-import Modal from './Modal';
-import SearchInput from './SearchInputs.js'
-import ArchivedCampaigns from './ArchivedCampaigns.js';
-import CloseIcon from '../CloseIcon.png'
+
 
 
 
 const Campaign = props => {
 
-    const [modalshow,setModalShow] = useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [keywords, setKeywords] = useState([]);
 
-    function showmodal(value) {
+    const showmodal = () => {
+        // console.log(modalShow);
+        setModalShow(prevState=> !prevState);
+    }
 
-            setModalShow(value);
+    const onCreateHandler = () => {
+        console.log('d');
+    }
+
+    const checkboxHandler = (e) => {
+        if (e.target.checked) {
+            console.log('checked ' + e.target.value)
+        } else {
+            console.log("unchecked " + e.target.value);
+        }
+
     }
 
 
-    return(
-    <div className='campaign-page'>
-
+    return (
+      <div className="campaign-page">
         <Header />
-        <CampStatContner/>
-        <SearchInput placeholder="Search for campaign"/>
-        <CreateBtn click={()=>showmodal(true)}/>
-        <CurCampContner/>
-        <ArchivedCampaigns />
+        <CampStatContner />
+        <CurCampContner />
 
+        <CreateBtn click={() => showmodal()} />
 
+        {modalShow ? (
+          <div className="modal_overlay" style={{ margin: "2rem" }}>
+            <div className="modal_content">
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h3>Create a campaign</h3>
+                <h3 style={{ cursor: "pointer" }} onClick={() => showmodal()}>
+                  X
+                </h3>
+              </div>
 
-{modalshow?
-        <div className='modal_overlay' >
-            <div className='modal_content'>
+              <form
+                className="contnr"
+                style={{ maxWidth: "500px" }}
+                onSubmit={onCreateHandler}
+              >
+                <label className="modal_inputs">
+                  Campaign Name:
+                  <input
+                    className="modal_search_input"
+                    type="text"
+                    name="name"
+                    placeholder="Type your campaign name"
+                    style={{ width: "100%" }}
+                  />
+                </label>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <h2>Create a new campaign</h2>
-                    <button type="button" onClick={()=>showmodal(false)}><img src={CloseIcon} alt="Close"></img></button>
-                </div>
+                <label>
+                  Create Description:
+                  <textarea
+                    placeholder="Type text below.."
+                    rows={5}
+                    style={{
+                      width: "100%",
+                      borderRadius: 5,
+                      backgroundColor: "lightgray",
+                    }}
+                  ></textarea>
+                </label>
 
-                <div className='contnr'>
-                    <h4>Campaign Name</h4>
-
-                    <Inputs placeholder="Title" />
-
-                    <h4>Create Description</h4>
-
-                    <textarea placeholder='Type text below..' rows={5} style={{width:'100%',borderRadius:5,backgroundColor:'lightgray'}}></textarea>
-                
-                    <h4>Add target Keywords</h4>
-                    <div className='modal_inputs'>
-                        <div className='mchip'>
-                            test
-                        </div>
-
-                        <div className='mchip'>
-                            test
-                        </div>
-
-                        <div className='mchip'>
-                            test
-                        </div>
-                        <div className='mchip'>
-                            test
-                        </div>
-                    </div>
-
-                    <button className='cbtn'>Create</button>
-                </div>
-
-
+                <label className="modal_inputs">
+                  Add target Keywords
+                  <Checkbox
+                    name="Lifestyle"
+                    cbid="/m/019_rr"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Music"
+                    cbid="/m/04rlf"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Entertainment"
+                    cbid="/m/02jjt"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Gaming"
+                    cbid="/m/0bzvm2"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Sport"
+                    cbid="/m/06ntj"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Tourism"
+                    cbid="/m/07bxq"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Technology"
+                    cbid="/m/07c1v"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Health"
+                    cbid="/m/0kt51"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Food"
+                    cbid="/m/02wbm"
+                    checkboxHandler={checkboxHandler}
+                  />
+                  <Checkbox
+                    name="Beauty"
+                    cbid="/m/041xxh"
+                    checkboxHandler={checkboxHandler}
+                  />
+                </label>
+                <button className="cbtn" type="submit">
+                  Create
+                </button>
+              </form>
             </div>
-        </div>:null
-}
-      
-        
-
-    </div>   
-    );
-    
-}
+          </div>
+        ) : null}
+      </div>
+    );}
 
 export default Campaign;

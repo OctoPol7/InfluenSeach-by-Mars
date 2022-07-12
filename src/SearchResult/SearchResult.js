@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Header from '../Header.js'
+import Header from '../header.js'
 import ResetInput from './ResetInput.js'
 import Tag from './Tag.js'
 import CountryDropdown from './CountryDropdown.js'
