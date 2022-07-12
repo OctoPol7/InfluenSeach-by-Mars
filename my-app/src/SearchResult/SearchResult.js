@@ -45,7 +45,7 @@ const SearchResult = props => {
               value={keyword}
               onChange={keywordHandler}
             />
-            <button type="submit">
+            <button type="submit" className='add-button'>
               Add
             </button>
           </form>
