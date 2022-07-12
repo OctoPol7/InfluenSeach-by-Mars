@@ -5,6 +5,9 @@ import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import Inputs from './Inputs';
 import Modal from './Modal';
+import SearchInput from './SearchInputs.js'
+import ArchivedCampaigns from './ArchivedCampaigns.js';
+import CloseIcon from '../CloseIcon.png'
 
 
 
@@ -23,9 +26,11 @@ const Campaign = props => {
 
         <Header />
         <CampStatContner/>
-        <CurCampContner/>
-        
+        <SearchInput placeholder="Search for campaign"/>
         <CreateBtn click={()=>showmodal(true)}/>
+        <CurCampContner/>
+        <ArchivedCampaigns />
+
 
 
 {modalshow?
@@ -33,8 +38,8 @@ const Campaign = props => {
             <div className='modal_content'>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <h3>Create Campaign</h3>
-                    <h3 style={{cursor:'pointer'}} onClick={()=>showmodal(false)}>X</h3>
+                    <h2>Create a new campaign</h2>
+                    <button type="button" onClick={()=>showmodal(false)}><img src={CloseIcon} alt="Close"></img></button>
                 </div>
 
                 <div className='contnr'>

@@ -1,26 +1,23 @@
 import React from 'react'
 import CurCampCard from './CurCampCard';
-import SearchInput from './SearchInputs';
+import SortByDropdown from './SortByDropdown.js';
 
 const CurCampContner = props => {
-    return<>
-     
-     <div className='pad20'>
-        <SearchInput placeholder="Search for campaign"/>
+    return(
+        <div className='pad20'>
 
-        <h2>Current Campaigns</h2>
+                <h2>Current Campaigns</h2>
+                <SortByDropdown />
 
-<div className='camcard_div'>
-        <CurCampCard/> 
-        <CurCampCard/>
-        <CurCampCard/>
-        <CurCampCard/>
-        <CurCampCard/>
-        <CurCampCard/>
+
+                <div className='camcard_div'>
+                        <CurCampCard campaignname="Campaign Name #1"/> 
+                        <CurCampCard campaignname="Campaign Name #1"/>
+                        <CurCampCard campaignname="Campaign Name #1"/>
+                        <CurCampCard campaignname="Campaign Name #1"/>
+                </div>
         </div>
-</div>
-   
-     </>
+    );
 }
 
 
