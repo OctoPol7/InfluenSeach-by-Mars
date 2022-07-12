@@ -5,7 +5,7 @@ const CampStatCard = props => {
     return<>
       <div className='campstat_card'>
         
-        <h3>Total Campaign created</h3>
+        <h3>{props.heading}</h3>
         <h1>{props.count}</h1>
 
 
