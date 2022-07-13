@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header.js'
 import TopBanner from './TopBanner';
-import GridContainer from './GridContainer';
+// import GridContainer from './GridContainer';
 
 
 const CreatorPage = props => {
@@ -9,10 +9,12 @@ const CreatorPage = props => {
     <>
    
         <Header/>
-        <div style={{padding:20}}>
-        <TopBanner/>
-        <GridContainer/>
-        </div>
+        <div className="creator">
+            <div className="margin">
+                <TopBanner/>
+                {/* <GridContainer/> */}
+            </div>
+         </div>
     </>
     )
 }
