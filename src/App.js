@@ -9,6 +9,7 @@ import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
 import Campaign from './CampaignPage/Campaign.js';
 import Landing from './Landing/Landing'
+import CreatorPage from "./CreatorPage/CreatorPage.js";
 // import './sass/style.scss'
 
 const App = (props) => {
@@ -53,6 +54,9 @@ const App = (props) => {
 
       <Route path="/campaign">
         <Campaign />
+      </Route>
+      <Route path="/creator">
+        <CreatorPage />
       </Route>
 
       <Landing />
