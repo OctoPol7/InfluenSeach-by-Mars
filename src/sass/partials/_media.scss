@@ -1,0 +1,28 @@
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo {
+    align-self: center;
+    width: 60%;
+}
+
+.searchpage .pro_pic,
+.search-result .results img {
+    border-radius: 50%;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.search-result .searched-keywords button img,
+.searchpage .filtertag button img {
+    display: inline-block;
+}
+
+.search-result .searched-keywords button,
+.searchpage .filtertag button {
+    border-radius: 50%;
+    border: none;
+}

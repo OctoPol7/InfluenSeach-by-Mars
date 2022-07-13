@@ -1,0 +1,789 @@
+/* 
+TABLE OF CONTENTS
+
+1. Reset
+2. Typography
+3. Header - Footer
+4. Navigation
+5. Layout
+6. Media
+7. Forms
+8. Accessibility
+9. Mixins
+10. Variables
+*/
+/* RESET ============================================== */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* TYPOGRAPHY ======================================== */
+.search-result .influ_count_div div p:first-of-type {
+  font-size: 0.85rem;
+}
+
+.search-result .influ_count_div div p:last-of-type {
+  font-weight: bold;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* NAVIGATION ======================================== */
+.header .nav, .tag_div .tag, .search-result .filters ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  float: right;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+.nav li {
+  font-family: sans-serif;
+  display: inline;
+  font-size: 27px;
+}
+
+.nav li:first-of-type {
+  padding-right: 2rem;
+}
+
+/* MEDIA ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  align-self: center;
+  width: 60%;
+}
+
+.searchpage .pro_pic,
+.search-result .results img {
+  border-radius: 50%;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.search-result .searched-keywords button img,
+.searchpage .filtertag button img {
+  display: inline-block;
+}
+
+.search-result .searched-keywords button,
+.searchpage .filtertag button {
+  border-radius: 50%;
+  border: none;
+}
+
+/* HEADER FOOTER =================================== */
+.header-background {
+  background-color: #E5E8EF;
+}
+
+.header {
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 1rem;
+}
+
+.header ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.nav ul {
+  display: block;
+}
+
+.nav li {
+  display: inline;
+  font-size: 27px;
+  color: #485063;
+}
+
+.nav {
+  float: right;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+.nav li .active,
+.nav a:active {
+  color: #E4572E;
+  text-decoration: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #485063;
+}
+
+.menubtn {
+  float: right;
+  display: none;
+  background-color: #E4572E;
+}
+
+.header h1 {
+  align-self: center;
+  padding-left: 1rem;
+}
+
+.header li {
+  align-self: center;
+}
+
+/* LAYOUT =========================================== */
+.login h1,
+.login p,
+.signup h1,
+.signup p {
+  text-align: center;
+}
+
+.login p,
+.signup p {
+  margin-top: 0.5rem;
+}
+
+.login a,
+.signup a {
+  color: #E4572E;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.login h1,
+.signup h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.signup,
+.login {
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login .submit-button-div,
+.signup .submit-button-div {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.signup .submitButton {
+  margin: 1rem auto;
+}
+
+.login form label,
+.signup form label {
+  margin-bottom: 1rem;
+}
+
+.login .submit-button-div input,
+.signup .submit-button-div input {
+  background: #E4572E;
+  color: white;
+  border-radius: 500px;
+  border: none;
+  padding: 0.5rem 2rem;
+}
+
+.header-max-width-div,
+.search-result .max-width-div,
+.searchpage .max-width-div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.searchpage .filtertag button,
+.search-result .searched-keywords button {
+  margin-left: 0.5rem;
+}
+
+.search-result .apply-filters-div {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.search-result .searched-keywords,
+.search-result .header {
+  grid-column: 1/-1;
+}
+
+.search-result .searched-keywords {
+  margin: 1rem 0;
+  background: linear-gradient(264.44deg, rgba(228, 87, 46, 0.15) 3.99%, rgba(90, 13, 254, 0.15) 56.08%, rgba(18, 0, 55, 0.15) 109.51%);
+}
+
+.search-result .searched-keywords li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.search-result .searched-keywords h2 {
+  padding-top: 1rem;
+  padding-left: 2rem;
+}
+
+.search-result .sort-by-grid {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.search-result .sort-by-grid select {
+  border: none;
+  max-width: fit-content;
+}
+
+.search-result .sort-by-grid div {
+  margin-right: 1rem;
+}
+
+.search-result .results-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.searchpage .trending-influencers .first-ul,
+.searchpage .influ .influ-cards,
+.search-result .results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.searchpage .influ_div,
+.search-result .results .influ_div {
+  margin: 0.5rem;
+}
+
+.searchpage .influ_div h2,
+.search-result .results h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.searchpage .influ_count_div,
+.search-result .influ_count_div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.searchpage .trending-influencers .first-ul {
+  padding: 0;
+}
+
+.searchpage .trending-influencers li {
+  list-style-type: none;
+}
+
+.searchpage .trending-influencers .tag_div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-result .influ_count_div div,
+.searchpage .influ_count_div div {
+  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+  padding-left: 1.5rem;
+}
+
+.search-result .influ_count_div div:last-of-type {
+  border-left: 1px solid darkgray;
+}
+
+.search-result .tag {
+  border: 1px solid darkgrey;
+  border-radius: 12px;
+  max-width: fit-content;
+  padding: 0 0.25rem;
+  margin: 0.25rem;
+}
+
+.searchpage .trending-influencers .tag_div,
+.searchpage .tag_div,
+.search-result .tag_div {
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.search-result .filters {
+  padding-top: 1rem;
+  padding-left: 2rem;
+}
+
+.search-result .filters .choose-gender,
+.search-result .filters .choose-area,
+.search-result .filters .choose-topic {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-result .choose-area select {
+  margin-top: 0.75rem;
+}
+
+.search-result .filters .choose-gender {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+.search-result .reset-button {
+  width: 140px;
+  height: 44px;
+  background: #E4572E;
+  font-size: 20px;
+  color: white;
+  border-radius: 500px;
+  border: none;
+  margin-right: 2rem;
+}
+
+.search-result form {
+  text-align: center;
+}
+
+.search-result .search_input {
+  height: 2rem;
+  width: 20rem;
+  border: 1px solid grey;
+}
+
+.search-result .add-button {
+  width: 60px;
+  height: 34px;
+  background: #E4572E;
+  font-size: 20px;
+  color: white;
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.search-result .one-line {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.search-result .filters ul button {
+  border-radius: 40%;
+  border: none;
+  padding: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.233);
+  color: white;
+}
+
+.search-result .filters li {
+  background-color: black;
+  color: white;
+  border-radius: 18px;
+}
+
+.searchpage .trending-influencers .tag_div,
+.searchpage .tag_div,
+.search-result .apply-filters-div ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.searchpage .influ-cards li,
+.search-result .tag_div li {
+  padding: 0 0.5rem;
+  margin: 0.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: #FBE3DC;
+  border: 1px solid #ED8F74;
+}
+
+.search-result .results li {
+  list-style-type: none;
+}
+
+.campaingn-page .pad20 {
+  padding: 20px;
+}
+
+.campaingn-page .campstat_card {
+  border: 1px solid black;
+  height: 150px;
+  border-radius: 10px;
+  width: 32%;
+  margin-right: 10px;
+  padding: 30px;
+}
+
+.campaingn-page .statcard_div {
+  display: flex;
+  flex-direction: row;
+}
+
+.campaingn-page .search_hme_div {
+  background-color: lightgray;
+  margin: 30px 10px;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.campaingn-page .curcamp_card {
+  border: 1px solid black;
+  height: 230px;
+  width: 23%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.campaingn-page .camcard_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.campaingn-page .create_btn {
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  width: 180px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 1px 5px 15px rgb(57, 245, 192);
+  cursor: pointer;
+}
+
+.campaingn-page .modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campaingn-page .modal_content {
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.campaingn-page .modal_inputs {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.campaingn-page .modal_search_input {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  padding-left: 10px;
+}
+
+.campaingn-page .contnr {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.campaingn-page .mchip {
+  width: 80px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  margin: 5px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campaingn-page .cbtn {
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  background-color: black;
+  float: right;
+  margin-top: 25px;
+}
+
+.campaingn-page .search_hme_div {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "space-between";
+}
+
+.search-result,
+.searchpage .background {
+  background-color: #E5E8EF;
+}
+
+.searchpage .influ h1 {
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.searchpage .tag {
+  border: 1px solid darkgrey;
+  border-radius: 12px;
+  max-width: fit-content;
+  padding: 0 0.25rem;
+  margin: 0.25rem;
+  background: #FBE3DC;
+  border: 1px solid #ED8F74;
+  border-radius: 50px;
+}
+
+.search-result .influ_div,
+.searchpage .influ_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(126.5deg, #FFFFFF 0%, #F2F5FC 96.54%);
+  box-shadow: 5px 8px 15px rgba(20, 41, 90, 0.1);
+}
+
+.searchpage .influ_count_div div:last-of-type {
+  border-left: 1px solid darkgray;
+}
+
+.searchpage .search_box {
+  min-height: 500px;
+  background: linear-gradient(264.44deg, rgba(228, 87, 46, 0.15) 3.99%, rgba(90, 13, 254, 0.15) 56.08%, rgba(18, 0, 55, 0.15) 109.51%);
+  text-align: center;
+  padding: 40px;
+}
+
+.searchpage .sub_head {
+  margin: 20px 0;
+}
+
+.searchpage .search_inp_div {
+  background: #FFFFFF;
+  box-shadow: 0px 24px 32px rgba(39, 15, 80, 0.2);
+  border-radius: 4px;
+  max-width: 841px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.searchpage .search_input {
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+
+.searchpage .filter {
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.searchpage .search_inp_div .filtertag {
+  padding: 0.25rem;
+  margin-right: 1rem;
+}
+
+.search-result .searched-keywords ul,
+.searchpage .search_inp_div .search-filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.searchpage .btn {
+  width: 140px;
+  height: 44px;
+  background: #E4572E;
+  margin: 40px;
+  font-size: 20px;
+  color: white;
+  border-radius: 500px;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .searchpage .search_box h1 {
+    font-size: 20px;
+  }
+  .searchpage .menubtn {
+    display: block;
+  }
+  .searchpage .nav ul li {
+    display: inherit;
+    text-align: center;
+    border-bottom: 1px solid grey;
+  }
+  .searchpage .nav {
+    margin-right: 10px;
+  }
+  .searchpage .nav ul {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-top: 1px solid black;
+    padding: 0;
+    display: none;
+  }
+  .searchpage .nav .expanded ul {
+    display: block;
+  }
+}
+.searchpage .influ .influ-div {
+  margin-left: 70px;
+}
+
+.searchpage .influ .influ-cards {
+  margin-left: 1rem;
+}
+
+/* ACCESSIBILITY =================================== */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* FORMS =========================================== */
+.login form label,
+.login form input,
+.signup form label,
+.signup form input {
+  display: block;
+}
+
+.login .submit-button-div input,
+.signup .submit-button-div input {
+  display: unset;
+}
+
+.login form,
+.signup form {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
