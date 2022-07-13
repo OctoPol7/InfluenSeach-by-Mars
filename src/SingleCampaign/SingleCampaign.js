@@ -24,14 +24,14 @@ const SingleCampaign = props => {
                 <SortByDropdown />
             </div>
             <div>
+                {/* <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
                 <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
+                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/> */}
             </div>
         </div>
     )

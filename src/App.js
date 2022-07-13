@@ -8,6 +8,7 @@ import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
 import SingleCampaign from './SingleCampaign/SingleCampaign.js'
 import Campaign from './CampaignPage/Campaign.js';
+import Landing from './Landing/Landing'
 // import './sass/style.scss'
 
 const App = (props) => {
@@ -16,7 +17,7 @@ const App = (props) => {
   
   return (
     <div className="App">
-      <Route path="/">
+      <Route path="/search">
         <SearchPage
           keywordArray={keywordArray}
           location={location}
@@ -34,7 +35,7 @@ const App = (props) => {
         />
       </Route>
 
-       <Route path="/signup">
+      <Route path="/signup">
         <SignUp />
       </Route>
 
@@ -48,10 +49,13 @@ const App = (props) => {
 
       <Route path="/singlecampaign">
         <SingleCampaign />
-      </Route>  
+      </Route>
+
       <Route path="/campaign">
-       <Campaign/>
-       </Route>
+        <Campaign />
+      </Route>
+
+      <Landing />
     </div>
   );
 };
