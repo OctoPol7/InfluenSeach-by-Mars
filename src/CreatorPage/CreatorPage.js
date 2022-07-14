@@ -3,8 +3,11 @@ import Header from '../header.js'
 import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
 import NameBoard from './NameBoardName.js';
-import TopBanner from './TopBanner';
-// import GridContainer from './GridContainer';
+// import TopBanner from './TopBanner';
+import Inputs from './Inputs';
+import Searchlist from './Searchlist';
+import Tags from './Tags';
+import GridContainer from './GridContainer';
 
 
 const CreatorPage = props => {
@@ -29,10 +32,72 @@ const CreatorPage = props => {
                 <div className='textcont'>
                     <NameBoard />
                 </div>
-                {/* <GridContainer/> */}
-            </div>
+                <GridContainer/>
+            
+        {modalshow ?
+        <div className='modal_overlay' >
+        {isAddtocamp? 
+             <div className='modal_content'>
+
+             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                 <h3>Add to Campaign</h3>
+                 <h3 style={{cursor:'pointer'}} onClick={()=>showmodal(false)}>X</h3>
+             </div>
+
+             <div className='contnr'>
+              
+
+                <Inputs placeholder="Search a campaign" />
+
+                <Searchlist title="Campaign Name 1" subtitle="23 creators" />
+                <Searchlist title="Campaign Name 1" subtitle="23 creators" />
+                <Searchlist title="Campaign Name 1" subtitle="23 creators" />
+
+                
+                 
+                
+
+                 <button className='cbtn'>Add to Campaign</button>
+                 <p onClick={()=>setIsAddtoCamp(false)} className="creat_capm_txt">Create new Capmapign</p>
+             </div>
+
+
+         </div> :  <div className='modal_content'>
+
+<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <h3>Create Campaign</h3>
+    <h3 style={{cursor:'pointer'}} onClick={()=>showmodal(false)}>X</h3>
+</div>
+
+<div className='contnr'>
+    <h4>Campaign Name</h4>
+
+    <Inputs placeholder="Name" />
+
+    <h4>Create Description</h4>
+
+    <textarea placeholder='Type text below..' rows={5} style={{width:'100%',borderRadius:5,backgroundColor:'white'}}></textarea>
+
+    <h4>Add target Keywords</h4>
+    <div className='modal_inputs'>
+       <Tags name="test"/> <Tags name="test"/> <Tags name="test"/> <Tags name="test"/>
+    </div>
+
+    <button className='cbtn'>Create</button>
+</div>
+
+
+</div>
+        }
+           
+
+
+        </div>:null
+}
          </div>
          </div>
+         </div>
+          
     </>
     )
 }
