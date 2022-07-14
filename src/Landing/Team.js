@@ -1,9 +1,13 @@
 import React from "react";
+import Cardimage from "./Cardimage.js";
 
 const Team = (props) => {
   return (
     <div>
-      <h2>Meet Our Team</h2>
+      <div>
+        <h2>Meet Our Team</h2>
+      </div>
+      <Cardimage />
     </div>
   );
 };
