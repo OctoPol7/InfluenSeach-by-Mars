@@ -10,11 +10,7 @@ import SingleCampaign from "./SingleCampaign/SingleCampaign.js";
 import Campaign from "./CampaignPage/Campaign.js";
 import Landing from "./Landing/Landing";
 import CreatorPage from "./CreatorPage/CreatorPage.js";
-<<<<<<< HEAD
-import './sass/style.scss'
-=======
 // import "./sass/style.scss";
->>>>>>> 7e7b92dd04dcfc977aa5a0cc268936d6d1102689
 
 const App = (props) => {
   const [location, setLocation] = useState();
