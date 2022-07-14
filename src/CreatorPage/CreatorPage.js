@@ -8,6 +8,7 @@ import Inputs from './Inputs';
 import Searchlist from './Searchlist';
 import Tags from './Tags';
 import GridContainer from './GridContainer';
+import ScoreCard from './ScoreCard.js';
 
 
 const CreatorPage = props => {
@@ -29,6 +30,7 @@ const CreatorPage = props => {
                 {/* <TopBanner/> */}
                 <AddToCampainButton modalshow ={modalshow} isAddtocamp={isAddtocamp} showmodal={showmodal}/>
                     <CreatorImage />
+                    <ScoreCard />
                 <div className='textcont'>
                     <NameBoard />
                 </div>
