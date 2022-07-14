@@ -9,6 +9,9 @@ const Header = (props) => {
         <img className="logo" src={Logo} alt="logo"></img>
         <ul className="nav">
           <li>
+            <NavLink to="/Landing">Home</NavLink>
+          </li>
+          <li>
             <NavLink to="/search">Search</NavLink>
           </li>
           <li>
