@@ -6,7 +6,7 @@ const cors = require("cors");
 
 require('dotenv').config();
 
-const PORT = process.env.BACKENDPORT;
+const PORT = process.env.PORT || 7000;
 
 //import routes
 const searchRoute = require("./routes/search");
