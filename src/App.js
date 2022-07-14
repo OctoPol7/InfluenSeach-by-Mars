@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Route } from "react-router-dom";
 
 import SignUp from "./SignUp/SignUp.js";
@@ -6,16 +6,20 @@ import SearchPage from "./SearchPage/SearchPage.js";
 import LogIn from "./LogIn/LogIn.js";
 import SearchResult from "./SearchResult/SearchResult.js";
 import GetSearch from "./GetSearch.js";
-import SingleCampaign from './SingleCampaign/SingleCampaign.js'
-import Campaign from './CampaignPage/Campaign.js';
-import Landing from './Landing/Landing'
+import SingleCampaign from "./SingleCampaign/SingleCampaign.js";
+import Campaign from "./CampaignPage/Campaign.js";
+import Landing from "./Landing/Landing";
 import CreatorPage from "./CreatorPage/CreatorPage.js";
+<<<<<<< HEAD
 import './sass/style.scss'
+=======
+// import "./sass/style.scss";
+>>>>>>> 7e7b92dd04dcfc977aa5a0cc268936d6d1102689
 
 const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
-  
+
   return (
     <div className="App">
       <Route path="/search">
