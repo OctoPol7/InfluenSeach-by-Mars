@@ -1,6 +1,7 @@
 import React from "react";
 import Heading from "./Heading.js";
 import Team from "./Team.js";
+import Createaccount from "./Createaccount.js";
 
 const Landing = (props) => {
   return (
@@ -26,6 +27,7 @@ const Landing = (props) => {
         <img className="img" src="./images/Framing.png" alt="frame2" />
       </div>
       <Team />
+      <Createaccount />
     </div>
   );
 };
