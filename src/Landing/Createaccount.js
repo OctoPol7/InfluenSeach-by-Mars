@@ -6,12 +6,10 @@ const Createaccount = (props) => {
       <div>
         <h1>Are you ready to try out InfluenSearch today?</h1>
         <ul>
-          <li>SignUp/Login</li>
-          <li>
-            <button className="btn" type="submit">
-              Launch App
-            </button>
-          </li>
+          SignUp/Login <br />
+          <button className="btn" type="submit">
+            Launch App
+          </button>
         </ul>
       </div>
     </div>
