@@ -30,7 +30,7 @@ const GridContainer = props => {
             <div>
             <h3 className='ml20'>Latest Video</h3>
 
-            <video src="https://www.w3schools.com/tags/movie.mp4" width="100%" className='video'  controls>
+            <video src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" width="100%" className='video'  controls>
      </video>
 
      <h4 className='ml20'>Common Tags</h4>

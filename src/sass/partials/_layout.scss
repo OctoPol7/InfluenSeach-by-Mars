@@ -656,6 +656,7 @@
 }
 .creator .ml20{
     margin-left: 20px;
+    margin-top: 20px;
 }
 .creator .tag_cntnr{
     display:flex;flex-direction:row;flex-wrap:wrap
@@ -700,6 +701,27 @@
     border: none;
     margin-top: 25px;
 }
+.creator .modal_search_input{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+
+}
+.creator .modal_style{
+     display: flex;
+     justify-content: space-between;
+}
+.creator .pointer{
+    cursor:pointer;
+}
+.creator .textarea{
+  width:100%;
+    border-radius:5;
+    background-color:white;
+}
+
 @media screen and (max-width: 600px) {
 
     .searchpage .search_box h1{
