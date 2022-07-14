@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "./Heading.js";
 import Team from "./Team.js";
 import Createaccount from "./Createaccount.js";
+import Footer from "./Footer.js";
 
 const Landing = (props) => {
   return (
@@ -28,6 +29,8 @@ const Landing = (props) => {
       </div>
       <Team />
       <Createaccount />
+      <br />
+      <Footer />
     </div>
   );
 };
