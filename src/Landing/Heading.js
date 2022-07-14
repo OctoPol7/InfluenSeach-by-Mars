@@ -7,15 +7,17 @@ const Heading = (props) => {
     <div className="header-background">
       <div className="header header-max-width-div">
         <img className="logo" src={Logo} alt="logo"></img>
-        <ul className="navland">
+        <ul className="nav">
           <li>
             <NavLink to="/Landing">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/search">Search</NavLink>
+            <NavLink to="/campaign">Campaign</NavLink>
           </li>
           <li>
-            <NavLink to="/campaign">Campaign</NavLink>
+            <button className="btn" type="submit">
+              Launch App
+            </button>
           </li>
         </ul>
       </div>
