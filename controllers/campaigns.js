@@ -5,8 +5,8 @@ const axios = require("axios");
 
 // function to create a new campaign
 exports.create_campaign = async (req, res, next) => {
-    const username = req.params.username;
-    const validateName = await campaigns.find({userName: username, campaignName: req.body.campaignName})
+    const uid = req.params.uid;
+    const validateName = await campaigns.find({userId: uid, campaignName: req.body.campaignName})
     .exec()
     .then((result) => {
         if (result.length >= 1){
@@ -17,7 +17,7 @@ exports.create_campaign = async (req, res, next) => {
         } else {
             const campaign = new campaigns ({
                 _id: new mongoose.Types.ObjectId(),
-                userName: username,
+                userId: uid,
                 campaignName: req.body.campaignName,
                 description: req.body.description,
                 dateCreated: new Date(),
@@ -44,12 +44,14 @@ exports.create_campaign = async (req, res, next) => {
 // function to add a creator to a campaign
 exports.campaign_add_creator = (req, res, next) => {
     const campaign = req.params.campaignName;
-    campaigns.updateOne({campaignName: campaign }, {$push:{creators: {
+    const uid = req.params.uid;
+    campaigns.updateOne({userId: uid},{campaignName: campaign }, {$push:{creators: {
         creatorId: req.body.creatorId,
-        dateJoined: new Date(),
+        dateJoined: new Date()
     }}})
     .exec()
     .then(result => {
+        console.log(campaign);
         res.status(200).json({
             message: 'Creator added to campaign',
         });
@@ -63,9 +65,9 @@ exports.campaign_add_creator = (req, res, next) => {
 }
 //function to get all the creators from a specific campaign
 exports.get_campaign_creators = async (req, res, next) => {
-    const username = req.params.username;
+    const uid = req.params.uid;
     const campaignName = req.params.campaignName;
-    const campaignDoc = await campaigns.find({userName: username, campaignName: campaignName})
+    const campaignDoc = await campaigns.find({userId: uid, campaignName: campaignName})
     .then(result => {
         //console.log(result);
         //res.status(200);
@@ -100,8 +102,8 @@ exports.get_campaign_creators = async (req, res, next) => {
 }
 
 exports.get_campaigns = (req, res, next) => {
-    const username = req.params.username;
-    campaigns.find({userName: username})
+    const uid = req.params.uid;
+    campaigns.find({userId: uid})
     .then(result => {
         console.log(result);
         res.status(200).json(result);
@@ -114,13 +116,14 @@ exports.get_campaigns = (req, res, next) => {
     });
 }
 
-exports.delete_campaign = (req, res, next) => {
-    const username = req.params.username;
-    const campaignName = req.params.campaignName;
-    campaigns.deleteOne({userName: username, campaignName: campaignName})
+exports.archive_campaign = (req, res, next) => {
+    const campaign = req.params.campaignName;
+    const uid = req.params.uid;
+    campaigns.updateOne({campaignName: campaign }, {userId: uid}, {$set:{active: false}})
+    .exec()
     .then(result => {
         res.status(200).json({
-            message: 'Campaign deleted!',
+            message: 'Campaign archived!',
         });
     })
     .catch(err => {
