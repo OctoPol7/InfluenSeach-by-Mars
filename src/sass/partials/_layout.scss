@@ -554,7 +554,7 @@
     border-radius: 25px;
     align-self: flex-end;
     margin: 20px;
-    background-color: #f44336;
+    background: #E4572E;
     color: white;
     border: none;
 }
@@ -570,7 +570,7 @@
 .creator .score_card{
     width: 80px;
     height: 70px;
-    background-color: blue;
+    background: #4501D5;
     position: absolute;
     right: 120px;
     display: flex;
@@ -610,11 +610,18 @@
 .creator .tags{
     width: 100px;
     height: 28px;
-    color: blueviolet;
+    color: #3D1408;
+
     border-radius: 20px;
     border: 1px solid grey;
     margin: 5px;
-    background-color: #ffcc80;
+    background: #FBE3DC;
+    border: 1px solid #ED8F74;
+}
+.creator .tag_style{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .creator .popubtn{
@@ -623,7 +630,7 @@
     border-radius: 25px;
     align-self: flex-end;
     margin: 20px;
-    background-color: #f44336;
+    background: #E4572E;
     color: white;
     border: none;
 }
@@ -696,7 +703,7 @@
     width: 100%;
     height: 40px;
     border-radius: 20px;
-    background-color: #f44336;
+    background: #E4572E;
     color: white;
     border: none;
     margin-top: 25px;
@@ -720,6 +727,15 @@
   width:100%;
     border-radius:5;
     background-color:white;
+}
+.creator .graph_style{
+        border: 1px solid ;
+        padding: 100px;
+       
+}
+.creator .grid_container_graph{
+    display: grid;
+  grid-template-columns: 70% auto;
 }
 
 @media screen and (max-width: 600px) {

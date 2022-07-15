@@ -8,6 +8,8 @@ import Searchlist from './Searchlist';
 import Tags from './Tags';
 import ScoreCard from './ScoreCard.js';
 import DisplayBlock from './DisplayBlock';
+import Graph from './Graph.js';
+
 
 
 const CreatorPage = props => {
@@ -94,19 +96,19 @@ const CreatorPage = props => {
             <div>
                 <h3 className='ml20'>Overview</h3>
                 <div className='overviewBlocks'>
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="Video Uploads" content="645" />
+                    <DisplayBlock title="Channel Age" content="5 Years" />
+                    <DisplayBlock title="Country" content="Switzerland" />
+                    <DisplayBlock title="Channel Type" content="Gaming" />
 
                 </div>
 
                 <h3 className='ml20'>Metrics</h3>
                 <div className='overviewBlocks'>
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
-                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="Watch Time" content="645" />
+                    <DisplayBlock title="Total Views" content="5 Years" />
+                    <DisplayBlock title="New Viewers" content="Switzerland" />
+                    <DisplayBlock title="Running Viewers" content="Gaming" />
 
                 </div>
             </div>
@@ -121,6 +123,9 @@ const CreatorPage = props => {
                     <Tags name="test"/> <Tags name="test"/> <Tags name="test"/>
                 </div>
             </div>
+        </div>
+        <div className='graph'>
+            <Graph />
         </div>
         </div>
          </div>

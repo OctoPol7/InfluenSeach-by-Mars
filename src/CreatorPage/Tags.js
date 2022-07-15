@@ -3,7 +3,7 @@ import React from 'react'
 
 const Tags = props => {
     return<>
-       <div className='tags' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>{props.name}</div>
+       <div className='tags tag_style'>{props.name}</div>
      </>
 }
 
