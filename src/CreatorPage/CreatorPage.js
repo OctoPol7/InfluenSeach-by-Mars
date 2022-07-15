@@ -3,12 +3,11 @@ import Header from '../header.js'
 import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
 import NameBoard from './NameBoardName.js';
-// import TopBanner from './TopBanner';
 import Inputs from './Inputs';
 import Searchlist from './Searchlist';
 import Tags from './Tags';
-import GridContainer from './GridContainer';
 import ScoreCard from './ScoreCard.js';
+import DisplayBlock from './DisplayBlock';
 
 
 const CreatorPage = props => {
@@ -34,7 +33,7 @@ const CreatorPage = props => {
                 <div className='textcont'>
                     <NameBoard />
                 </div>
-                <GridContainer/>
+                
                         
                     {modalshow ?
                     <div className='modal_overlay' >
@@ -56,9 +55,6 @@ const CreatorPage = props => {
                             <Searchlist title="Campaign Name 1" subtitle="23 creators" />
 
                             
-                            
-                            
-
                             <button className='cbtn'>Add to Campaign</button>
                             <p onClick={()=>setIsAddtoCamp(false)} className="creat_capm_txt">Create new Capmapign</p>
                         </div>
@@ -91,13 +87,42 @@ const CreatorPage = props => {
 
             </div>
                     }
-                    
-
-
-                    </div>:null
-            }
+         </div>:null }
          </div>
-         </div>
+         <div className="grid_container">
+
+            <div>
+                <h3 className='ml20'>Overview</h3>
+                <div className='overviewBlocks'>
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+
+                </div>
+
+                <h3 className='ml20'>Metrics</h3>
+                <div className='overviewBlocks'>
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+                    <DisplayBlock title="test" content="645" />
+
+                </div>
+            </div>
+
+            <div>
+                <h3 className='ml20'>Latest Video</h3>
+
+                <video src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" width="100%" className='video'  controls>
+                </video>
+                <h4 className='ml20'>Common Tags</h4>
+                <div className='tag_cntnr'>
+                    <Tags name="test"/> <Tags name="test"/> <Tags name="test"/>
+                </div>
+            </div>
+        </div>
+        </div>
          </div>
           
     </>
