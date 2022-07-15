@@ -802,7 +802,12 @@
         gap: 20px;
     }
     
-    
-    
+  }
+
+  //ProfileSetting Page
+  .profile .grid_container{
+    display: grid;
+    grid-template-columns: 25% auto;
+
   }
 
