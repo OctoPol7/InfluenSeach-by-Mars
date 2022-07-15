@@ -1,18 +1,45 @@
 .header-background {
     background-color:#E5E8EF;
 }
-
-.header {
-    height: 100px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 1rem;
+ 
+.header .nav {
+    margin: 1rem;
+    margin-top: 0;
 }
 
 .header ul {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-end;
+}
+
+.header img {
+    margin: 1rem;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+
+.footer-background {
+    background-color: #E5E8EF;
+}
+
+@media screen and (min-width: 750px) {
+   .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+   } 
+
+   .header .nav {
+    justify-self: end;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 }
 
  .nav ul{
@@ -23,11 +50,6 @@
     display: inline;
     font-size: 27px;
     color: #485063;
-}
-.nav {
-    float: right;
-    margin-right: 100px;
-    margin-top: 30px;
 }
 
 .nav li .active,
@@ -55,3 +77,14 @@
 .header li {
     align-self: center;
 }
+
+.landing .btn{
+    width: 9rem;
+    height: 44px;
+    background: #E4572E;
+    font-size: 20px;
+    color: white;
+    border-radius: 500px;
+    border: none;
+}
+

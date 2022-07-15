@@ -4,10 +4,13 @@ img {
     height: auto;
 }
 
-.logo {
-    align-self: center;
-    width: 60%;
+@media screen and (min-width: 750px) {
+    .logo {
+        justify-self: start;
+        width: 60%;
+    }
 }
+
 
 .searchpage .pro_pic,
 .search-result .results img {

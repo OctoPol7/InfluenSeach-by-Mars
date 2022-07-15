@@ -9,11 +9,12 @@ import Framing from "../images/Framing.png"
 
 const Landing = (props) => {
   return (
-    <div>
+    <div className="landing">
       <Heading />
+      <div className="container-background">
       <div className="container">
-        <div>
-          <h1>Searching for Influncers made easy</h1>
+        <div className="container-elements">
+          <h2>Searching for Influncers made easy</h2>
           <p>
             InfluenSearch helps marketers and small business owners find the
             right influencers that match their needs. This app provides accurate
@@ -28,10 +29,11 @@ const Landing = (props) => {
         </div>
         <img src={Influencers} alt="Pics of Influencers" />
       </div>
-      <div>
-        <h2>WHAT MAKES US AWESOME?</h2>
       </div>
       <div>
+        <h2 className="blue-text">WHAT MAKES US AWESOME?</h2>
+      </div>
+      <div className="big-image">
         <img  src={Framing} alt="Features of InfluenSearch" />
       </div>
       <Team />

@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const Createaccount = (props) => {
   return (
-    <div>
-      <div>
-        <p>Are you ready to try out InfluenSearch today?</p>
+    <div className="footer-background">
+      <div className="create-account">
+        <h2>Are you ready to try out InfluenSearch today?</h2>
         <ul>
           <li><a href="signup">Sign Up</a></li>
           <li><a href="login">Log in</a></li>
