@@ -58,10 +58,10 @@ const SearchResult = props => {
             <div className="one-line">
               <ul>
                 {props.keywordArray.map((key) => (
-                  <Tag tagname={key} />
+                  <Tag name={key} />
                 ))}
 
-                <Tag tagname={JSON.parse(props.location).country} />
+                <Tag name={JSON.parse(props.location).country} />
               </ul>
               <ResetInput
                 keywordArray={props.keywordArray}
