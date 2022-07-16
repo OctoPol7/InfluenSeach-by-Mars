@@ -63,6 +63,28 @@ exports.campaign_add_creator = (req, res, next) => {
         });
     });
 }
+// function to remove a creator from a campaign
+exports.campaign_remove_creator = (req, res, next) => {
+    const campaign = req.params.campaignName;
+    const uid = req.params.uid;
+    const creatorId = req.params.creatorId;
+    campaigns.updateOne({userId: uid, campaignName: campaign }, {$pull:{creators: {
+        creatorId: creatorId
+    }}})
+    .exec()
+    .then(result => {
+        //console.log(campaign);
+        res.status(200).json({
+            message: 'Creator removed from campaign',
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
+}
 //function to get all the creators from a specific campaign
 exports.get_campaign_creators = async (req, res, next) => {
     const uid = req.params.uid;
@@ -100,7 +122,7 @@ exports.get_campaign_creators = async (req, res, next) => {
     console.log(creatorsDetails);
     res.json(creatorsDetails);
 }
-
+// function to get all campaigns that belong to a user
 exports.get_campaigns = (req, res, next) => {
     const uid = req.params.uid;
     campaigns.find({userId: uid})
@@ -115,7 +137,7 @@ exports.get_campaigns = (req, res, next) => {
         });
     });
 }
-
+// function to archive a campaign
 exports.archive_campaign = (req, res, next) => {
     const campaign = req.params.campaignName;
     const uid = req.params.uid;

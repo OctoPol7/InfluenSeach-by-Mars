@@ -9,8 +9,11 @@ const campaignControllers = require("../controllers/campaigns");
 // new campaign route
 router.post('/:uid/new-campaign', checkAuth, campaignControllers.create_campaign);
 
-//add creator to campaign route
+//route to add creator to campaign
 router.patch('/:uid/:campaignName/add-creator', checkAuth, campaignControllers.campaign_add_creator);
+
+//route to remove creator from a campaign
+router.patch('/:uid/:campaignName/:creatorId/remove-creator', checkAuth, campaignControllers.campaign_remove_creator);
 
 //route to archive a campaign
 router.patch('/:uid/archive-campaign/:campaignName', checkAuth ,campaignControllers.archive_campaign);
