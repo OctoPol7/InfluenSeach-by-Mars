@@ -9,7 +9,7 @@ import Tags from './Tags';
 import ScoreCard from './ScoreCard.js';
 import DisplayBlock from './DisplayBlock';
 import Graph from './Graph.js';
-
+import GetCreatorInfo from '../GetCreatorInfo.js'
 
 
 const CreatorPage = props => {
@@ -24,6 +24,7 @@ const CreatorPage = props => {
     return (
       <>
         <Header userData={props.userData} />
+        <GetCreatorInfo channelId={JSON.stringify(props.channelId)} />
         <div className="creator">
           <div className="margin">
             <div className="top_Banner">

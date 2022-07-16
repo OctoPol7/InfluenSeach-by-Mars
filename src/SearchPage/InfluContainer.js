@@ -15,12 +15,10 @@ const InfluContainer = props => {
     };
 
     return (
-      <div className='trending-influencers'>
-        <h1>
-          Trending Influencers this week
-        </h1>
+      <div className="trending-influencers">
+        <h1>Trending Influencers this week</h1>
         <GetTrending grabResults={grabResults} />
-        <ul className='first-ul'>
+        <ul className="first-ul">
           {results.map((result) => (
             <InfluCard
               sub_count={result.statistics.subscriberCount}
@@ -28,10 +26,11 @@ const InfluContainer = props => {
               influ_name={result.brandingSettings.channel.title}
               influ_img={result.snippet.thumbnails.default.url}
               topic_ids={result.topicDetails.topicIds}
+              channel_id={result.id}
+              grabChannelId={props.grabChannelId}
             />
           ))}
         </ul>
-
       </div>
     );
 }
