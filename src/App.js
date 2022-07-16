@@ -18,7 +18,10 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <Route path="/search">
+      <Route path="/" exact={true}>
+        <Landing />
+      </Route>
+      <Route path="/search" exact={true}>
         <SearchPage
           keywordArray={keywordArray}
           location={location}
@@ -26,8 +29,7 @@ const App = (props) => {
           setLocation={setLocation}
         />
       </Route>
-
-      <Route path="/searchresult">
+      <Route path="/searchresult" exact={true}>
         <SearchResult
           keywordArray={keywordArray}
           location={location}
@@ -35,31 +37,21 @@ const App = (props) => {
           setLocation={setLocation}
         />
       </Route>
-
-      <Route path="/signup">
+      <Route path="/signup" exact={true}>
         <SignUp />
       </Route>
-
-      <Route path="/login">
+      <Route path="/login" exact={true}>
         <LogIn />
       </Route>
-
-      <Route path="/getsearch">
+      <Route path="/getsearch" exact={true}>
         <GetSearch />
       </Route>
-
-      <Route path="/singlecampaign">
+      <Route path="/singlecampaign" exact={true}>
         <SingleCampaign />
       </Route>
-
-      <Route path="/campaign">
+      <Route path="/campaign" exact={true}>
         <Campaign />
       </Route>
-      <Route path="/creator">
-        <CreatorPage />
-      </Route>
-
-      <Landing />
     </div>
   );
 };
