@@ -45,13 +45,13 @@ exports.create_campaign = async (req, res, next) => {
 exports.campaign_add_creator = (req, res, next) => {
     const campaign = req.params.campaignName;
     const uid = req.params.uid;
-    campaigns.updateOne({userId: uid},{campaignName: campaign }, {$push:{creators: {
+    campaigns.updateOne({userId: uid, campaignName: campaign }, {$push:{creators: {
         creatorId: req.body.creatorId,
         dateJoined: new Date()
     }}})
     .exec()
     .then(result => {
-        console.log(campaign);
+        //console.log(campaign);
         res.status(200).json({
             message: 'Creator added to campaign',
         });
@@ -119,7 +119,7 @@ exports.get_campaigns = (req, res, next) => {
 exports.archive_campaign = (req, res, next) => {
     const campaign = req.params.campaignName;
     const uid = req.params.uid;
-    campaigns.updateOne({campaignName: campaign }, {userId: uid}, {$set:{active: false}})
+    campaigns.updateOne({campaignName: campaign , userId: uid}, {$set:{active: false}})
     .exec()
     .then(result => {
         res.status(200).json({
