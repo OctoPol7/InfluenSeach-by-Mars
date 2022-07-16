@@ -1,10 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import Tag from './Tag.js';
 
 
 const InfluCard = props => {
     return (
       <li key={props.id}>
+        <NavLink to='/creator'>
         <div className="influ_div">
           <div>
             <img
@@ -36,6 +38,7 @@ const InfluCard = props => {
             ))}
           </ul>
         </div>
+        </NavLink>
       </li>
     );
 }

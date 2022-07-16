@@ -65,12 +65,9 @@ const App = (props) => {
       <Route path="/creator" exact={true}>
         <CreatorPage userData={userData} />
       </Route>
-
-      <Route path="/profile">
+      <Route path="/profile" exact={true}>
         <ProfileSetting />
       </Route>
-
-      <Landing />
     </div>
   );
 };
