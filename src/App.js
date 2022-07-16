@@ -61,6 +61,9 @@ const App = (props) => {
       <Route path="/campaign" exact={true}>
         <Campaign userData={userData} />
       </Route>
+      <Route path="/creator" exact={true}>
+        <CreatorPage userData={userData} />
+      </Route>
     </div>
   );
 };
