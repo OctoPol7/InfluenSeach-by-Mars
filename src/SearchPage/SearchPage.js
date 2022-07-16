@@ -1,5 +1,5 @@
 
-import React from "react"
+import React, { useEffect } from "react"
 // import { Route } from "react-router-dom";
 
 import Header from '../header.js'
@@ -10,10 +10,13 @@ import InfluContainer from './InfluContainer.js'
 
 const SearchPage = props => {
 
+  useEffect(() => {
+    return console.log(props.keywordArray);
+  }, [props.keywordArray]);
+
   const grabKeyword = (key) => {
     console.log(key);
-    props.setKeywordArray([...props.keywordArray, key]);
-    console.log(props.keywordArray);
+    props.setKeywordArray([key, ...props.keywordArray]);
   }
 
   const removeKeyword = (key) => {
@@ -39,6 +42,7 @@ const SearchPage = props => {
         <SearchContainer
           keywordArray={props.keywordArray}
           location={props.location}
+          setKeywordArray={props.setKeywordArray}
           setLocation={props.setLocation}
           grabKeyword={grabKeyword}
           grabLocation={grabLocation}
