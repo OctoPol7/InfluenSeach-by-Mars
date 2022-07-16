@@ -15,6 +15,13 @@ import CreatorPage from "./CreatorPage/CreatorPage.js";
 const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
+  const [userData, setUserData] = useState();
+
+  const grabUserData = (data) => {
+    setUserData(data);
+    console.log(JSON.stringify(data));
+  }
+  
 
   return (
     <div className="App">
@@ -27,6 +34,7 @@ const App = (props) => {
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
+          userData={userData}
         />
       </Route>
       <Route path="/searchresult" exact={true}>
@@ -35,22 +43,26 @@ const App = (props) => {
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
+          userData={userData}
         />
       </Route>
       <Route path="/signup" exact={true}>
         <SignUp />
       </Route>
       <Route path="/login" exact={true}>
-        <LogIn />
+        <LogIn grabUserData={grabUserData} />
       </Route>
       <Route path="/getsearch" exact={true}>
-        <GetSearch />
+        <GetSearch userData={userData} />
       </Route>
       <Route path="/singlecampaign" exact={true}>
-        <SingleCampaign />
+        <SingleCampaign userData={userData} />
       </Route>
       <Route path="/campaign" exact={true}>
-        <Campaign />
+        <Campaign userData={userData} />
+      </Route>
+      <Route path="/creator" exact={true}>
+        <CreatorPage userData={userData} />
       </Route>
     </div>
   );
