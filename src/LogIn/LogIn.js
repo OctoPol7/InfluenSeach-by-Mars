@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Axios from 'axios'
 import { Route, Redirect } from 'react-router-dom'
 // import EmailInput from './../SignUp/EmailInput.js'
@@ -11,6 +11,7 @@ const LogIn = props => {
     const passwordRef = useRef();
     const [loginStatus, setLoginStatus] = useState('');
 
+
     const submitHandler = (event) => {
       event.preventDefault();
 
@@ -19,16 +20,21 @@ const LogIn = props => {
         password: passwordRef.current.value,
       };
 
-      Axios.post(`http://localhost:4000/user/login`, user).then((res)=>{
-        if (res) {
+
+      Axios.post(`http://localhost:4000/user/login`, user)
+        .then((res) => {
+          props.grabUserData(res.data);
+
           setLoginStatus(res.data.message);
-          
-        } else {
-          setLoginStatus("Wrong combination");
-        }
-        })
-        .catch((error)=>setLoginStatus('Wrong combination'));
+
+        },[])
+        .catch((error) => setLoginStatus("Wrong combination"));
+
+        console.log('asdf');
     };
+    
+
+
 
     return (
       <div className="login">
@@ -51,10 +57,15 @@ const LogIn = props => {
             Not a user yet? <a href="signup">Sign Up</a>
           </p>
         </form>
-        {loginStatus}
-        {loginStatus === "Authentication successful" ? <Route path='/login'>
-            <Redirect to='/search' />
-        </Route> : <></>}
+
+        {loginStatus === "Authentication successful" ? (
+          <Route path="/login">
+            <Redirect to="/search"/>
+          </Route>
+        ) : (
+          <p>{loginStatus}</p>
+        )}
+
       </div>
     );
 }

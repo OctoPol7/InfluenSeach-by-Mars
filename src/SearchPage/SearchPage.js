@@ -30,12 +30,12 @@ const SearchPage = props => {
 
   const resetButton = () => {
     props.setKeywordArray([]);
-    props.setLocation("");
+    props.setLocation(null);
   };
 
     return (
       <div className="searchpage">
-        <Header />
+        <Header userData={props.userData} />
         <SearchContainer
           keywordArray={props.keywordArray}
           location={props.location}
@@ -49,7 +49,7 @@ const SearchPage = props => {
           <div className=" max-width-div">
             <InfluContainer />
           </div>
-      </div>
+        </div>
       </div>
     );      
 }
