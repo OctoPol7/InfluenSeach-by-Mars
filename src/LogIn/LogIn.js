@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import Axios from 'axios'
 import { Route, Redirect } from 'react-router-dom'
 // import EmailInput from './../SignUp/EmailInput.js'

@@ -14,8 +14,11 @@ const Header = (props) => {
           <li>
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
-          <li>
-            <NavLink to="/campaign"> Hello <strong>{props.userData.userName}!</strong></NavLink>
+          <li style={{paddingLeft: "1.5rem"}}>
+            <NavLink to="/search">
+              {"  "}
+              Hello <strong>{props.userData.userName}!</strong>
+            </NavLink>
           </li>
         </ul>
       </div>
