@@ -521,7 +521,14 @@
     color: white;
     border-radius: 500px;
     border: none;
+    
 }
+.searchpage .btn:hover {
+        background:#e54f21;
+        transform: scale(1.025);
+        transition: .25s all;
+    } 
+
 @media screen and (max-width: 600px) {
 
     .searchpage .search_box h1{
