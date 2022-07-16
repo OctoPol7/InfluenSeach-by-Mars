@@ -8,7 +8,8 @@ const GetSearch = (props) => {
   
   useEffect(() => {
     async function loadSearch() {
-      const url = `http://localhost:4000/search`;
+      const url = `https://marsbeserver2022.herokuapp.com/search` 
+                  // || `http://localhost:4000/search`;
 
       await axios
         .get(url)
