@@ -15,9 +15,7 @@ const Heading = (props) => {
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
           <li>
-            <button className="btn" type="submit">
-              Launch App
-            </button>
+            <NavLink to="/login"><button className="btn" type="submit">Launch App</button></NavLink>
           </li>
         </ul>
       </div>

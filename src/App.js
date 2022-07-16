@@ -16,49 +16,56 @@ import ProfileSetting from "./ProfileSetting/ProfileSetting.js";
 const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
+  const [userData, setUserData] = useState();
+
+  const grabUserData = (data) => {
+    setUserData(data);
+    console.log(JSON.stringify(data));
+  }
+  
 
   return (
     <div className="App">
-      <Route path="/search">
+      <Route path="/" exact={true}>
+        <Landing />
+      </Route>
+      <Route path="/search" exact={true}>
         <SearchPage
           keywordArray={keywordArray}
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
+          userData={userData}
         />
       </Route>
-
-      <Route path="/searchresult">
+      <Route path="/searchresult" exact={true}>
         <SearchResult
           keywordArray={keywordArray}
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
+          userData={userData}
         />
       </Route>
-
-      <Route path="/signup">
+      <Route path="/signup" exact={true}>
         <SignUp />
       </Route>
-
-      <Route path="/login">
-        <LogIn />
+      <Route path="/login" exact={true}>
+        <LogIn grabUserData={grabUserData} />
+      </Route>
+      <Route path="/getsearch" exact={true}>
+        <GetSearch userData={userData} />
+      </Route>
+      <Route path="/singlecampaign" exact={true}>
+        <SingleCampaign userData={userData} />
+      </Route>
+      <Route path="/campaign" exact={true}>
+        <Campaign userData={userData} />
+      </Route>
+      <Route path="/creator" exact={true}>
+        <CreatorPage userData={userData} />
       </Route>
 
-      <Route path="/getsearch">
-        <GetSearch />
-      </Route>
-
-      <Route path="/singlecampaign">
-        <SingleCampaign />
-      </Route>
-
-      <Route path="/campaign">
-        <Campaign />
-      </Route>
-      <Route path="/creator">
-        <CreatorPage />
-      </Route>
       <Route path="/profile">
         <ProfileSetting />
       </Route>
