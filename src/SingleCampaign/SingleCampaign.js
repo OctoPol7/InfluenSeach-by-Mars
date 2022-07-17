@@ -4,7 +4,7 @@ import SubmitButton from '../SignUp/SubmitButton.js'
 import DeleteButton from './DeleteButton.js'
 import SearchInput from '../SearchResult/SearchInput.js'
 import SortByDropdown from '../SearchResult/SortByDropdown.js'
-import InfluCard from '../SearchPage/InfluCard.js'
+// import InfluCard from '../SearchPage/InfluCard.js'
 
 const SingleCampaign = props => {
     return(

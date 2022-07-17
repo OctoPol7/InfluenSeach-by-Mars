@@ -5,7 +5,7 @@ import CampStatCard from './CampStatCard';
 
 const CampStatContner = props => {
     return(
-      <div className='pad20'>
+      <div>
         <h2>Campaign Statistics</h2>
         <div className='statcard_div'>
           <CampStatCard heading={"Active Campaigns"} count={1204}/>

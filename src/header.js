@@ -14,6 +14,12 @@ const Header = (props) => {
           <li>
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
+          <div className="no-active">
+            <NavLink to="/search">
+              {console.log(props.userData.userName)}
+              <ul className="username"> <li>Hello</li><li>{props.userData.userName}!</li></ul>
+            </NavLink>
+          </div>
         </ul>
       </div>
     </div>

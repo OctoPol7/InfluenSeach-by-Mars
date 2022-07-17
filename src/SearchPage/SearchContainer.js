@@ -33,6 +33,7 @@ const SearchContainer = props => {
             removeKeyword={props.removeKeyword}
             resetButton={props.resetButton}
             keywordArray={props.keywordArray}
+            setKeywordArray={props.setKeywordArray}
             location={props.location}
           />
         );
@@ -42,6 +43,7 @@ const SearchContainer = props => {
           <StepTwo
             grabLocation={props.grabLocation}
             setLocation={props.setLocation}
+            setKeywordArray={props.setKeywordArray}
             removeKeyword={props.removeKeyword}
             resetButton={props.resetButton}
             keywordArray={props.keywordArray}

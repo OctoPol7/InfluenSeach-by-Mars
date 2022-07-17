@@ -2,8 +2,7 @@ import React from 'react'
 
 const ResetInput = props => {
   const resetButton = () => {
-    props.setKeywordArray([]);
-    props.setLocation("");
+    props.resetButton();
   };
 
     return(

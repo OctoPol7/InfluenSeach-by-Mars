@@ -5,7 +5,7 @@ const Team = (props) => {
   return (
     <div>
       <div>
-        <h2>Meet Our Team</h2>
+        <h2 className="blue-text-no-margin">Meet Our Team</h2>
       </div>
       <Cardimage />
     </div>

@@ -2,18 +2,20 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const GetSearch = (props) => {
+const GetCreatorInfo = (props) => {
   const [isLoading, setLoading] = useState(true);
   // const [search, setSearch] = useState();
-  
+
   useEffect(() => {
     async function loadSearch() {
-      const url = `http://localhost:4000/search`;
+      const url = `http://localhost:4000/creatordetails/${props.channelId}`;
+
+      console.log("Bearer " + props.userData.token);
 
       await axios
         .get(url, {
           headers: {
-            'Authorization': 'Bearer ' + props.userData.token,
+            'Authorization': 'Bearer '+ props.userData.token
           },
         })
         .then((resData) => {
@@ -26,10 +28,9 @@ const GetSearch = (props) => {
         });
     }
     loadSearch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //console.log(search);
   if (isLoading) {
     return (
       <>
@@ -37,12 +38,8 @@ const GetSearch = (props) => {
       </>
     );
   } else {
-    return (
-      <>
-        {/* <h1>Search Successful!</h1> */}
-      </>
-    );
+    return <>{/* <h1>Search Successful!</h1> */}</>;
   }
 };
 
-export default GetSearch;
+export default GetCreatorInfo;
