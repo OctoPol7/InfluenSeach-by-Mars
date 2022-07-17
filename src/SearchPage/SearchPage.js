@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react"
+import React from "react"
 // import { Route } from "react-router-dom";
 
 import Header from '../header.js'
@@ -10,13 +10,10 @@ import InfluContainer from './InfluContainer.js'
 
 const SearchPage = props => {
 
-  useEffect(() => {
-    return console.log(props.keywordArray);
-  }, [props.keywordArray]);
-
   const grabKeyword = (key) => {
     console.log(key);
-    props.setKeywordArray([key, ...props.keywordArray]);
+    props.setKeywordArray([...props.keywordArray, key]);
+    console.log(props.keywordArray);
   }
 
   const removeKeyword = (key) => {
@@ -33,16 +30,15 @@ const SearchPage = props => {
 
   const resetButton = () => {
     props.setKeywordArray([]);
-    props.setLocation(null);
+    props.setLocation("");
   };
 
     return (
       <div className="searchpage">
-        <Header userData={props.userData} />
+        <Header />
         <SearchContainer
           keywordArray={props.keywordArray}
           location={props.location}
-          setKeywordArray={props.setKeywordArray}
           setLocation={props.setLocation}
           grabKeyword={grabKeyword}
           grabLocation={grabLocation}
@@ -51,9 +47,9 @@ const SearchPage = props => {
         />
         <div className="background">
           <div className=" max-width-div">
-            <InfluContainer grabChannelId={props.grabChannelId} />
+            <InfluContainer />
           </div>
-        </div>
+      </div>
       </div>
     );      
 }

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import FilterTag from "./FilterTag.js";
-import FilterLocationTag from './FilterLocationTag.js';
 
 const StepOne = props => {
   const [keyword, setKeyword] = useState("");
@@ -25,7 +24,8 @@ const StepOne = props => {
           grabKeyword={props.grabKeyword}
           resetButton={props.resetButton}
         /> */}
-        <div className="search_inp_div">
+        <div
+          className="search_inp_div">
           <form onSubmit={addHandler}>
             <input
               className="search_input"
@@ -39,18 +39,13 @@ const StepOne = props => {
 
         <div className="search-filters">
           {props.keywordArray.map((key) => (
-            <FilterTag
-              name={key}
-              setKeywordArray={props.setKeywordArray}
-              keywordArray={props.keywordArray}
-            />
+            <FilterTag name={key} removeKeyword={props.removeKeyword} />
           ))}
 
           {props.location ? (
-            <FilterLocationTag
+            <FilterTag
               name={JSON.parse(props.location).country}
               location={props.location}
-              setLocation={props.setLocation}
             />
           ) : (
             <></>
@@ -66,9 +61,10 @@ const StepOne = props => {
             <div className="reset_circle" onClick={props.resetButton}>
               Reset
             </div>
-          </label>
+          </label> 
+
         </div>
-      </>
+        </>
     );
 }
 

@@ -11,7 +11,6 @@ const LogIn = props => {
     const passwordRef = useRef();
     const [loginStatus, setLoginStatus] = useState('');
 
-
     const submitHandler = (event) => {
       event.preventDefault();
 
@@ -20,21 +19,16 @@ const LogIn = props => {
         password: passwordRef.current.value,
       };
 
-
-      Axios.post(`http://localhost:4000/user/login`, user)
-        .then((res) => {
-          props.grabUserData(res.data);
-
+      Axios.post(`http://localhost:4000/user/login`, user).then((res)=>{
+        if (res) {
           setLoginStatus(res.data.message);
-
-        },[])
-        .catch((error) => setLoginStatus("Wrong combination"));
-
-        console.log('asdf');
+          
+        } else {
+          setLoginStatus("Wrong combination");
+        }
+        })
+        .catch((error)=>setLoginStatus('Wrong combination'));
     };
-    
-
-
 
     return (
       <div className="login">
@@ -57,15 +51,10 @@ const LogIn = props => {
             Not a user yet? <a href="signup">Sign Up</a>
           </p>
         </form>
-
-        {loginStatus === "Authentication successful" ? (
-          <Route path="/login">
-            <Redirect to="/search"/>
-          </Route>
-        ) : (
-          <p>{loginStatus}</p>
-        )}
-
+        {loginStatus}
+        {loginStatus === "Authentication successful" ? <Route path='/login'>
+            <Redirect to='/search' />
+        </Route> : <></>}
       </div>
     );
 }

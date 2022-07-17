@@ -1,6 +1,5 @@
 import React from 'react';
 import FilterTag from "./FilterTag.js";
-import FilterLocationTag from './FilterLocationTag.js';
 
 
 const StepTwo = props => {
@@ -1037,10 +1036,13 @@ const StepTwo = props => {
 
     return (
       <>
+
         <p>Step 2/2</p>
         <h2>Which geographical locations do you want to target?</h2>
 
-        <div className="search_inp_div">
+        <div
+          className="search_inp_div">
+
           <select className="search_input" onChange={changeHandler} required>
             {props.location ? (
               <option>{JSON.parse(props.location).country}</option>
@@ -1056,24 +1058,19 @@ const StepTwo = props => {
           </select>
 
           <div className="search-filters">
-            {props.keywordArray.map((key) => (
-              <FilterTag
-                name={key}
-                setKeywordArray={props.setKeywordArray}
-                keywordArray={props.keywordArray}
-              />
-            ))}
+          {props.keywordArray.map((key) => (
+            <FilterTag name={key} />
+          ))}
 
-            {props.location ? (
-              <FilterLocationTag
-                name={JSON.parse(props.location).country}
-                location={props.location}
-                setLocation={props.setLocation}
-              />
-            ) : (
-              <></>
-            )}
-          </div>
+          {props.location ? (
+            <FilterTag
+              name={JSON.parse(props.location).country}
+              location={props.location}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
         </div>
       </>
     );

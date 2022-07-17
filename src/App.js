@@ -10,71 +10,56 @@ import SingleCampaign from "./SingleCampaign/SingleCampaign.js";
 import Campaign from "./CampaignPage/Campaign.js";
 import Landing from "./Landing/Landing";
 import CreatorPage from "./CreatorPage/CreatorPage.js";
-import ProfileSetting from "./ProfileSetting/ProfileSetting.js";
 // import "./sass/style.scss";
 
 const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
-  const [userData, setUserData] = useState();
-  const [channelId, setChannelId] = useState();
-
-  const grabUserData = (data) => {
-    setUserData(data);
-    console.log(JSON.stringify(data));
-  }
-  
-  const grabChannelId = (id) => {
-    setChannelId(id);
-    console.log(JSON.stringify(id));
-  }
 
   return (
     <div className="App">
-      <Route path="/" exact={true}>
-        <Landing />
-      </Route>
-      <Route path="/search" exact={true}>
+      <Route path="/search">
         <SearchPage
           keywordArray={keywordArray}
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
-          userData={userData}
-          grabChannelId={grabChannelId}
         />
       </Route>
-      <Route path="/searchresult" exact={true}>
+
+      <Route path="/searchresult">
         <SearchResult
           keywordArray={keywordArray}
           location={location}
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
-          userData={userData}
-          grabChannelId={grabChannelId}
         />
       </Route>
-      <Route path="/signup" exact={true}>
+
+      <Route path="/signup">
         <SignUp />
       </Route>
-      <Route path="/login" exact={true}>
-        <LogIn grabUserData={grabUserData} />
+
+      <Route path="/login">
+        <LogIn />
       </Route>
-      <Route path="/getsearch" exact={true}>
-        <GetSearch userData={userData} />
+
+      <Route path="/getsearch">
+        <GetSearch />
       </Route>
-      <Route path="/singlecampaign" exact={true}>
-        <SingleCampaign userData={userData} />
+
+      <Route path="/singlecampaign">
+        <SingleCampaign />
       </Route>
-      <Route path="/campaign" exact={true}>
-        <Campaign userData={userData} />
+
+      <Route path="/campaign">
+        <Campaign />
       </Route>
-      <Route path="/creator" exact={true}>
-        <CreatorPage userData={userData} channelId={channelId} />
+      <Route path="/creator">
+        <CreatorPage />
       </Route>
-      <Route path="/profile" exact={true}>
-        <ProfileSetting />
-      </Route>
+
+      <Landing />
     </div>
   );
 };
