@@ -61,7 +61,6 @@ a:not([class]) {
 img,
 picture {
   max-width: 100%;
-  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -77,7 +76,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
 *::before,
 *::after {
@@ -101,26 +99,43 @@ body {
 }
 
 /* NAVIGATION ======================================== */
-.header .nav, .tag_div .tag, .search-result .filters ul {
+.header .nav, .tag_div .tag, .search-result .filters ul, .landing .create-account ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.nav {
-  float: right;
-  margin-right: 100px;
-  margin-top: 30px;
-}
-.nav li {
-  font-family: sans-serif;
-  display: inline;
-  font-size: 27px;
-}
-.nav li + :first-of-type {
-  padding-right: 2rem;
+.landing .create-account a {
+  text-decoration: none;
+  color: #3301A0;
 }
 
+.nav li:first-of-type {
+  padding-right: 1rem;
+}
+
+.landing .nav li:nth-of-type(2) {
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .nav {
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+  }
+  .nav li {
+    font-family: sans-serif;
+    display: inline;
+    font-size: 27px;
+  }
+  .nav li:first-of-type {
+    padding-right: 2rem;
+  }
+  .landing .nav li:nth-of-type(2) {
+    padding-right: 2rem;
+  }
+}
 a {
   color: black;
   text-decoration: none;
@@ -137,11 +152,12 @@ img {
   height: auto;
 }
 
-.logo {
-  align-self: center;
-  width: 60%;
+@media screen and (min-width: 750px) {
+  .logo {
+    justify-self: start;
+    width: 60%;
+  }
 }
-
 .searchpage .pro_pic,
 .search-result .results img {
   border-radius: 50%;
@@ -165,19 +181,43 @@ img {
   background-color: #E5E8EF;
 }
 
-.header {
-  height: 100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0 1rem;
+.header .nav {
+  margin: 1rem;
+  margin-top: 0;
 }
 
 .header ul {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
 }
 
+.header img {
+  margin: 1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.footer-background {
+  background-color: #E5E8EF;
+}
+
+@media screen and (min-width: 750px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+  .header .nav {
+    justify-self: end;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
 .nav ul {
   display: block;
 }
@@ -186,12 +226,6 @@ img {
   display: inline;
   font-size: 27px;
   color: #485063;
-}
-
-.nav {
-  float: right;
-  margin-right: 100px;
-  margin-top: 30px;
 }
 
 .nav li .active,
@@ -218,6 +252,16 @@ img {
 
 .header li {
   align-self: center;
+}
+
+.landing .btn {
+  width: 9rem;
+  height: 44px;
+  background: #E4572E;
+  font-size: 20px;
+  color: white;
+  border-radius: 500px;
+  border: none;
 }
 
 /* LAYOUT =========================================== */
@@ -330,7 +374,7 @@ img {
 
 .search-result .sort-by-grid select {
   border: none;
-  max-width: 100%;
+  max-width: fit-content;
 }
 
 .search-result .sort-by-grid div {
@@ -395,7 +439,7 @@ img {
 .search-result .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: 100%;
+  max-width: fit-content;
   padding: 0 0.25rem;
   margin: 0.25rem;
 }
@@ -556,7 +600,7 @@ img {
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-  box-shadow: 1px 5px 15px #39f5c0;
+  box-shadow: 1px 5px 15px rgb(57, 245, 192);
   cursor: pointer;
 }
 
@@ -644,7 +688,7 @@ img {
 .searchpage .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: 100%;
+  max-width: fit-content;
   padding: 0 0.25rem;
   margin: 0.25rem;
   background: #FBE3DC;
@@ -736,21 +780,17 @@ img {
   .searchpage .search_box h1 {
     font-size: 20px;
   }
-
   .searchpage .menubtn {
     display: block;
   }
-
   .searchpage .nav ul li {
     display: inherit;
     text-align: center;
     border-bottom: 1px solid grey;
   }
-
   .searchpage .nav {
     margin-right: 10px;
   }
-
   .searchpage .nav ul {
     position: absolute;
     top: 80px;
@@ -763,7 +803,6 @@ img {
     padding: 0;
     display: none;
   }
-
   .searchpage .nav .expanded ul {
     display: block;
   }
@@ -776,6 +815,116 @@ img {
   margin-left: 1rem;
 }
 
+.landing .container-background {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(81.16deg, #121724 15.87%, #373F52 103.97%);
+}
+
+.landing .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.landing .container img {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  place-self: center;
+}
+
+.landing .container p {
+  color: #E5E8EF;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.landing .container h2 {
+  color: pink;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.landing .container-elements {
+  align-self: center;
+  padding-left: 1rem;
+}
+
+.landing .container-elements .btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.landing .blue-text {
+  color: #373F52;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.landing .blue-text-no-margin {
+  color: #373F52;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.landing .cards {
+  text-align: center;
+}
+
+.landing .card {
+  max-width: max-content;
+  background: linear-gradient(126.5deg, #FFFFFF 0%, #F2F5FC 96.54%);
+  box-shadow: 5px 8px 15px rgba(20, 41, 90, 0.1);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing .create-account, .landing .footer {
+  text-align: center;
+}
+
+.landing .create-account ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.landing .create-account li {
+  padding: 0.5rem;
+}
+
+.landing .create-account h2 {
+  padding-top: 1rem;
+}
+
+.landing .create-account button {
+  margin: 1rem;
+  margin-top: 0.5rem;
+}
+
+.landing .footer p {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.landing .big-image {
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .landing .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 1rem;
+  }
+  .landing .cards div:last-of-type {
+    grid-column: 2/3;
+  }
+}
 .creator .margin {
   padding: 30px;
 }
@@ -1013,7 +1162,6 @@ img {
     display: grid;
     grid-template-columns: 100%;
   }
-
   .creator .overviewBlocks {
     display: grid;
     grid-template-columns: auto;

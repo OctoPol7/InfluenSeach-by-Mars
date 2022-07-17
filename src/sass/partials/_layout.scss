@@ -108,7 +108,7 @@
 
 .search-result .sort-by-grid  select {
     border: none;
-    max-width: 100%;
+    max-width: fit-content;
 }
 
 .search-result .sort-by-grid div {
@@ -174,7 +174,7 @@
 .search-result .tag {
     border: 1px solid darkgrey;
     border-radius: 12px;
-    max-width: 100%;
+    max-width: fit-content;
     padding: 0 0.25rem;
     margin: 0.25rem;
 }
@@ -429,7 +429,7 @@
 .searchpage .tag {
     border: 1px solid darkgrey;
     border-radius: 12px;
-    max-width: 100%;
+    max-width: fit-content;
     padding: 0 0.25rem;
     margin: 0.25rem;
     background: #FBE3DC;
@@ -575,11 +575,118 @@
     margin-left: 1rem;
 }
 
+.landing .container-background {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(81.16deg, #121724 15.87%, #373F52 103.97%);
+}
 
+.landing .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 
+.landing .container img {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    place-self: center;
+}
 
+.landing .container p {
+    color: #E5E8EF;
+    margin-top: 0.5rem;
+    text-align: left;
+}
 
+.landing .container h2 {
+    color: pink;
+    margin-top: 1rem;
+    text-align: left;
+}
 
+.landing .container-elements {
+    align-self: center;
+    padding-left: 1rem;
+}
+
+.landing .container-elements .btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.landing .blue-text {
+    color: #373F52;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.landing .blue-text-no-margin {
+    color: #373F52;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.landing .cards {
+    text-align: center;
+}
+
+.landing .card {
+    max-width: max-content;
+    background: linear-gradient(126.5deg, #FFFFFF 0%, #F2F5FC 96.54%);
+    box-shadow: 5px 8px 15px rgba(20, 41, 90, 0.1);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing .create-account, .landing .footer {
+    text-align: center;
+}
+
+.landing .create-account ul {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+}
+
+.landing .create-account li {
+    padding: 0.5rem;
+}
+
+.landing .create-account h2 {
+    padding-top: 1rem;
+}
+
+.landing .create-account button {
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.landing .footer p {
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.landing .big-image {
+    text-align: center;
+}
+
+@media screen and (min-width: 750px) { 
+    .landing .cards {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 1rem;
+    }
+
+    .landing .cards div:last-of-type {
+        grid-column: 2/3;
+    }
+
+}
 
 // CREATOR PAGE STYLES
 .creator .margin{
@@ -817,4 +924,5 @@
     grid-template-columns: 25% auto;
 
   }
+
 
