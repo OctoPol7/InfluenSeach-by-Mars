@@ -3,13 +3,17 @@
 }
 
 .header .nav {
-    margin: 1rem;
-    margin-top: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .header ul {
     display: flex;
     flex-flow: row nowrap;
+}
+
+.landing .header img {
+    width: 90%;
 }
 
 .header img {
@@ -61,6 +65,10 @@
 .nav a {
     text-decoration: none;
     color: #485063;
+}
+
+.nav .no-active {
+    color: #485063 !important;
 }
 
 .menubtn{

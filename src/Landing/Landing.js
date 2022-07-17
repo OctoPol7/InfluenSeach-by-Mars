@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import Heading from "./Heading.js";
 import Team from "./Team.js";
 import Createaccount from "./Createaccount.js";
@@ -21,11 +20,6 @@ const Landing = (props) => {
               statistics for youtube influnecers and let you plan and create new
               marketing campaigns.
             </p>
-            <NavLink to="/search">
-              <button className="btn" type="submit">
-                Launch App
-              </button>
-            </NavLink>
           </div>
           <img src={Influencers} alt="Pics of Influencers" />
         </div>

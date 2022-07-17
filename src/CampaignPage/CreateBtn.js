@@ -7,7 +7,6 @@ const CreateBtn = props => {
         <button
           onClick={props.click}
           className="create_btn"
-          style={{ margin: "2rem" }}
         >
           Create Campaign
         </button>
