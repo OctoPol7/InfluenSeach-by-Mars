@@ -26,7 +26,7 @@ const App = (props) => {
   
   const grabChannelId = (id) => {
     setChannelId(id);
-    console.log(JSON.stringify(id));
+    console.log(id);
   }
 
   return (
