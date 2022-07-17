@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../header.js'
 import Checkbox from '../SearchResult/Checkbox.js';
 import CampStatContner from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
-
+import axios from 'axios'
 
 
 
@@ -19,8 +19,28 @@ const Campaign = props => {
     }
 
     const onCreateHandler = () => {
-        console.log('d');
-    }
+      async function loadSearch() {
+        const url = `http://localhost:4000/campaigns/${props.channelId}/new-campaign`;
+
+        console.log("Bearer " + props.userData.token);
+
+        await axios
+          .post(url, {
+            headers: {
+              'Authorization': 'Bearer '+ props.userData.token
+            },
+          })
+          .then(() => {
+            console.log(url);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
+        loadSearch();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }
+    
 
     const checkboxHandler = (e) => {
         if (e.target.checked) {
@@ -34,7 +54,7 @@ const Campaign = props => {
 
     return (
       <div className="campaign-page">
-        <Header />
+        <Header userData={props.userData} />
         <CampStatContner />
         <CurCampContner />
 
@@ -53,7 +73,7 @@ const Campaign = props => {
               <form
                 className="contnr"
                 style={{ maxWidth: "500px" }}
-                onSubmit={onCreateHandler}
+                // onSubmit={onCreateHandler}
               >
                 <label className="modal_inputs">
                   Campaign Name:
@@ -140,6 +160,7 @@ const Campaign = props => {
           </div>
         ) : null}
       </div>
-    );}
+    )
+  }
 
 export default Campaign;

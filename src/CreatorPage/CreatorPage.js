@@ -15,16 +15,27 @@ import GetCreatorInfo from '../GetCreatorInfo.js'
 const CreatorPage = props => {
     const [modalshow,setModalShow] = useState(false);
     const [isAddtocamp,setIsAddtoCamp]=useState(true);
+    const [results, setResults] = useState([]);
 
     function showmodal(value) {
     setIsAddtoCamp(true)
     setModalShow(value);
     }
+
+    const grabResults = (resData) => {
+      console.log("FROM ResultPage ");
+      console.log(resData.data);
+      setResults(resData.data);
+    };
     
     return (
       <>
         <Header userData={props.userData} />
-        <GetCreatorInfo channelId={JSON.stringify(props.channelId)} />
+        <GetCreatorInfo
+          channelId={props.channelId}
+          userData={props.userData}
+          grabResults={grabResults}
+        />
         <div className="creator">
           <div className="margin">
             <div className="top_Banner">

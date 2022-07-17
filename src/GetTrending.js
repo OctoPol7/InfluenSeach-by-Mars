@@ -11,7 +11,11 @@ const GetSearch = (props) => {
       const url = `http://localhost:4000/search`;
 
       await axios
-        .get(url)
+        .get(url, {
+          headers: {
+            'Authorization': JSON.stringify(props.userData.token)
+          },
+        })
         .then((resData) => {
           console.log(url);
           props.grabResults(resData);
