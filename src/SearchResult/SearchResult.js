@@ -136,6 +136,7 @@ const SearchResult = props => {
               searchPhrase={searchPhrase}
               location={props.location}
               grabResults={grabResults}
+              userData={props.userData}
             />
             <div className="sort-by-grid">
               <h2>{results.length} creators found</h2>
@@ -150,6 +151,7 @@ const SearchResult = props => {
                   influ_name={result.brandingSettings.channel.title}
                   influ_img={result.snippet.thumbnails.default.url}
                   topic_ids={result.topicDetails.topicIds}
+                  grabChannelId={props.grabChannelId}
                 />
               ))}
             </div>

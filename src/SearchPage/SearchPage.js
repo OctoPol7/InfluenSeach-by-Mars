@@ -51,7 +51,10 @@ const SearchPage = props => {
         />
         <div className="background">
           <div className=" max-width-div">
-            <InfluContainer grabChannelId={props.grabChannelId} />
+            <InfluContainer
+              grabChannelId={props.grabChannelId}
+              userData={props.userData}
+            />
           </div>
         </div>
       </div>

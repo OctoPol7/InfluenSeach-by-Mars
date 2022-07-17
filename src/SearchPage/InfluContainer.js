@@ -17,7 +17,7 @@ const InfluContainer = props => {
     return (
       <div className="trending-influencers">
         <h1>Trending Influencers this week</h1>
-        <GetTrending grabResults={grabResults} />
+        <GetTrending grabResults={grabResults} userData={props.userData} />
         <ul className="first-ul">
           {results.map((result) => (
             <InfluCard
