@@ -2,13 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const GetCreatorInfo = (props) => {
+const AddCampaign = (props) => {
   const [isLoading, setLoading] = useState(true);
   // const [search, setSearch] = useState();
 
   useEffect(() => {
     async function loadSearch() {
-      const url = `http://localhost:4000/creatordetails/${props.channelId}`;
+      const url = `http://localhost:4000/campaigns/${props.channelId}/new-campaign`;
 
       console.log("Bearer " + props.userData.token);
 
@@ -42,4 +42,4 @@ const GetCreatorInfo = (props) => {
   }
 };
 
-export default GetCreatorInfo;
+export default AddCampaign;
