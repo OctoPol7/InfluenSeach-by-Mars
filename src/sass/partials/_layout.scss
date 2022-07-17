@@ -797,11 +797,28 @@
     }
     .creator .overviewBlocks{
         display: grid;
-        grid-template-columns: auto ;
+        grid-template-columns: auto auto ;
         padding: 20px;
         gap: 20px;
     }
-    
+    .creator .grid_container_graph {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .creator .avatar {
+        margin-top: -120px;
+    }
+    .creator .textcont {
+        margin-top: 0px;
+        padding: 20px;
+    }
+    .creator .namebord {
+        margin-left: 0px;
+    }
+    .creator .link{
+        display: flex;
+        flex-direction: column;
+    }  
   }
 
   //ProfileSetting Page

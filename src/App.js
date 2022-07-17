@@ -11,7 +11,7 @@ import Campaign from "./CampaignPage/Campaign.js";
 import Landing from "./Landing/Landing";
 import CreatorPage from "./CreatorPage/CreatorPage.js";
 import ProfileSetting from "./ProfileSetting/ProfileSetting.js";
-// import "./sass/style.scss";
+import "./sass/style.scss";
 
 const App = (props) => {
   const [location, setLocation] = useState();
