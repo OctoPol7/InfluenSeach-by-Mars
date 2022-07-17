@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Header from '../header.js'
 import ResetInput from './ResetInput.js'
-import Tag from './Tag.js'
+import FilterTag from '../SearchPage/FilterTag.js'
+import FilterLocationTag from '../SearchPage/FilterLocationTag.js'
 import CountryDropdown from './CountryDropdown.js'
 import Checkbox from './Checkbox.js'
 import SortByDropdown from './SortByDropdown.js'
@@ -16,22 +17,43 @@ const SearchResult = props => {
 
   const keywordHandler = (event) => {
     setKeyword(event.target.value);
+    console.log(event.target.value);
   };
 
   const addHandler = (event) => {
     event.preventDefault();
-    props.setKeywordArray([...props.keywordArray, keyword]);
+    props.setKeywordArray([keyword, ...props.keywordArray]);
     console.log(props.keywordArray);
 
     setKeyword("");
   };
-
 
   const grabResults = (resData) => {
     console.log("FROM ResultPage " + props.location.country);
     console.log(resData.data);
     setResults(resData.data);
   }
+
+  // useEffect(() => {
+  //   return console.log(props.keywordArray);
+  // }, [props.keywordArray]);
+
+  const removeKeyword = (key) => {
+    const newArray = props.keywordArray;
+    newArray.splice(props.keywordArray.indexOf(key), 1);
+    props.setKeywordArray(newArray);
+    console.log(props.keywordArray);
+  };
+
+  const grabLocation = (key) => {
+    props.setLocation(key);
+    console.log(props.location);
+  };
+
+  const resetButton = () => {
+    props.setKeywordArray([]);
+    props.setLocation(null);
+  };
 
     return (
       <div className="search-result">
@@ -58,17 +80,24 @@ const SearchResult = props => {
             <div className="one-line">
               <ul>
                 {props.keywordArray.map((key) => (
-                  <Tag name={key} />
+                  <FilterTag
+                    name={key}
+                    setKeywordArray={props.setKeywordArray}
+                    keywordArray={props.keywordArray}
+                  />
                 ))}
 
-                <Tag name={JSON.parse(props.location).country} />
+                {props.location ? (
+                  <FilterLocationTag
+                    name={JSON.parse(props.location).country}
+                    location={props.location}
+                    setLocation={props.setLocation}
+                  />
+                ) : (
+                  <></>
+                )}
               </ul>
-              <ResetInput
-                keywordArray={props.keywordArray}
-                location={props.location}
-                setKeywordArray={props.setKeywordArray}
-                setLocation={props.setLocation}
-              />
+              <ResetInput resetButton={resetButton} />
             </div>
           </div>
         </div>
