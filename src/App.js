@@ -17,12 +17,17 @@ const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
   const [userData, setUserData] = useState();
+  const [channelId, setChannelId] = useState();
 
   const grabUserData = (data) => {
     setUserData(data);
     console.log(JSON.stringify(data));
   }
   
+  const grabChannelId = (id) => {
+    setChannelId(id);
+    console.log(JSON.stringify(id));
+  }
 
   return (
     <div className="App">
@@ -36,6 +41,7 @@ const App = (props) => {
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
           userData={userData}
+          grabChannelId={grabChannelId}
         />
       </Route>
       <Route path="/searchresult" exact={true}>
@@ -45,6 +51,7 @@ const App = (props) => {
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
           userData={userData}
+          grabChannelId={grabChannelId}
         />
       </Route>
       <Route path="/signup" exact={true}>
@@ -63,7 +70,7 @@ const App = (props) => {
         <Campaign userData={userData} />
       </Route>
       <Route path="/creator" exact={true}>
-        <CreatorPage userData={userData} />
+        <CreatorPage userData={userData} channelId={channelId} />
       </Route>
       <Route path="/profile" exact={true}>
         <ProfileSetting />

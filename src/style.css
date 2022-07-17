@@ -330,7 +330,7 @@ img {
 
 .search-result .sort-by-grid select {
   border: none;
-  max-width: fit-content;
+  max-width: 100%;
 }
 
 .search-result .sort-by-grid div {
@@ -395,7 +395,7 @@ img {
 .search-result .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: fit-content;
+  max-width: 100%;
   padding: 0 0.25rem;
   margin: 0.25rem;
 }
@@ -644,7 +644,7 @@ img {
 .searchpage .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: fit-content;
+  max-width: 100%;
   padding: 0 0.25rem;
   margin: 0.25rem;
   background: #FBE3DC;
