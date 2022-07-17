@@ -6,24 +6,14 @@ const GetSearch = (props) => {
   const [isLoading, setLoading] = useState(true);
   // const [search, setSearch] = useState();
 
-  console.log(props.location);
-  
   useEffect(() => {
     async function loadSearch() {
-      const part = "snippet";
-      const publishedAfter = "2020-06-10T00%3A00%3A00Z";
-      const searchPhrase = props.searchPhrase;
-      const type = "video";
-      const maxResults = "20";
-      const orderBy = "viewCount";
-      const regionCode = JSON.parse(props.location).code;
-      const url = `https://localhost:4000/search/${part}/${searchPhrase}/${type}/${publishedAfter}/${maxResults}/${orderBy}/${regionCode}`;
+      const url = `http://localhost:4000/getCreatorDetails/${props.channelId}`;
 
       await axios
         .get(url)
         .then((resData) => {
           console.log(url);
-          console.log(props.searchPhrase);
           props.grabResults(resData);
           setLoading(false);
         })
@@ -32,10 +22,9 @@ const GetSearch = (props) => {
         });
     }
     loadSearch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //console.log(search);
   if (isLoading) {
     return (
       <>
@@ -43,11 +32,7 @@ const GetSearch = (props) => {
       </>
     );
   } else {
-    return (
-      <>
-        {/* <h1>Search Successfull!</h1> */}
-      </>
-    );
+    return <>{/* <h1>Search Successful!</h1> */}</>;
   }
 };
 

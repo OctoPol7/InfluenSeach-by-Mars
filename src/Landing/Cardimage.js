@@ -5,37 +5,37 @@ const Cardimage = (props) => {
   return (
     <div className="cards">
       <div class="card">
-        <img src={Avatar} alt="Picture of Chumpol"></img>
+        <img src={Avatar} alt="Chumpol"></img>
         <p>Chumpol</p>
         <p>Full Stack Developer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Tanya"></img>
+        <img src={Avatar} alt="Tanya"></img>
         <p>Tanya</p>
         <p>Front-End Developer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Roberto"></img>
+        <img src={Avatar} alt="Roberto"></img>
         <p>Roberto</p>
         <p>Back-End Developer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Thushara"></img>
+        <img src={Avatar} alt="Thushara"></img>
         <p>Thushara</p>
         <p>Front-End Developer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Saurabh"></img>
+        <img src={Avatar} alt="Saurabh"></img>
         <p>Saurabh</p>
         <p>Full Stack Developer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Siddharth"></img>
+        <img src={Avatar} alt="Siddharth"></img>
         <p>Siddharth</p>
         <p>UI/UX Designer</p>
       </div>
       <div class="card">
-        <img src={Avatar} alt="Picture of Yash"></img>
+        <img src={Avatar} alt="Yash"></img>
         <p>Yash</p>
         <p>UI/UX Designer</p>
       </div>

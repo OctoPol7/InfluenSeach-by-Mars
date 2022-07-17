@@ -362,7 +362,7 @@ img {
 
 .search-result .sort-by-grid select {
   border: none;
-  max-width: fit-content;
+  max-width: 100%;
 }
 
 .search-result .sort-by-grid div {
@@ -427,7 +427,7 @@ img {
 .search-result .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: fit-content;
+  max-width: 100%;
   padding: 0 0.25rem;
   margin: 0.25rem;
 }
@@ -676,7 +676,7 @@ img {
 .searchpage .tag {
   border: 1px solid darkgrey;
   border-radius: 12px;
-  max-width: fit-content;
+  max-width: 100%;
   padding: 0 0.25rem;
   margin: 0.25rem;
   background: #FBE3DC;
@@ -758,67 +758,10 @@ img {
   border: none;
 }
 
-.creator .margin {
-  padding: 30px;
-}
-
-.creator .tob_Banner {
-  height: 250px;
-}
-
-.creator .top_Banner_bg {
-  height: 150px;
-  background-image: url("https://i.pinimg.com/736x/69/0f/51/690f51e0aded53b927d2b4397571e0c6.jpg");
-  display: flex;
-  justify-content: flex-end;
-}
-
-.creator .avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  position: absolute;
-  margin: 10px;
-  margin-top: -42px;
-  border: 1px solid white;
-  margin-left: 40px;
-}
-
-.creator .popubtn {
-  width: 160px;
-  height: 40px;
-  border-radius: 25px;
-  align-self: flex-end;
-  margin: 20px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-}
-
-.creator .textcont {
-  display: flex;
-}
-
-.creator .namebord {
-  margin-left: 140px;
-}
-
-.creator .baner {
-  font-size: 13px;
-}
-
-.creator .score_card {
-  width: 80px;
-  height: 70px;
-  background-color: blue;
-  position: absolute;
-  right: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  border-radius: 0 0 10px 10px;
+.searchpage .btn:hover {
+  background: #e54f21;
+  transform: scale(1.025);
+  transition: 0.25s all;
 }
 
 @media screen and (max-width: 600px) {
@@ -970,6 +913,255 @@ img {
     grid-column: 2/3;
   }
 }
+.creator .margin {
+  padding: 30px;
+}
+
+.creator .tob_Banner {
+  height: 250px;
+}
+
+.creator .top_Banner_bg {
+  height: 150px;
+  background-image: url("https://i.pinimg.com/736x/69/0f/51/690f51e0aded53b927d2b4397571e0c6.jpg");
+  display: flex;
+  justify-content: flex-end;
+}
+
+.creator .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  margin: 10px;
+  margin-top: -42px;
+  border: 1px solid white;
+  margin-left: 40px;
+}
+
+.creator .popubtn {
+  width: 160px;
+  height: 40px;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin: 20px;
+  background: #E4572E;
+  color: white;
+  border: none;
+}
+
+.creator .textcont {
+  display: flex;
+}
+
+.creator .namebord {
+  margin-left: 140px;
+}
+
+.creator .baner {
+  font-size: 13px;
+}
+
+.creator .score_card {
+  width: 80px;
+  height: 70px;
+  background: #4501D5;
+  position: absolute;
+  right: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.creator .grid_container {
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.creator .block {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator .overviewBlocks {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.creator .video {
+  margin-top: 20px;
+}
+
+.creator .tags {
+  width: 100px;
+  height: 28px;
+  color: #3D1408;
+  border-radius: 20px;
+  border: 1px solid grey;
+  margin: 5px;
+  background: #FBE3DC;
+  border: 1px solid #ED8F74;
+}
+
+.creator .tag_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator .popubtn {
+  width: 160px;
+  height: 40px;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin: 20px;
+  background: #E4572E;
+  color: white;
+  border: none;
+}
+
+.creator.filter_result {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ded2d2;
+  padding: 10px;
+}
+
+.creator .filter_title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.creator .creat_capm_txt {
+  text-align: center;
+  color: blue;
+  padding: 20px;
+}
+
+.creator .filtr_text_cont {
+  padding-left: 20px;
+}
+
+.creator .filter_subtitle {
+  font-size: 13px;
+}
+
+.creator .ml20 {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.creator .tag_cntnr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.creator .modal_inputs {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.creator .modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator .modal_content {
+  width: 400px;
+  height: 500px;
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.creator .contnr {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.creator .cbtn {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  background: #E4572E;
+  color: white;
+  border: none;
+  margin-top: 25px;
+}
+
+.creator .modal_search_input {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  padding-left: 10px;
+}
+
+.creator .modal_style {
+  display: flex;
+  justify-content: space-between;
+}
+
+.creator .pointer {
+  cursor: pointer;
+}
+
+.creator .textarea {
+  width: 100%;
+  border-radius: 5;
+  background-color: white;
+}
+
+.creator .graph_style {
+  border: 1px solid;
+  padding: 100px;
+}
+
+.creator .grid_container_graph {
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .creator .grid_container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .creator .overviewBlocks {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+.profile .grid_container {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+
 /* ACCESSIBILITY =================================== */
 .visually-hidden {
   clip: rect(0 0 0 0);
