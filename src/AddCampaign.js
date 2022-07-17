@@ -4,33 +4,38 @@ import { useState, useEffect } from "react";
 
 const AddCampaign = (props) => {
   const [isLoading, setLoading] = useState(true);
-  // const [search, setSearch] = useState();
-
+  
   useEffect(() => {
-    async function loadSearch() {
-      const url = `http://localhost:4000/campaigns/${props.channelId}/new-campaign`;
-
-      console.log("Bearer " + props.userData.token);
+    async function newCampaign() {
+      const uid = props.userData.uid;
+      const token = props.userData.token;
+      const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
 
       await axios
-        .get(url, {
-          headers: {
-            'Authorization': 'Bearer '+ props.userData.token
+        .post(url, 
+          {
+            "campaignName": "New Campaign",
+            "description": "This is a test for frontend component",
+            "tags": ["frontend","new","campaigns"]
           },
-        })
+          {
+            headers: {
+              'Authorization': 'Bearer '+ token
+            }
+          }
+        )
         .then((resData) => {
-          console.log(url);
-          props.grabResults(resData);
-          setLoading(false);
+          console.log(resData);
         })
         .catch((error) => {
           console.log(error);
         });
     }
-    loadSearch();
+    newCampaign();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  //console.log(search);
   if (isLoading) {
     return (
       <>
@@ -38,7 +43,11 @@ const AddCampaign = (props) => {
       </>
     );
   } else {
-    return <>{/* <h1>Search Successful!</h1> */}</>;
+    return (
+      <>
+        {/* <h1>Search Successfull!</h1> */}
+      </>
+    );
   }
 };
 
