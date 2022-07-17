@@ -284,11 +284,8 @@
 
 
 // Campaign Home page styling
-.campaingn-page .pad20{
-    padding: 20px;
-}
 
-.campaingn-page .campstat_card{
+.campaign-page .campstat_card{
     border: 1px solid black;
     height: 150px;
     border-radius: 10px;
@@ -297,19 +294,19 @@
     padding: 30px;
 }
 
-.campaingn-page .statcard_div{
+.campaign-page .statcard_div{
     display: flex;
     flex-direction: row;
 }
 
-.campaingn-page .search_hme_div{
+.campaign-page .search_hme_div{
     background-color: lightgray;
     margin: 30px 10px;
     padding-left:20px;
     border-radius: 5px;
 }
 
-.campaingn-page .curcamp_card{
+.campaign-page .curcamp_card{
     border: 1px solid black;
     height: 230px;
     width: 23%;
@@ -319,13 +316,13 @@
     align-items: center;
 }
 
-.campaingn-page .camcard_div{
+.campaign-page .camcard_div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.campaingn-page .create_btn{
+.campaign-page .create_btn{
     display: flex;
     position: fixed;
     bottom: 50px;
@@ -342,7 +339,7 @@
 
 }
 
-.campaingn-page .modal_overlay{
+.campaign-page .modal_overlay{
     position: fixed;
     top: 0;
     left: 0;
@@ -354,7 +351,7 @@
     align-items: center;
 }
 
-.campaingn-page .modal_content{
+.campaign-page .modal_content{
     width: 400px;
     height: 500px;
     background-color: white;
@@ -362,7 +359,7 @@
     border-radius: 10px;
 }
 
-.campaingn-page .modal_inputs{
+.campaign-page .modal_inputs{
     background-color: lightgray;
     display:flex;
     flex-direction:row;
@@ -372,7 +369,7 @@
     margin-bottom: 10px;
 }
 
-.campaingn-page .modal_search_input{
+.campaign-page .modal_search_input{
     width: 100%;
     height: 40px;
     background-color: transparent;
@@ -381,24 +378,12 @@
 
 }
 
-.campaingn-page .contnr{
+.campaign-page .contnr{
     width: 100%;
     padding-top: 20px;
 }
 
-.campaingn-page .mchip{
-    width: 80px;
-    height: 30px;
-    background-color: black;
-    color:white;
-    margin:5px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.campaingn-page .cbtn{
+.campaign-page .cbtn{
     width: 100px;
     height: 40px;
     color: white;
@@ -408,7 +393,7 @@
     margin-top: 25px;
 }
 
-.campaingn-page .search_hme_div {
+.campaign-page .search_hme_div {
     display:'flex';
     flex-direction:'row';
     justify-content:'space-between';
@@ -426,7 +411,8 @@
    padding: 1rem;
 }
 
-.searchpage .tag {
+.searchpage .tag,
+.campaign-page .tag {
     border: 1px solid darkgrey;
     border-radius: 12px;
     max-width: fit-content;

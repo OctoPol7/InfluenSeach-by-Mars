@@ -1,5 +1,6 @@
 import React from 'react'
 import Inputs from './Inputs';
+import CloseIcon from '../CloseIcon.png'
 
 
 const Modal = props => {
@@ -10,39 +11,28 @@ const Modal = props => {
         <div className='modal_overlay' >
             <div className='modal_content'>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <h3>Create Campaign</h3>
-                    <h3 style={{cursor:'pointer'}} >X</h3>
+                <div>
+                    <h2>Create Campaign</h2>
+                    <button type="button">
+                        <img src={CloseIcon} alt="Close"></img>
+                    </button>
                 </div>
 
                 <div className='contnr'>
-                    <h4>Campaign Name</h4>
+                    <h3>Choose campaign name</h3>
 
-                    <Inputs placeholder="Name" />
+                    <Inputs placeholder="Title" />
 
-                    <h4>Create Description</h4>
+                    <h3>Choose description</h3>
 
-                    <textarea placeholder='Type text below..' rows={5} style={{width:'100%',borderRadius:5,backgroundColor:'lightgray'}}></textarea>
+                    <textarea placeholder='This is a new campaign' rows={5}></textarea>
                 
-                    <h4>Add target Keywords</h4>
-                    <div className='modal_inputs'>
-                        <div className='mchip'>
-                            test
-                        </div>
+                    <h3>Add tags or keywords</h3>
+                    <ul className='modal-filters tag_div'>
+                        <li className="tag">Gaming</li>
+                    </ul>
 
-                        <div className='mchip'>
-                            test
-                        </div>
-
-                        <div className='mchip'>
-                            test
-                        </div>
-                        <div className='mchip'>
-                            test
-                        </div>
-                    </div>
-
-                    <button className='cbtn'>Create</button>
+                    <button className='cbtn'>Create campaign</button>
                 </div>
 
 
