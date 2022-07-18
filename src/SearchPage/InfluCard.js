@@ -5,13 +5,25 @@ import Tag from './Tag.js';
 
 const InfluCard = props => {
 
-  const channelIdHandler = () => {
-    props.grabChannelId(props.channel_id);
-    
+  let channelInfo;
+
+  const channelInfoHandler = () => {
+     channelInfo = {
+       id: props.channel_id,
+       name: props.influ_name,
+       image: props.influ_img,
+       country: props.country,
+       subCount: props.sub_count,
+       vidCount: props.video_count,
+       viewCount: props.view_count,
+       topicIds: props.topic_ids,
+     };
+    props.grabChannelInfo(channelInfo);
+    console.log(channelInfo)
   }
     return (
-      <li onClick={channelIdHandler}>
-        <NavLink to="/creator" channel_id={JSON.stringify(props.channel_id)}>
+      <li onClick={channelInfoHandler}>
+        <NavLink to="/creator">
           <div className="influ_div">
             <div>
               <img

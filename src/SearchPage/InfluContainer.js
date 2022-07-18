@@ -23,11 +23,13 @@ const InfluContainer = props => {
             <InfluCard
               sub_count={result.statistics.subscriberCount}
               video_count={result.statistics.videoCount}
+              view_count={result.statistics.viewCount}
               influ_name={result.brandingSettings.channel.title}
               influ_img={result.snippet.thumbnails.default.url}
               topic_ids={result.topicDetails.topicIds}
+              country={result.brandingSettings.channel.country}
               channel_id={result.id}
-              grabChannelId={props.grabChannelId}
+              grabChannelInfo={props.grabChannelInfo}
             />
           ))}
         </ul>

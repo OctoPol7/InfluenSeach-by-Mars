@@ -479,7 +479,7 @@ const Tag = props => {
 
         return (
           <>
-            {found === undefined ? <></> : <li className="tag">{found.topic}</li>}
+            {found === undefined ? <></> : <li className={`tag ${props.className ? props.className : ""} ?`}>{found.topic}</li>}
           </>
         );
 
