@@ -92,7 +92,10 @@ const App = (props) => {
       <Route path="/creator" exact={true}>
         <CreatorPage userData={userData} channelInfo={channelInfo} channelId={channelId} />
       </Route>
-      <Route path="/profile" exact={true}>
+      {/* <Route path="/profile" exact={true}>
+        <ProfileSetting />
+      </Route> */}
+      <Route path="/profile">
         <ProfileSetting />
       </Route>
     </div>
