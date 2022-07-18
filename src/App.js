@@ -11,6 +11,7 @@ import Campaign from "./CampaignPage/Campaign.js";
 import Landing from "./Landing/Landing";
 import CreatorPage from "./CreatorPage/CreatorPage.js";
 import ProfileSetting from "./ProfileSetting/ProfileSetting.js";
+import AddCampaign from "./AddCampaign.js";
 // import "./sass/style.scss";
 
 const App = (props) => {
@@ -21,8 +22,11 @@ const App = (props) => {
 
   const grabUserData = (data) => {
     setUserData(data);
-    console.log(JSON.stringify(data));
+    //console.log(JSON.stringify(data));
+    console.log(data);
   }
+
+  console.log("This is UserData: ... ",userData);
   
   const grabChannelId = (id) => {
     setChannelId(id);
@@ -68,6 +72,9 @@ const App = (props) => {
       </Route>
       <Route path="/campaign" exact={true}>
         <Campaign userData={userData} />
+      </Route>
+      <Route path="/newcampaign" exact={true}>
+        <AddCampaign userData={userData} />
       </Route>
       <Route path="/creator" exact={true}>
         <CreatorPage userData={userData} channelId={channelId} />
