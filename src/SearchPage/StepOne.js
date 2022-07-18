@@ -18,8 +18,8 @@ const StepOne = props => {
 
     return (
       <>
-        <p>Step 1/2</p>
-        <h2>Which industry do you want to explore creators in?</h2>
+        <p className='step-number'>Step 1/2</p>
+        <h2 className='step-details'>Which industry do you want to explore creators in?</h2>
 
         {/* <SearchInput
           grabKeyword={props.grabKeyword}

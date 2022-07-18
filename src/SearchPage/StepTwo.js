@@ -1037,8 +1037,8 @@ const StepTwo = props => {
 
     return (
       <>
-        <p>Step 2/2</p>
-        <h2>Which geographical locations do you want to target?</h2>
+        <p className='step-number'>Step 2/2</p>
+        <h2 className='step-details'>Which geographical locations do you want to target?</h2>
 
         <div className="search_inp_div">
           <select className="search_input" onChange={changeHandler} required>
