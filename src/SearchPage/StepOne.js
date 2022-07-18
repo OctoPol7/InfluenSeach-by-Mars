@@ -26,15 +26,16 @@ const StepOne = props => {
           resetButton={props.resetButton}
         /> */}
         <div className="search_inp_div">
+          <div>
           <form onSubmit={addHandler}>
             <input
               className="search_input"
-              type="text"
+              type="text" 
               placeholder="Gaming, Lifestyle"
               value={keyword}
               onChange={keywordHandler}
             />
-          </form>
+          </form></div>
         </div>
 
         <div className="search-filters">
@@ -55,19 +56,12 @@ const StepOne = props => {
           ) : (
             <></>
           )}
-
-          <label
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+        </div>
+        <label>
             <div className="reset_circle" onClick={props.resetButton}>
               Reset
             </div>
           </label>
-        </div>
       </>
     );
 }

@@ -78,7 +78,6 @@ const SearchResult = props => {
           <div className="max-width-div">
             <div className='reset-button-layout'>
             <h2>Your current search:</h2>
-            <ResetInput resetButton={resetButton} />
             </div>
             <div className="one-line">
               <ul>
@@ -100,6 +99,7 @@ const SearchResult = props => {
                   <></>
                 )}
               </ul>
+              <ResetInput resetButton={resetButton} />
             </div>
           </div>
         </div>

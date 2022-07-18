@@ -211,7 +211,8 @@ img {
 
 .header ul {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .landing .header img {
@@ -233,6 +234,9 @@ img {
 }
 
 @media screen and (min-width: 750px) {
+  .header ul {
+    flex-flow: row nowrap;
+  }
   .header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -363,18 +367,66 @@ img {
   margin: 0 auto;
 }
 
+.search-result .filters .choose-gender,
+.search-result .filters .choose-area,
+.search-result .filters .choose-topic {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-result .choose-area select {
+  margin-top: 0.75rem;
+}
+
+.search-result .one-line .filtertag,
+.searchpage .search-filters .filtertag {
+  margin-left: 1rem;
+}
+
+.search-result .one-line {
+  text-align: center;
+}
+
+.search-result .one-line ul,
+.searchpage .search-filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.search-result .one-line ul {
+  padding-left: 1rem;
+}
+
+.searchpage .reset_circle {
+  font-weight: bold;
+  transition: all 0.25s;
+}
+
+.searchpage .reset_circle:hover {
+  transform: scale(1.25);
+}
+
 .searchpage .first-ul {
   margin: 1rem;
   padding: 0;
 }
 
 .searchpage .first-ul li {
-  border: 1px solid #A4A4A4;
   margin: 1rem;
 }
 
+.searchpage .tag_div li {
+  margin: 0.25rem;
+}
+
+.searchpage .tag_div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .searchpage .trending-influencers h1 {
-  margin-left: 1rem;
+  margin-left: 2rem;
+  padding-top: 1rem;
 }
 
 .searchpage .influ .influ-div {
@@ -420,6 +472,8 @@ img {
   border-top: 1px solid darkgray;
   border-bottom: 1px solid darkgray;
   padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .search-result .influ_count_div div:last-of-type {
@@ -470,19 +524,22 @@ img {
 }
 
 .search-result .add-button {
-  width: 60px;
+  width: 100px;
   height: 34px;
   background: #E4572E;
   font-size: 20px;
   color: white;
-  margin-left: 0.5rem;
   border: none;
+  border-radius: 500px;
+  margin: 1rem;
 }
 
-.search-result .one-line {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+.search-result .apply-filters-div {
+  padding-left: 1rem;
+}
+
+.search-result .reset-button-layout h2 {
+  padding: 1rem;
 }
 
 .search-result .filters ul button {
@@ -599,16 +656,56 @@ img {
   transform: scale(1.025);
 }
 
+.searchpage .search-filters .filtertag button,
+.search-result .filtertag button {
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 750px) {
   .searchpage .tag_div,
 .search-result .tag_div {
-    height: 3rem;
+    height: 3.5rem;
     overflow: hidden;
   }
   .searchpage .influ_div h2,
 .search-result .results h2 {
     height: 2rem;
     overflow: hidden;
+  }
+  .searchpage .search-filters .filtertag {
+    margin: 0.5rem;
+  }
+  .searchpage .trending-influencers .first-ul,
+.searchpage .influ .influ-cards,
+.search-result .results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .searchpage .search_inp_div {
+    width: 915px;
+    margin: 1rem auto;
+  }
+  .searchpage .search-filters {
+    width: 900px;
+    margin: 1rem auto;
+  }
+  .search-result .apply-filters-div {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .search-result .searched-keywords,
+.search-result .header {
+    grid-column: 1/-1;
+  }
+  .search-result .sort-by-grid {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-left: 1rem;
+  }
+  .search-result .sort-by-grid select {
+    max-width: 75%;
   }
 }
 .campaign-page .campstat_card {
