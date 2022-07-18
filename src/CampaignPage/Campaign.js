@@ -4,7 +4,8 @@ import Checkbox from '../SearchResult/Checkbox.js';
 import CampStatContner from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
-import axios from 'axios'
+import axios from 'axios';
+import CloseIcon from '../CloseIcon.png'
 
 
 
@@ -56,51 +57,54 @@ const Campaign = props => {
       <div className="campaign-page">
         <Header userData={props.userData} />
         <CampStatContner />
+        <div>
+        <form>
+            <input
+              className="search_input"
+              type="text"
+              placeholder="Search for a campaign"
+            />
+            <button type="submit">Create New Campaign</button>
+          </form>
+        </div>
         <CurCampContner />
 
         <CreateBtn click={() => showmodal()} />
 
         {modalShow ? (
-          <div className="modal_overlay" style={{ margin: "2rem" }}>
+          <div className="modal_overlay">
             <div className="modal_content">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>Create a campaign</h3>
-                <h3 style={{ cursor: "pointer" }} onClick={() => showmodal()}>
-                  X
-                </h3>
+              <div>
+                <h2>Create a campaign</h2>
+                <button type="button" onClick={() => showmodal()}>
+                  <img src={CloseIcon} alt="Close"></img>
+                </button>
               </div>
 
               <form
                 className="contnr"
-                style={{ maxWidth: "500px" }}
                 // onSubmit={onCreateHandler}
               >
                 <label className="modal_inputs">
-                  Campaign Name:
+                Choose campaign name
                   <input
                     className="modal_search_input"
                     type="text"
                     name="name"
-                    placeholder="Type your campaign name"
-                    style={{ width: "100%" }}
+                    placeholder="Title"
                   />
                 </label>
 
                 <label>
-                  Create Description:
+                Choose description:
                   <textarea
-                    placeholder="Type text below.."
+                    placeholder="This is a new campaign"
                     rows={5}
-                    style={{
-                      width: "100%",
-                      borderRadius: 5,
-                      backgroundColor: "lightgray",
-                    }}
                   ></textarea>
                 </label>
 
                 <label className="modal_inputs">
-                  Add target Keywords
+                  Add tags or keywords
                   <Checkbox
                     name="Lifestyle"
                     cbid="/m/019_rr"
@@ -153,7 +157,7 @@ const Campaign = props => {
                   />
                 </label>
                 <button className="cbtn" type="submit">
-                  Create
+                  Create Campaign
                 </button>
               </form>
             </div>

@@ -2,22 +2,19 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const AddCampaign = (props) => {
+const RemoveCreatorCampaign = (props) => {
   const [isLoading, setLoading] = useState(true);
   
   useEffect(() => {
-    async function newCampaign() {
+    async function removeCreator() {
       const uid = props.userData.uid;
+      const campaignName = "Campaign Name"; //replace with campaign name value
+      const creatorId = "creator Id"; //replace with creator id
       const token = props.userData.token;
-      const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
+      const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/${creatorId}/remove-creator`;
 
       await axios
-        .post(url, 
-          {
-            "campaignName": "New Campaign",
-            "description": "This is a test for frontend component",
-            "tags": ["frontend","new","campaigns"]
-          },
+        .patch(url,
           {
             headers: {
               'Authorization': 'Bearer '+ token
@@ -31,7 +28,7 @@ const AddCampaign = (props) => {
           console.log(error);
         });
     }
-    newCampaign();
+    removeCreator();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -51,4 +48,4 @@ const AddCampaign = (props) => {
   }
 };
 
-export default AddCampaign;
+export default RemoveCreatorCampaign;

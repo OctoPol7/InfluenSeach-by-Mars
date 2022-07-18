@@ -2,21 +2,20 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const AddCampaign = (props) => {
+const AddCreatorCampaign = (props) => {
   const [isLoading, setLoading] = useState(true);
   
   useEffect(() => {
-    async function newCampaign() {
+    async function addCreator() {
       const uid = props.userData.uid;
+      const campaignName = "Campaign Name"; //replace with campaign name value
       const token = props.userData.token;
-      const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
+      const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
 
       await axios
-        .post(url, 
+        .patch(url, 
           {
-            "campaignName": "New Campaign",
-            "description": "This is a test for frontend component",
-            "tags": ["frontend","new","campaigns"]
+            "creatorId": "channelId" //replace with channel id value
           },
           {
             headers: {
@@ -31,7 +30,7 @@ const AddCampaign = (props) => {
           console.log(error);
         });
     }
-    newCampaign();
+    addCreator();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -51,4 +50,4 @@ const AddCampaign = (props) => {
   }
 };
 
-export default AddCampaign;
+export default AddCreatorCampaign;

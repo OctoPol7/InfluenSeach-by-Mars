@@ -2,22 +2,17 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const AddCampaign = (props) => {
+const GetCampaigns = (props) => {
   const [isLoading, setLoading] = useState(true);
   
   useEffect(() => {
-    async function newCampaign() {
+    async function getCampaigns() {
       const uid = props.userData.uid;
       const token = props.userData.token;
-      const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
+      const url = `http://localhost:4000/campaigns/${uid}`;
 
       await axios
-        .post(url, 
-          {
-            "campaignName": "New Campaign",
-            "description": "This is a test for frontend component",
-            "tags": ["frontend","new","campaigns"]
-          },
+        .get(url,
           {
             headers: {
               'Authorization': 'Bearer '+ token
@@ -31,7 +26,7 @@ const AddCampaign = (props) => {
           console.log(error);
         });
     }
-    newCampaign();
+    getCampaigns();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -51,4 +46,4 @@ const AddCampaign = (props) => {
   }
 };
 
-export default AddCampaign;
+export default GetCampaigns;

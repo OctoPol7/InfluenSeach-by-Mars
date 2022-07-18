@@ -14,6 +14,7 @@ const GetSearch = (props) => {
         .get(url, {
           headers: {
             "Authorization": "Bearer " + props.userData.token,
+
           },
         })
         .then((resData) => {
