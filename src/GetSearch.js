@@ -22,7 +22,7 @@ const GetSearch = (props) => {
       await axios
         .get(url, {
           headers: {
-            'Authorization': JSON.stringify(props.userData.token)
+            "Authorization": "Bearer " + props.userData.token,
           },
         })
         .then((resData) => {
