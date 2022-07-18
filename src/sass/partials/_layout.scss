@@ -97,6 +97,8 @@
 
 .searchpage .reset_circle {
     font-weight:bold;
+    width: fit-content;
+    margin: 0 auto;
     transition: all .25s;
 }
 
@@ -104,15 +106,17 @@
     transform: scale(1.25);
 }
 
-//   .searchpage .influ .influ-cards {
-//     margin-left: 1rem;
-// }
-
+.search-result .results,
 .searchpage .first-ul {
     margin: 1rem;
     padding: 0;
 }
 
+.search-result .results {
+    margin-left: 0;
+}
+
+.search-result .results li,
 .searchpage .first-ul li {
     // border: 1px solid #A4A4A4;
     margin: 1rem;
@@ -391,7 +395,7 @@
     }
 
     .searchpage .search_inp_div {
-        width: 915px;
+        max-width: 915px;
         margin: 1rem auto;
     }
 
