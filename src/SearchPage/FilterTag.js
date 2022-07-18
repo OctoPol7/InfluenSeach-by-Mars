@@ -14,6 +14,7 @@ const FilterTag = props => {
     })
     await props.setKeywordArray(newArray);
     console.log(props.keywordArray);
+    props.setSearchPhrase(props.keywordArray);
   };
     return (
       <>
