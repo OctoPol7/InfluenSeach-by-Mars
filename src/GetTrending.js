@@ -13,7 +13,8 @@ const GetSearch = (props) => {
       await axios
         .get(url, {
           headers: {
-            'Authorization': 'Bearer ' + props.userData.token,
+            "Authorization": "Bearer " + props.userData.token,
+
           },
         })
         .then((resData) => {

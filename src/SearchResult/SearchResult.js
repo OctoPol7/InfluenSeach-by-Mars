@@ -23,27 +23,29 @@ const SearchResult = props => {
   const addHandler = (event) => {
     event.preventDefault();
     props.setKeywordArray([keyword, ...props.keywordArray]);
-    console.log(props.keywordArray);
+    newSearchPhrase();
 
     setKeyword("");
   };
+
+  const checkboxHandler = (event) => {
+    setKeyword(event.target.value);
+    event.preventDefault();
+    props.setKeywordArray([keyword, ...props.keywordArray]);
+    newSearchPhrase();
+  }
+
+  const newSearchPhrase = () => {
+    console.log(props.keywordArray);
+    setSearchPhrase(props.keywordArray.join(" "));
+    console.log(searchPhrase);
+  }
 
   const grabResults = (resData) => {
     console.log("FROM ResultPage " + props.location.country);
     console.log(resData.data);
     setResults(resData.data);
   }
-
-  // useEffect(() => {
-  //   return console.log(props.keywordArray);
-  // }, [props.keywordArray]);
-
-  const removeKeyword = (key) => {
-    const newArray = props.keywordArray;
-    newArray.splice(props.keywordArray.indexOf(key), 1);
-    props.setKeywordArray(newArray);
-    console.log(props.keywordArray);
-  };
 
   const grabLocation = (key) => {
     props.setLocation(key);
@@ -55,6 +57,10 @@ const SearchResult = props => {
     props.setLocation(null);
   };
 
+  const topicArray = [
+    "Lifestyle", "Music", "Family", "Technology", "Design", "Travel"
+  ]
+
     return (
       <div className="search-result">
         <Header userData={props.userData} />
@@ -65,7 +71,6 @@ const SearchResult = props => {
               className="search_input"
               type="text"
               placeholder="Gaming, Lifestyle"
-              value={keyword}
               onChange={keywordHandler}
             />
             <button type="submit" className="add-button">
@@ -86,6 +91,7 @@ const SearchResult = props => {
                     name={key}
                     setKeywordArray={props.setKeywordArray}
                     keywordArray={props.keywordArray}
+                    setSearchPhrase={setSearchPhrase}
                   />
                 ))}
 
@@ -110,26 +116,49 @@ const SearchResult = props => {
               <h3>Geographic Areas</h3>
               <CountryDropdown
                 location={props.location}
-                setLocation={props.setLocation}
-                searchPhrase={searchPhrase}
-                grabResults={grabResults}
+                grabLocation={grabLocation}
               />
             </div>
-            {/* <div className='choose-gender'>
-            <h3>Gender</h3>
-            <Checkbox name="Male" />
-            <Checkbox name="Female" />
-            <Checkbox name="Transgender" />
-            <Checkbox name="Non-Binary" />
-          </div> */}
             <div className="choose-topic">
               <h3>Topics</h3>
-              <Checkbox name="Lifestyle" />
-              <Checkbox name="Music" />
-              <Checkbox name="Family" />
-              <Checkbox name="Technology" />
-              <Checkbox name="Design" />
-              <Checkbox name="Travel" />
+              {topicArray.map((topic)=> {
+                return <Checkbox
+                  name={topic}
+                  setKeywordArray={props.setKeywordArray}
+                  keywordHandler={keywordHandler}
+                  checkboxHandler={checkboxHandler}
+                  setSearchPhrase={setSearchPhrase}
+                />;
+              })}
+              {/* <Checkbox
+                name="Lifestyle"
+                setKeywordArray={props.setKeywordArray}
+                onClick={checkboxHandler}
+              />
+              <Checkbox
+                name="Music"
+                setKeywordArray={props.setKeywordArray}
+                keywordHandler={keywordHandler}
+                checkboxHandler={checkboxHandler}
+                setSearchPhrase={setSearchPhrase}
+              />
+              <Checkbox
+                name="Family"
+                setKeywordArray={props.setKeywordArray}
+                keywordHandler={keywordHandler}
+                keywordArray={props.keywordArray}
+              />
+              <Checkbox
+                name="Technology"
+                setKeywordArray={props.setKeywordArray}
+                keywordHandler={keywordHandler}
+              />
+              <Checkbox
+                name="Design"
+                setKeywordArray={props.setKeywordArray}
+                keywordHandler={keywordHandler}
+              />
+              <Checkbox name="Travel" /> */}
             </div>
           </div>
 
