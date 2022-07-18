@@ -21,6 +21,7 @@ const SearchResult = props => {
   };
 
   const addHandler = (event) => {
+    setKeyword(event.target.value);
     event.preventDefault();
     props.setKeywordArray([keyword, ...props.keywordArray]);
     newSearchPhrase();
@@ -71,7 +72,7 @@ const SearchResult = props => {
               className="search_input"
               type="text"
               placeholder="Gaming, Lifestyle"
-              onChange={keywordHandler}
+              // onChange={keywordHandler}
             />
             <button type="submit" className="add-button">
               Add
@@ -180,7 +181,7 @@ const SearchResult = props => {
                   influ_name={result.brandingSettings.channel.title}
                   influ_img={result.snippet.thumbnails.default.url}
                   topic_ids={result.topicDetails.topicIds}
-                  grabChannelId={props.grabChannelId}
+                  grabChannelInfo={props.grabChannelInfo}
                 />
               ))}
             </div>

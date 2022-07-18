@@ -16,7 +16,7 @@ const Header = (props) => {
           </li>
           <li style={{ paddingLeft: "1.5rem" }}>
             <NavLink to="/search">
-              {console.log(props.userData.userName)}
+              {/* {console.log(props.userData.userName)} */}
               Hello <strong>{props.userData.userName}!</strong>
             </NavLink>
           </li>
