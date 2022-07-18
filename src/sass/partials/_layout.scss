@@ -992,6 +992,63 @@ $secondary-background-color: #DCE7FB;
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.profile .modal_inputs{
+    background-color: white;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profile .modal_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile .modal-style{
+    display: flex;
+    justify-content: space-between;
+}
+.profile .modal_content{
+    width: 400px;
+    height: 200px;
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 10px;
+}
+.profile .cbtn{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    background:$button-color-background;
+    color: white;
+    border: none;
+    margin-top: 25px;
+}
+.profle .modal_search_input{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+
+}
+.profile .modal_style{
+     display: flex;
+     justify-content: space-between;
+}
+.profile .pointer{
+    cursor:pointer;
+}
+
 //Toggle switch button style
 .toggle-switch {
     position: relative;
@@ -1102,10 +1159,6 @@ $secondary-background-color: #DCE7FB;
   }
   
 //Profile page Mobile view
-.profile .user-data {
-    display: flex;
-    flex-direction: column;
-}
 @media only screen and (max-width:600px) {
     .profile{
         margin: 20px;
