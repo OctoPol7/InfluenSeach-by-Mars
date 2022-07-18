@@ -4,7 +4,7 @@ import SortByDropdown from './SortByDropdown.js';
 
 const ArchivedCampaigns = props => {
     return(
-        <div className='pad20'>
+        <div>
 
                 <h2>Archived Campaigns</h2>
                 <SortByDropdown />

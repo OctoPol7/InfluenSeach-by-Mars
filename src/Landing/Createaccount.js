@@ -2,14 +2,12 @@ import React from "react";
 
 const Createaccount = (props) => {
   return (
-    <div>
-      <div>
-        <h1>Are you ready to try out InfluenSearch today?</h1>
+    <div className="footer-background">
+      <div className="create-account">
+        <h2>Are you ready to try out InfluenSearch today?</h2>
         <ul>
-          SignUp/Login <br />
-          <button className="btn" type="submit">
-            Launch App
-          </button>
+          <li><a href="signup">Sign Up</a></li>
+          <li><a href="login">Log in</a></li>
         </ul>
       </div>
     </div>

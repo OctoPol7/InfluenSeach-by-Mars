@@ -1,15 +1,44 @@
 import React from "react";
+import Avatar from "../images/Avatar.png";
 
 const Cardimage = (props) => {
   return (
     <div className="cards">
-      <div className="card">Pol</div>
-      <div className="card">Tanya</div>
-      <div className="card">Roberto</div>
-      <div className="card">Saurabh</div>
-      <div className="card">Thusara</div>
-      <div className="card">Sid</div>
-      <div className="card">Yash</div>
+      <div className="card">
+        <img src={Avatar} alt="Chumpol"></img>
+        <p>Chumpol</p>
+        <p>Full Stack Developer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Tanya"></img>
+        <p>Tanya</p>
+        <p>Front-End Developer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Roberto"></img>
+        <p>Roberto</p>
+        <p>Back-End Developer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Thushara"></img>
+        <p>Thushara</p>
+        <p>Front-End Developer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Saurabh"></img>
+        <p>Saurabh</p>
+        <p>Full Stack Developer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Siddharth"></img>
+        <p>Siddharth</p>
+        <p>UI/UX Designer</p>
+      </div>
+      <div class="card">
+        <img src={Avatar} alt="Yash"></img>
+        <p>Yash</p>
+        <p>UI/UX Designer</p>
+      </div>
     </div>
   );
 };
