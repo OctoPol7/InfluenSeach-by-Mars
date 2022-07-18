@@ -81,7 +81,9 @@ const SearchResult = props => {
 
         <div className="searched-keywords">
           <div className="max-width-div">
+            <div className='reset-button-layout'>
             <h2>Your current search:</h2>
+            </div>
             <div className="one-line">
               <ul>
                 {props.keywordArray.map((key) => (
