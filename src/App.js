@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 
 import SignUp from "./SignUp/SignUp.js";
@@ -18,6 +18,7 @@ const App = (props) => {
   const [location, setLocation] = useState();
   const [keywordArray, setKeywordArray] = useState([]);
   const [userData, setUserData] = useState();
+  const [channelInfo, setChannelInfo] = useState();
   const [channelId, setChannelId] = useState();
 
   const grabUserData = (data) => {
@@ -28,10 +29,22 @@ const App = (props) => {
 
   console.log("This is UserData: ... ",userData);
   
-  const grabChannelId = (id) => {
-    setChannelId(id);
-    console.log(id);
+  const grabChannelInfo = (info) => {
+    console.log(info);
+    console.log(info.id);
+    console.log(`http://localhost:4000/creatordetails/${info.id}`);
+    if (info !== undefined) channelInfoHandler(info);
   }
+
+  const channelInfoHandler = (info) => {
+    setChannelInfo(info);
+    setChannelId(info.id);
+  }
+
+  useEffect(() => {
+    console.log(channelInfo);
+    console.log(channelId);
+  }, [channelInfo, channelId]);
 
   return (
     <div className="App">
@@ -45,7 +58,7 @@ const App = (props) => {
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
           userData={userData}
-          grabChannelId={grabChannelId}
+          grabChannelInfo={grabChannelInfo}
         />
       </Route>
       <Route path="/searchresult" exact={true}>
@@ -55,7 +68,7 @@ const App = (props) => {
           setKeywordArray={setKeywordArray}
           setLocation={setLocation}
           userData={userData}
-          grabChannelId={grabChannelId}
+          grabChannelInfo={grabChannelInfo}
         />
       </Route>
       <Route path="/signup" exact={true}>
@@ -77,7 +90,7 @@ const App = (props) => {
         <AddCampaign userData={userData} />
       </Route>
       <Route path="/creator" exact={true}>
-        <CreatorPage userData={userData} channelId={channelId} />
+        <CreatorPage userData={userData} channelInfo={channelInfo} channelId={channelId} />
       </Route>
       {/* <Route path="/profile" exact={true}>
         <ProfileSetting />

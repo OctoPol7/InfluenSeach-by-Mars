@@ -16,9 +16,9 @@ const Header = (props) => {
           </li>
           <div className="no-active">
             <NavLink to="/search">
-              {console.log(props.userData.userName)}
-              <ul className="username"> <li>Hello</li><li>{props.userData.userName}!</li></ul>
-            </NavLink>
+              {/* {console.log(props.userData.userName)} */}
+              Hello <strong>{props.userData.userName}!</strong>
+ </NavLink>
           </div>
         </ul>
       </div>

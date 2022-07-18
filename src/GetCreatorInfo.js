@@ -8,9 +8,12 @@ const GetCreatorInfo = (props) => {
 
   useEffect(() => {
     async function loadSearch() {
-      const url = `http://localhost:4000/creatordetails/${props.channelId}`;
+      const channelId = JSON.parse(props.channelInfo).id;
+      const url = `http://localhost:4000/creatordetails/${channelId}`;
 
-      console.log("Bearer " + props.userData.token);
+      console.log(
+        `${channelId}`
+      );
 
       await axios
         .get(url, {
