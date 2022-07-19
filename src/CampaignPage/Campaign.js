@@ -8,7 +8,7 @@ import axios from 'axios';
 import CloseIcon from '../CloseIcon.png'
 // import AddCampaign from '../AddCampaign.js';
 import GetCampaigns from '../GetCampaigns'
-import ArchivedCampaigns from './ArchivedCampaigns.js'
+
 
 
 
@@ -147,20 +147,27 @@ const Campaign = props => {
     return (
       <div className="campaign-page">
         <Header userData={props.userData} />
-
         <GetCampaigns userData={props.userData} grabCampaigns={grabCampaigns} />
         {results == null ? <></> : activeCount()}
         <div className='campaign-page-background'>
         <div className='max-width'>
         <CampStatContnr allCam={resultsLength} active={counter} />
- 
+        {/* <div>
+        <form>
+            <input
+              className="search_input"
+              type="text"
+              placeholder="Search for a campaign"
+            />
+            <button type="submit">Create New Campaign</button>
+          </form>
+        </div> */}
         <CurCampContner
           campaignArray={results}
           grabCampData={props.grabCampData}
         />
 
         <CreateBtn click={() => showmodal()} />
-
 
         {modalShow ? (
           <div className="modal_overlay">
@@ -174,30 +181,27 @@ const Campaign = props => {
 
               <form className="contnr" onSubmit={onCreateHandler}>
                 <label className="modal_inputs">
-
                   Name your Campaign:
                   <input
-
                     className="modal_search_input"
                     type="text"
                     name="name"
                     placeholder="Campaign name"
                     ref={campaignNameRefe}
                   />
+                </label>
 
                 <label>
-
                   Description:
                   <textarea
-
                     placeholder="This is a new campaign"
                     rows={5}
                     ref={descriptionRef}
                   ></textarea>
+                </label>
 
                 <label className="modal_inputs">
                   Add tags or keywords
-
                   {keywordArrayCB.map((keyword) => (
                     <Checkboxx
                       name={keyword.name}
