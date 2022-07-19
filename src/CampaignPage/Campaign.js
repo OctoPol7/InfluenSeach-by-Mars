@@ -6,6 +6,7 @@ import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import axios from 'axios';
 import CloseIcon from '../CloseIcon.png'
+import ArchivedCampaigns from './ArchivedCampaigns.js'
 
 
 
@@ -56,6 +57,8 @@ const Campaign = props => {
     return (
       <div className="campaign-page">
         <Header userData={props.userData} />
+        <div className='campaign-page-background'>
+        <div className='max-width'>
         <CampStatContner />
         <div>
         <form>
@@ -64,12 +67,14 @@ const Campaign = props => {
               type="text"
               placeholder="Search for a campaign"
             />
-            <button type="submit">Create New Campaign</button>
+            <button type="submit">Search</button>
           </form>
         </div>
         <CurCampContner />
-
-        <CreateBtn click={() => showmodal()} />
+        <ArchivedCampaigns  />
+        <div className='center-button'>
+          <CreateBtn click={() => showmodal()} />
+        </div>
 
         {modalShow ? (
           <div className="modal_overlay">
@@ -163,6 +168,8 @@ const Campaign = props => {
             </div>
           </div>
         ) : null}
+      </div>
+      </div>
       </div>
     )
   }

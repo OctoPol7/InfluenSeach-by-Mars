@@ -55,11 +55,13 @@ a {
     text-decoration: none;
 }
 
+.campain-page .curcamp_card,
 .search-result .results li,
 .first-ul li {
     transition: all .25s;
 }
 
+.campain-page .curcamp_card,
 .search-result .results li:hover,
 .first-ul li:hover {
     transform: scale(1.025);
