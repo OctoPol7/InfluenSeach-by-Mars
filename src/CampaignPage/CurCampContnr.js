@@ -1,25 +1,38 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import CurCampCard from './CurCampCard';
-import SortByDropdown from './SortByDropdown.js';
+// import SortByDropdown from './SortByDropdown.js';
 
-const CurCampContner = props => {
-    return(
-        <div>
-            <div className='campaigns-grid'>
-                <h2>Current Campaigns</h2>
-                <SortByDropdown />
-            </div>
+const CurCampContnr = props => {
 
-            <div className='camcard_div'>
-                <CurCampCard campaignname="Campaign Name #1"/> 
-                <CurCampCard campaignname="Campaign Name #1"/>
-                <CurCampCard campaignname="Campaign Name #1"/>
-                <CurCampCard campaignname="Campaign Name #1"/>
-            </div>
+    return (
+      <div>
+        <h2>Current Campaigns</h2>
+        {/* <SortByDropdown /> */}
+
+        <div className="camcard_div">
+          {props.campaignArray !== undefined ? (
+            props.campaignArray.map((c) => (
+              <NavLink to="/singlecampaign">
+                <CurCampCard
+                  data={c}
+                  name={c.campaignName}
+                  tags={c.tags}
+                  date={c.dateCreated}
+                  creators={c.creators.length}
+                  grabCampData={props.grabCampData}
+                />
+              </NavLink>
+            ))
+          ) : (
+            <></>
+          )}
+
         </div>
+      </div>
     );
 }
 
 
 
-export default CurCampContner;
+export default CurCampContnr;

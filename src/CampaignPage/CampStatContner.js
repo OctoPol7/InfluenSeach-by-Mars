@@ -4,17 +4,20 @@ import CampStatCard from './CampStatCard';
 
 
 const CampStatContner = props => {
-    return(
+
+    return (
       <div>
         <h2>Campaign Statistics</h2>
-        <div className='statcard_div'>
-          <CampStatCard heading={"Active Campaigns"} count={1204}/>
-          <CampStatCard heading={"Archived Campaigns"} count={1204}/>
-          <CampStatCard heading={"Total Campaigns Created"} count={1204}/>
+        <div className="statcard_div">
+          <CampStatCard heading={"Current Campaigns"} count={props.active} />
+          <CampStatCard
+            heading={"Archived Campaigns"}
+            count={props.allCam - props.active}
+          />
+          <CampStatCard heading={"Total Campaigns"} count={props.allCam} />
         </div>
-
       </div>
-    )
+    );
 }
 
 

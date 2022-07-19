@@ -1,18 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Header from '../header.js'
-import Checkbox from '../SearchResult/Checkbox.js';
-import CampStatContner from './CampStatContner';
+import Checkboxx from './Checkboxx'
+import CampStatContnr from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import axios from 'axios';
 import CloseIcon from '../CloseIcon.png'
-import ArchivedCampaigns from './ArchivedCampaigns.js'
+// import AddCampaign from '../AddCampaign.js';
+import GetCampaigns from '../GetCampaigns'
+
 
 
 
 const Campaign = props => {
 
-    const [modalShow, setModalShow] = useState(false);
+  const campaignNameRefe = useRef();
+  const descriptionRef = useRef();
+  
+  const [tags, setTags] = useState([]);
+  const [results, setResults] = useState();
+  const [resultsLength, setResultsLength] = useState();
+  const [message, setMessage] = useState();
+  const [modalShow, setModalShow] = useState(false);
+  const [active, setActive] = useState(0);
     // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
@@ -20,61 +30,144 @@ const Campaign = props => {
         setModalShow(prevState=> !prevState);
     }
 
-    const onCreateHandler = () => {
-      async function loadSearch() {
-        const url = `http://localhost:4000/campaigns/${props.channelId}/new-campaign`;
+    const onCreateHandler = (e) => {
+      e.preventDefault();
 
-        console.log("Bearer " + props.userData.token);
+      const newCampaign = {
+        campaignName: campaignNameRefe.current.value,
+        description: descriptionRef.current.value,
+        tags: tags,
+      };
+      
+      //  useEffect(() => {
+      //    async function newCampaign() {
+           const uid = props.userData.uid;
+           const token = props.userData.token;
+           const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
 
-        await axios
-          .post(url, {
-            headers: {
-              'Authorization': 'Bearer '+ props.userData.token
-            },
-          })
-          .then(() => {
-            console.log(url);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-        }
-        loadSearch();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }
+          axios
+             .post(url, newCampaign, {
+               headers: {
+                 Authorization: "Bearer " + token,
+               },
+             })
+             .then((resData) => {
+               console.log(resData.data.message);
+               showmodal();
+             })
+             .catch((error) => {
+               console.log(error);
+             });
+         }
+        //  newCampaign();
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+      //  }, []);
+      // console.log(newCampaign)
+      // }
+
+    const keywordArrayCB = [
+      {name:"Lifestyle",
+      cbid:"/m/019_rr"},
+
+      {name:"Music",
+      cbid:"/m/04rlf"},
+
+      {name:"Entertainment",
+      cbid:"/m/02jjt"},
+
+      {name:"Gaming",
+      cbid:"/m/0bzvm2"},
+
+      {name:"Sport",
+      cbid:"/m/06ntj"},
+
+      {name:"Tourism",
+      cbid:"/m/07bxq"},
+
+      {name:"Technology",
+      cbid:"/m/07c1v"},
+
+      {name:"Health",
+      cbid:"/m/0kt51"},
+
+      {name:"Food",
+      cbid:"/m/02wbm"},
+
+      {name:"Beauty",
+      cbid:"/m/041xxh"}
+    ]
     
+    useEffect(() => {
+      return 
+        console.log(tags);
+        console.log("results : ", results);
+    }, [tags, results]);
 
     const checkboxHandler = (e) => {
         if (e.target.checked) {
-            console.log('checked ' + e.target.value)
+            console.log('checked ' + e.target.value);
+            setTags(prevState => [...prevState, e.target.value]);
+
         } else {
             console.log("unchecked " + e.target.value);
+            let newArray = [];
+            tags.map((tag)=>{
+              if (tag!==e.target.value) {
+                newArray.push(e.target.value);
+              }
+            })
+            setTags(newArray)
         }
-
     }
+
+    const grabCampaigns = (resData) => {
+      console.log("FROM Campaign.js ");
+      console.log(resData.data);
+      setResults(resData.data);
+      setResultsLength(resData.data.length)
+      setMessage(resData.message);
+    };
+
+    let counter=0;
+
+    const activeCount = () => {
+      
+      for(let i=0; i < results.length; i++){
+        if (results[i].active === true) {
+          counter++;
+        }
+      }
+      console.log(counter);
+      return counter
+    }
+    
+
 
 
     return (
       <div className="campaign-page">
         <Header userData={props.userData} />
+        <GetCampaigns userData={props.userData} grabCampaigns={grabCampaigns} />
+        {results == null ? <></> : activeCount()}
         <div className='campaign-page-background'>
         <div className='max-width'>
-        <CampStatContner />
-        <div>
+        <CampStatContnr allCam={resultsLength} active={counter} />
+        {/* <div>
         <form>
             <input
               className="search_input"
               type="text"
               placeholder="Search for a campaign"
             />
-            <button type="submit">Search</button>
+            <button type="submit">Create New Campaign</button>
           </form>
-        </div>
-        <CurCampContner />
-        <ArchivedCampaigns  />
-        <div className='center-button'>
-          <CreateBtn click={() => showmodal()} />
-        </div>
+        </div> */}
+        <CurCampContner
+          campaignArray={results}
+          grabCampData={props.grabCampData}
+        />
+
+        <CreateBtn click={() => showmodal()} />
 
         {modalShow ? (
           <div className="modal_overlay">
@@ -86,89 +179,55 @@ const Campaign = props => {
                 </button>
               </div>
 
-              <form
-                className="contnr"
-                // onSubmit={onCreateHandler}
-              >
+              <form className="contnr" onSubmit={onCreateHandler}>
                 <label className="modal_inputs">
-                Choose campaign name
+
+                  Name your Campaign:
+
                   <input
                     className="modal_search_input"
                     type="text"
                     name="name"
-                    placeholder="Title"
+                    placeholder="Campaign name"
+                    ref={campaignNameRefe}
                   />
                 </label>
 
                 <label>
-                Choose description:
+
+                  Description:
+
                   <textarea
                     placeholder="This is a new campaign"
                     rows={5}
+                    ref={descriptionRef}
                   ></textarea>
                 </label>
 
                 <label className="modal_inputs">
                   Add tags or keywords
-                  <Checkbox
-                    name="Lifestyle"
-                    cbid="/m/019_rr"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Music"
-                    cbid="/m/04rlf"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Entertainment"
-                    cbid="/m/02jjt"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Gaming"
-                    cbid="/m/0bzvm2"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Sport"
-                    cbid="/m/06ntj"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Tourism"
-                    cbid="/m/07bxq"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Technology"
-                    cbid="/m/07c1v"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Health"
-                    cbid="/m/0kt51"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Food"
-                    cbid="/m/02wbm"
-                    checkboxHandler={checkboxHandler}
-                  />
-                  <Checkbox
-                    name="Beauty"
-                    cbid="/m/041xxh"
-                    checkboxHandler={checkboxHandler}
-                  />
+
+                  {keywordArrayCB.map((keyword) => (
+                    <Checkboxx
+                      name={keyword.name}
+                      id={keyword.cbid}
+                      checkboxHandler={checkboxHandler}
+                    />
+                  ))}
                 </label>
+
+
                 <button className="cbtn" type="submit">
                   Create Campaign
                 </button>
+  
               </form>
+              {message}
             </div>
           </div>
         ) : null}
       </div>
+
       </div>
       </div>
     )

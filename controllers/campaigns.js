@@ -6,6 +6,13 @@ const axios = require("axios");
 // function to create a new campaign
 exports.create_campaign = async (req, res, next) => {
     const uid = req.params.uid;
+    // const date = new Date();
+    // const formattedDate = 
+    //   date.getDate() +
+    //   " " +
+    //   date.getMonth() +
+    //   " " +
+    //   date.getFullYear();
     const validateName = await campaigns.find({userId: uid, campaignName: req.body.campaignName})
     .exec()
     .then((result) => {

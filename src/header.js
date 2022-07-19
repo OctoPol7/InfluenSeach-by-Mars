@@ -14,9 +14,6 @@ const Header = (props) => {
           <li>
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
-          <li>
-            <NavLink to="/singlecampaign">sCampaign</NavLink>
-          </li>
           <div className="no-active">
             <NavLink to="/search">
               {/* {console.log(props.userData.userName)} */}

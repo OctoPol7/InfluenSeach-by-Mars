@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Header from '../header.js'
 import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
@@ -11,12 +11,17 @@ import DisplayBlock from './DisplayBlock';
 import Graph from './Graph.js';
 import GetCreatorInfo from '../GetCreatorInfo.js'
 import Tag from '../SearchPage/Tag.js';
+import GetCampaigns from '../GetCampaigns'
+import axios from 'axios';
+
 
 
 const CreatorPage = props => {
     const [modalshow,setModalShow] = useState(false);
     const [isAddtocamp,setIsAddtoCamp]=useState(true);
     const [results, setResults] = useState([]);
+    const [campaigns, setCampaigns] = useState([]);
+    const [groupCamp, setGroupCamp] = useState([]);
 
     function showmodal(value) {
     setIsAddtoCamp(true)
@@ -24,9 +29,15 @@ const CreatorPage = props => {
     }
 
     const grabResults = (resData) => {
-      console.log("FROM ResultPage ");
+      console.log("FROM Creator ");
       console.log(resData.data);
       setResults(resData.data);
+    };
+
+    const grabCampaigns = (resData) => {
+      console.log("FROM Creator ");
+      console.log(resData.data);
+      setCampaigns(resData.data);
     };
 
     const youTubeTopicIds = [
@@ -1264,6 +1275,56 @@ const CreatorPage = props => {
 
     const xtopic = youTubeTopicIds.find((obj) => obj.id === props.channelInfo.topicIds[0]);
     const xcountry = countryCode.find((obj) => obj.code === props.channelInfo.country);
+
+    const checkboxHandler = (e) => {
+      if (e.target.checked) {
+        console.log("checked " + e.target.value);
+        setGroupCamp((prevState) => [...prevState, e.target.value]);
+      } else {
+        console.log("unchecked " + e.target.value);
+        let newArray = [];
+        groupCamp.map((tag) => {
+          if (tag !== e.target.value) {
+            newArray.push(e.target.value);
+          }
+        });
+        setGroupCamp(newArray);
+      }
+    };
+
+      useEffect(() => {
+        console.log(groupCamp);
+      }, [groupCamp]);
+
+    const addCreator = () => {
+      const uid = props.userData.uid;
+      const token = props.userData.token;
+
+      groupCamp.map((camp)=>{
+        const campaignName = camp; //replace with campaign name value
+        console.log(campaignName);
+        const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
+
+        axios
+          .patch(
+            url,
+            {
+              "creatorId": `${props.channelId}`, //replace with channel id value
+            },
+            {
+              headers: {
+                Authorization: "Bearer " + token,
+              },
+            }
+          )
+          .then((resData) => {
+            console.log(resData.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+    }
     
     return (
       <>
@@ -1304,22 +1365,24 @@ const CreatorPage = props => {
                       </div>
 
                       <div className="contnr">
-                        <Inputs placeholder="Search a campaign" />
+                        {/* <Inputs placeholder="Search a campaign" /> */}
+                        <GetCampaigns
+                          userData={props.userData}
+                          grabCampaigns={grabCampaigns}
+                        />
+                        {campaigns.length === 0 ? (
+                          <></>
+                        ) : (
+                          campaigns.map((camp) => (
+                            <Searchlist
+                              title={camp.campaignName}
+                              subtitle={`${camp.creators.length} creators`}
+                              checkboxHandler={checkboxHandler}
+                            />
+                          ))
+                        )}
 
-                        <Searchlist
-                          title="Campaign Name 1"
-                          subtitle="23 creators"
-                        />
-                        <Searchlist
-                          title="Campaign Name 1"
-                          subtitle="23 creators"
-                        />
-                        <Searchlist
-                          title="Campaign Name 1"
-                          subtitle="23 creators"
-                        />
-
-                        <button className="cbtn">Add to Campaign</button>
+                        <button className="cbtn" onClick={addCreator}>Add to Campaign</button>
                         <p
                           onClick={() => setIsAddtoCamp(false)}
                           className="creat_capm_txt"
@@ -1378,8 +1441,14 @@ const CreatorPage = props => {
                     title="Total Views"
                     content={props.channelInfo.viewCount}
                   />
-                  <DisplayBlock title="Country" content={xcountry.country} />
-                  <DisplayBlock title="Channel Type" content={xtopic.topic} />
+                  <DisplayBlock
+                    title="Country"
+                    content={xcountry === undefined ? "N/A" : xcountry.country}
+                  />
+                  <DisplayBlock
+                    title="Channel Type"
+                    content={xtopic === undefined ? "N/A" : xtopic.topic}
+                  />
                 </div>
               </div>
 
@@ -1399,8 +1468,8 @@ const CreatorPage = props => {
                 {/* <iframe
                   id="video"
                   title={results ? results[0].snippet.localized.title : ""}
-                  width="420"
-                  height="315"
+                  // width="420"
+                  // height="315"
                   src={
                     results
                       ? `//www.youtube.com/embed/${results[0].id}?rel=0`
@@ -1414,14 +1483,16 @@ const CreatorPage = props => {
                 <div className="tag_cntnr">
                   <ul className="tag_div">
                     {props.channelInfo.topicIds.map((tag) => (
-                      <Tag className="tags tag_style"  name={tag} />
+                      <Tag className="tags tag_style" name={tag} />
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
             <div className="graph">
-              <Graph />
+              {results.map((result) => {
+                <Graph viewCount={result.statistics.viewCount} />;
+              })}
             </div>
           </div>
         </div>
