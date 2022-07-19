@@ -1293,8 +1293,8 @@ const CreatorPage = props => {
     };
 
       useEffect(() => {
-        console.log('results[0] ', results[0]);
-      }, [results]);
+        console.log(groupCamp);
+      }, [groupCamp]);
 
     const addCreator = () => {
       const uid = props.userData.uid;
@@ -1303,7 +1303,7 @@ const CreatorPage = props => {
       groupCamp.map((camp)=>{
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
-        const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/add-creator`;
+        const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
 
         axios
           .patch(
@@ -1382,9 +1382,7 @@ const CreatorPage = props => {
                           ))
                         )}
 
-                        <button className="cbtn" onClick={addCreator}>
-                          Add to Campaign
-                        </button>
+                        <button className="cbtn" onClick={addCreator}>Add to Campaign</button>
                         <p
                           onClick={() => setIsAddtoCamp(false)}
                           className="creat_capm_txt"
@@ -1467,21 +1465,19 @@ const CreatorPage = props => {
                   controls
                 ></video> */}
 
-                {/* {results[0].id == null ||
-                results[0].id == undefined ||
-                results[0].id == " " ? (
-                  <p>No videos available</p>
-                ) : (
-                  <iframe
-                    id="video"
-                    title=" "
-                    // width="420"
-                    // height="315"
-                    src={`//www.youtube.com/embed/${results[0].id}?rel=0`}
-                    frameborder="0"
-                    allowfullscreen
-                  ></iframe>
-                )} */}
+                {/* <iframe
+                  id="video"
+                  title={results ? results[0].snippet.localized.title : ""}
+                  // width="420"
+                  // height="315"
+                  src={
+                    results
+                      ? `//www.youtube.com/embed/${results[0].id}?rel=0`
+                      : ""
+                  }
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe> */}
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">
