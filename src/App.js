@@ -33,7 +33,7 @@ const App = (props) => {
   const grabChannelInfo = (info) => {
     console.log(info);
     console.log(info.id);
-    console.log(` https://influensearch.herokuapp.com/creatordetails/${info.id}`);
+    console.log(`http://localhost:4000/creatordetails/${info.id}`);
     if (info !== undefined) channelInfoHandler(info);
   }
 
