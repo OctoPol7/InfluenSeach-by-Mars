@@ -1,8 +1,6 @@
 {
     "env": {
        "DBPASSWORD": "TheMartians2022",
-       "PORT": 3000,
-       "BACKENDPORT": 4000,
        "KEY": "AIzaSyDkGoypG9zMnDtDWqBAydQKT0xKZZbv_vI",
        "JWT_KEY": "TheMartians2022"
     }

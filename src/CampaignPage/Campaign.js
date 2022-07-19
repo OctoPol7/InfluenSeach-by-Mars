@@ -138,7 +138,6 @@ const Campaign = props => {
         }
       }
       console.log(counter);
-      return counter
     }
     
 
