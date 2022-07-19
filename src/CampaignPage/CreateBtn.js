@@ -8,7 +8,7 @@ const CreateBtn = props => {
           onClick={props.click}
           className="create_btn"
         >
-          Create Campaign
+          Create new campaign
         </button>
       </>
     );
