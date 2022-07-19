@@ -124,11 +124,6 @@ body {
   font-size: 0.95rem;
 }
 
-.campaign-page .modal_content label {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
 /* NAVIGATION ======================================== */
 .header .nav, .tag_div .tag, .search-result .filters ul, .landing .create-account ul {
   list-style-type: none;
@@ -1406,7 +1401,7 @@ img {
   padding: 0.25rem 1.5rem;
 }
 
-.campaign-page .search_input {
+.campaign-page input {
   border: 1px solid lightgrey;
   box-shadow: 0px 24px 32px rgba(55, 63, 82, 0.08);
   margin-left: 1rem;
@@ -1442,59 +1437,7 @@ img {
   padding: 0.25rem 1.5rem;
 }
 
-.campaign-page .modal_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.campaign-page .modal_content {
-  background-color: #E5E8EF;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  min-width: fit-content;
-  overflow: scroll;
-}
-
-.campaign-page .modal_search_input {
-  padding-left: 10px;
-}
-
-.campaign-page .modal_grid {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-
-.campaign-page .modal_content form {
-  text-align: left;
-}
-
-.campaign-page .modal_content textarea {
-  display: block;
-}
-
-.campaign-page .modal_content h2,
-.campaign-page .modal_content label {
-  margin-left: 0;
-}
-
-.campaign-page .modal_content .close-button {
-  border-radius: 50%;
-  padding: 0 1rem;
-  border: 1px solid darkgray;
-}
-
 @media screen and (min-width: 750px) {
-  .campaign-page .modal_content {
-    width: 600px;
-  }
   .campaign-page .statcard_div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1502,17 +1445,9 @@ img {
   .campaign-page .campstat_card {
     max-width: unset;
   }
-  .campaign-page .search_input {
+  .campaign-page input {
     height: 45px;
-    max-width: 1044px;
-  }
-  .campaign-page .modal_search_input,
-.campaign-page .modal_content textarea {
-    width: 100%;
-    border: none;
-    background: #FFFFFF;
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
+    width: 1044px;
   }
   .campaign-page .camcard_div {
     display: grid;

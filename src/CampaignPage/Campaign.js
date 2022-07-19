@@ -79,9 +79,9 @@ const Campaign = props => {
         {modalShow ? (
           <div className="modal_overlay">
             <div className="modal_content">
-              <div className="modal_grid">
-                <h2>Create new campaign</h2>
-                <button type="button" className='close-button' onClick={() => showmodal()}>
+              <div>
+                <h2>Create a campaign</h2>
+                <button type="button" onClick={() => showmodal()}>
                   <img src={CloseIcon} alt="Close"></img>
                 </button>
               </div>
@@ -92,25 +92,24 @@ const Campaign = props => {
               >
                 <label className="modal_inputs">
                 Choose campaign name
-                </label>
-                <input
+                  <input
                     className="modal_search_input"
                     type="text"
                     name="name"
                     placeholder="Title"
                   />
+                </label>
 
                 <label>
                 Choose description:
-                </label>
-                <textarea
+                  <textarea
                     placeholder="This is a new campaign"
                     rows={5}
                   ></textarea>
+                </label>
 
                 <label className="modal_inputs">
                   Add tags or keywords
-                  </label>
                   <Checkbox
                     name="Lifestyle"
                     cbid="/m/019_rr"
@@ -161,6 +160,7 @@ const Campaign = props => {
                     cbid="/m/041xxh"
                     checkboxHandler={checkboxHandler}
                   />
+                </label>
                 <button className="cbtn" type="submit">
                   Create Campaign
                 </button>
