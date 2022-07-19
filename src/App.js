@@ -20,6 +20,7 @@ const App = (props) => {
   const [userData, setUserData] = useState();
   const [channelInfo, setChannelInfo] = useState();
   const [channelId, setChannelId] = useState();
+  const [campData, setCampData] = useState();
 
   const grabUserData = (data) => {
     setUserData(data);
@@ -41,10 +42,15 @@ const App = (props) => {
     setChannelId(info.id);
   }
 
+  const grabCampData = (data) => {
+    setCampData(data);
+  }
+
   useEffect(() => {
     console.log(channelInfo);
     console.log(channelId);
-  }, [channelInfo, channelId]);
+    console.log(campData);
+  }, [channelInfo, channelId, campData]);
 
   return (
     <div className="App">
@@ -81,16 +87,20 @@ const App = (props) => {
         <GetSearch userData={userData} />
       </Route>
       <Route path="/singlecampaign" exact={true}>
-        <SingleCampaign userData={userData} />
+        <SingleCampaign userData={userData} campData={campData}/>
       </Route>
       <Route path="/campaign" exact={true}>
-        <Campaign userData={userData} />
+        <Campaign userData={userData} grabCampData={grabCampData} />
       </Route>
       {/* <Route path="/newcampaign" exact={true}>
         <AddCampaign userData={userData} />
       </Route> */}
       <Route path="/creator" exact={true}>
-        <CreatorPage userData={userData} channelInfo={channelInfo} channelId={channelId} />
+        <CreatorPage
+          userData={userData}
+          channelInfo={channelInfo}
+          channelId={channelId}
+        />
       </Route>
       {/* <Route path="/profile" exact={true}>
         <ProfileSetting />

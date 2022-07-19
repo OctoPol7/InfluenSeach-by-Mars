@@ -3,12 +3,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const GetCreatorInfo = (props) => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   // const [search, setSearch] = useState();
 
   useEffect(() => {
     async function loadSearch() {
-      const channelId = props.channelInfo.id;
+      const channelId = props.channelId;
       const url = `http://localhost:4000/creatordetails/${channelId}`;
 
       console.log(
@@ -24,7 +24,7 @@ const GetCreatorInfo = (props) => {
         .then((resData) => {
           console.log(url);
           props.grabResults(resData);
-          setLoading(false);
+          setIsLoading(false);
         })
         .catch((error) => {
           console.log(error);

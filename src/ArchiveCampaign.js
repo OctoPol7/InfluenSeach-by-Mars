@@ -8,10 +8,11 @@ const ArchiveCampaign = (props) => {
   useEffect(() => {
     async function archiveCampaign() {
       const uid = props.userData.uid;
-      const campaignName = "Campaign Name"; //replace with campaign name value
+      const campaignName = props.campaignName; //replace with campaign name value
       const token = props.userData.token;
       const url = `http://localhost:4000/campaigns/${uid}/archive-campaign/${campaignName}`;
 
+      
       await axios
         .patch(url,
           {
@@ -21,7 +22,7 @@ const ArchiveCampaign = (props) => {
           }
         )
         .then((resData) => {
-          console.log(resData);
+          console.log(resData.message);
         })
         .catch((error) => {
           console.log(error);

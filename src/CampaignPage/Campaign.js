@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Header from '../header.js'
 import Checkboxx from './Checkboxx'
-import CampStatContner from './CampStatContner';
+import CampStatContnr from './CampStatContner';
 import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import axios from 'axios';
 import CloseIcon from '../CloseIcon.png'
-import AddCampaign from '../AddCampaign.js';
+// import AddCampaign from '../AddCampaign.js';
 import GetCampaigns from '../GetCampaigns'
 
 
@@ -17,7 +17,10 @@ const Campaign = props => {
   
   const [tags, setTags] = useState([]);
   const [results, setResults] = useState();
+  const [resultsLength, setResultsLength] = useState();
+  const [message, setMessage] = useState();
   const [modalShow, setModalShow] = useState(false);
+  const [active, setActive] = useState(0);
     // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
@@ -95,7 +98,8 @@ const Campaign = props => {
     useEffect(() => {
       return 
         console.log(tags);
-    }, [tags]);
+        console.log("results : ", results);
+    }, [tags, results]);
 
     const checkboxHandler = (e) => {
         if (e.target.checked) {
@@ -114,18 +118,36 @@ const Campaign = props => {
         }
     }
 
-    const grabResults = (resData) => {
-      console.log("FROM Campaign.js " + props.location.country);
+    const grabCampaigns = (resData) => {
+      console.log("FROM Campaign.js ");
       console.log(resData.data);
       setResults(resData.data);
+      setResultsLength(resData.data.length)
+      setMessage(resData.message);
     };
+
+    let counter=0;
+
+    const activeCount = () => {
+      
+      for(let i=0; i < results.length; i++){
+        if (results[i].active === true) {
+          counter++;
+        }
+      }
+      console.log(counter);
+      return counter
+    }
+    
+
 
 
     return (
       <div className="campaign-page">
         <Header userData={props.userData} />
-        <GetCampaigns userData={props.userData} grabResults={grabResults} />
-        <CampStatContner total={results != null ? results.length : 0 } />
+        <GetCampaigns userData={props.userData} grabCampaigns={grabCampaigns} />
+        {results == null ? <></> : activeCount()}
+        <CampStatContnr allCam={resultsLength} active={counter} />
         {/* <div>
         <form>
             <input
@@ -136,7 +158,10 @@ const Campaign = props => {
             <button type="submit">Create New Campaign</button>
           </form>
         </div> */}
-        <CurCampContner campaignArray={results} />
+        <CurCampContner
+          campaignArray={results}
+          grabCampData={props.grabCampData}
+        />
 
         <CreateBtn click={() => showmodal()} />
 
@@ -185,8 +210,9 @@ const Campaign = props => {
                 <button className="cbtn" type="submit">
                   Create Campaign
                 </button>
+  
               </form>
-
+              {message}
             </div>
           </div>
         ) : null}
