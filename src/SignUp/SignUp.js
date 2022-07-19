@@ -26,6 +26,7 @@ const SignUp = props => {
     }
 
     return (
+      <div className='signup-background'>
       <div className="signup">
         <h1>Sign Up</h1>
         <form onSubmit={submitHandler}>
@@ -58,6 +59,7 @@ const SignUp = props => {
             </button>
           </NavLink>
         </p>
+      </div>
       </div>
     );
 }

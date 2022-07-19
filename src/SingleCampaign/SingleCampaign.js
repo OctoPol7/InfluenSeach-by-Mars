@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Header from '../header.js'
 import DeleteButton from './DeleteButton.js'
-import SearchInput from '../SearchResult/SearchInput.js'
-import SortByDropdown from '../SearchResult/SortByDropdown.js'
+// import SearchInput from '../SearchResult/SearchInput.js'
+// import SortByDropdown from '../SearchResult/SortByDropdown.js'
 import InfluCard from '../SearchPage/InfluCard.js'
 import GetCampaignCreators from '../GetCampaignCreators'
 import GetCreatorInfo from '../GetCreatorInfo.js'
@@ -20,40 +20,22 @@ const SingleCampaign = props => {
     return (
       <div className="single-campaign">
         <Header userData={props.userData} />
-<<<<<<< HEAD
+        {console.log(props.campData)}
+        {console.log("results:  ", results)}
         <div className='single-campaign-background'>
         <div className='max-width-div'>
         <div className='flex-setup'>
-          <h1>Campaign Name #1</h1>
+        <h1>{props.campData.campaignName}</h1>
           <div>
-            <button type="submit">Edit</button>
-            <DeleteButton />
-          </div>
-        </div>
-        <p>
-          This is the short description about the campaign. The user can edit
-          this text at the time of creation of the campaign.
-        </p>
-        <p>Created on: 12 May,2022</p>
-        <div className='search-center'>
-          <SearchInput name="creator-search" placeholder="Search for a creator" />
-        </div>
-=======
-        {console.log(props.campData)}
-        {console.log("results:  ", results)}
-        <div>
-          <h1>{props.campData.campaignName}</h1>
-          {/* <SubmitButton label="Edit" /> */}
+            {/* <SubmitButton label="Edit" /> */}
           <DeleteButton
             userData={props.userData}
             campaignName={props.campData.campaignName}
           />
+          </div>
         </div>
         <p>{props.campData.description}</p>
         <p>Created on {props.campData.dateCreated}</p>
-        {/* Add search icon in search input of SearchResult */}
-        {/* <SearchInput name="creator-search" placeholder="Search for a creator" /> */}
->>>>>>> 44f20f75eb10a253b66e897ad2cb56d947f1cc78
         <div>
           <h2>
             {props.campData.creators == null ? 0 : props.campData.creators.length}
@@ -61,18 +43,7 @@ const SingleCampaign = props => {
           </h2>
           {/* <SortByDropdown /> */}
         </div>
-<<<<<<< HEAD
         <div className='influencers-container'>
-          {/* <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/>
-                <InfluCard sub_count={2346677} video_count={3456} influ_name="Joan Doe"/> */}
-=======
-        <div>
           {props.campData.creators == null ? (
             <p>This campaign does not contain any influencers</p>
           ) : (
@@ -101,7 +72,6 @@ const SingleCampaign = props => {
               </>
             ))
           )}
->>>>>>> 44f20f75eb10a253b66e897ad2cb56d947f1cc78
         </div>
       </div>
       </div>

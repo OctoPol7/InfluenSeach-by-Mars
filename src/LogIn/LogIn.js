@@ -37,6 +37,7 @@ const LogIn = props => {
 
 
     return (
+      <div className='login-background'>
       <div className="login">
         <h1>Log In</h1>
         <form onSubmit={submitHandler}>
@@ -71,6 +72,7 @@ const LogIn = props => {
           <p>{loginStatus}</p>
         )}
 
+      </div>
       </div>
     );
 }
