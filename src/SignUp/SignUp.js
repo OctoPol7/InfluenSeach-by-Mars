@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import SubmitButton from './SubmitButton.js'
 import UserTypeDropdown from './UserTypeDropdown.js'
+import Logo from "../Logo.svg"
 
 const SignUp = props => {
 
@@ -27,6 +28,11 @@ const SignUp = props => {
 
     return (
       <div className='signup-background'>
+      <div className='max-width'>
+      <div className="hidden">
+        <img src={Logo} alt="InfluenSearch Logo"></img>
+        <h2>Join Us</h2>
+      </div>
       <div className="signup">
         <h1>Sign Up</h1>
         <form onSubmit={submitHandler}>
@@ -59,6 +65,7 @@ const SignUp = props => {
             </button>
           </NavLink>
         </p>
+      </div>
       </div>
       </div>
     );

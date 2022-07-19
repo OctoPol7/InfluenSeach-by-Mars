@@ -4,6 +4,7 @@ import { Route, Redirect, NavLink } from 'react-router-dom'
 // import EmailInput from './../SignUp/EmailInput.js'
 // import PasswordInput from './../SignUp/PasswordInput.js'
 import SubmitButton from './../SignUp/SubmitButton.js'
+import Logo from "../Logo.svg"
 
 
 const LogIn = props => {
@@ -38,6 +39,11 @@ const LogIn = props => {
 
     return (
       <div className='login-background'>
+        <div className='max-width'>
+        <div className="hidden">
+          <img src={Logo} alt="InfluenSearch Logo"></img>
+          <h2>Welcome</h2>
+        </div>
       <div className="login">
         <h1>Log In</h1>
         <form onSubmit={submitHandler}>
@@ -71,7 +77,7 @@ const LogIn = props => {
         ) : (
           <p>{loginStatus}</p>
         )}
-
+      </div>
       </div>
       </div>
     );
