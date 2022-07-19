@@ -55,14 +55,27 @@ a {
     text-decoration: none;
 }
 
+.single-campaign .influencers-container li,
+.single-campaign .flex-setup button,
+.single-campaign .flex-setup input,
 .campain-page .curcamp_card,
 .search-result .results li,
 .first-ul li {
     transition: all .25s;
 }
 
-.campain-page .curcamp_card,
+.single-campaign .influencers-container li:hover,
+.single-campaign .flex-setup button:hover,
+.single-campaign .flex-setup input:hover,
+.campain-page .curcamp_card:hover,
 .search-result .results li:hover,
 .first-ul li:hover {
     transform: scale(1.025);
+}
+
+.single-campaign .flex-setup button:hover,
+.single-campaign .flex-setup input:hover,
+.single-campaign .flex-setup button:active,
+.single-campaign .flex-setup input:active {
+    color: #E4572E;
 }

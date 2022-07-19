@@ -2,7 +2,7 @@ import React from 'react'
 
 const SortByDropdown = props => {
     return(
-        <div>
+        <div className='sortby'>
             <label for="sortby">Sort by:</label>
 
             <select name="sortby">
