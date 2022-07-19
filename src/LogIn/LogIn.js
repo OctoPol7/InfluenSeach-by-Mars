@@ -60,7 +60,7 @@ const LogIn = props => {
 
         {loginStatus === "Authentication successful" ? (
           <Route path="/login">
-            <Redirect to="/campaign"/>
+            <Redirect to="/search"/>
           </Route>
         ) : (
           <p>{loginStatus}</p>
