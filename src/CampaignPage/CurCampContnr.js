@@ -1,22 +1,19 @@
 import React from 'react'
 import CurCampCard from './CurCampCard';
-import SortByDropdown from './SortByDropdown.js';
+// import SortByDropdown from './SortByDropdown.js';
 
 const CurCampContner = props => {
-    return(
-        <div>
+    return (
+      <div>
+        <h2>Current Campaigns</h2>
+        {/* <SortByDropdown /> */}
 
-                <h2>Current Campaigns</h2>
-                <SortByDropdown />
-
-
-                <div className='camcard_div'>
-                        <CurCampCard campaignname="Campaign Name #1"/> 
-                        <CurCampCard campaignname="Campaign Name #1"/>
-                        <CurCampCard campaignname="Campaign Name #1"/>
-                        <CurCampCard campaignname="Campaign Name #1"/>
-                </div>
+        <div className="camcard_div">
+          {/* {props.campaignArray.length != undefined ? props.campaignArray.map((campaign) => (
+            <CurCampCard name={campaign.campaignName} />
+          )) : <></>} */}
         </div>
+      </div>
     );
 }
 

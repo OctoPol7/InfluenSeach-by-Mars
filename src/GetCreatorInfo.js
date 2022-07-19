@@ -8,7 +8,7 @@ const GetCreatorInfo = (props) => {
 
   useEffect(() => {
     async function loadSearch() {
-      const channelId = JSON.parse(props.channelInfo).id;
+      const channelId = props.channelInfo.id;
       const url = `http://localhost:4000/creatordetails/${channelId}`;
 
       console.log(

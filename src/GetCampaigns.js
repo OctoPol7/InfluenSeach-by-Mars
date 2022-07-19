@@ -21,6 +21,8 @@ const GetCampaigns = (props) => {
         )
         .then((resData) => {
           console.log(resData);
+          props.grabResults(resData);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);

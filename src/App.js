@@ -27,7 +27,7 @@ const App = (props) => {
     console.log(data);
   }
 
-  console.log("This is UserData: ... ",userData);
+  console.log("This is UserData: ... ", userData);
   
   const grabChannelInfo = (info) => {
     console.log(info);
@@ -86,9 +86,9 @@ const App = (props) => {
       <Route path="/campaign" exact={true}>
         <Campaign userData={userData} />
       </Route>
-      <Route path="/newcampaign" exact={true}>
+      {/* <Route path="/newcampaign" exact={true}>
         <AddCampaign userData={userData} />
-      </Route>
+      </Route> */}
       <Route path="/creator" exact={true}>
         <CreatorPage userData={userData} channelInfo={channelInfo} channelId={channelId} />
       </Route>

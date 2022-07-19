@@ -1378,8 +1378,8 @@ const CreatorPage = props => {
                     title="Total Views"
                     content={props.channelInfo.viewCount}
                   />
-                  <DisplayBlock title="Country" content={xcountry.country} />
-                  <DisplayBlock title="Channel Type" content={xtopic.topic} />
+                  <DisplayBlock title="Country" content={xcountry === undefined ? "N/A" : xcountry.country} />
+                  <DisplayBlock title="Channel Type" content={xtopic === undefined ? "N/A" : xtopic.topic} />
                 </div>
               </div>
 
@@ -1399,8 +1399,8 @@ const CreatorPage = props => {
                 {/* <iframe
                   id="video"
                   title={results ? results[0].snippet.localized.title : ""}
-                  width="420"
-                  height="315"
+                  // width="420"
+                  // height="315"
                   src={
                     results
                       ? `//www.youtube.com/embed/${results[0].id}?rel=0`
@@ -1421,7 +1421,10 @@ const CreatorPage = props => {
               </div>
             </div>
             <div className="graph">
-              <Graph />
+              {results.map((result)=>{
+                  <Graph viewCount={result.statistics.viewCount}/>
+              })}
+              
             </div>
           </div>
         </div>

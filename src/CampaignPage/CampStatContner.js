@@ -8,9 +8,9 @@ const CampStatContner = props => {
       <div>
         <h2>Campaign Statistics</h2>
         <div className='statcard_div'>
-          <CampStatCard heading={"Active Campaigns"} count={1204}/>
+          <CampStatCard heading={"Current Campaigns"} count={1204}/>
           <CampStatCard heading={"Archived Campaigns"} count={1204}/>
-          <CampStatCard heading={"Total Campaigns Created"} count={1204}/>
+          <CampStatCard heading={"Total Campaigns"} count={props.total}/>
         </div>
 
       </div>
