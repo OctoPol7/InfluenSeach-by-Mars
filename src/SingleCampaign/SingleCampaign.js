@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import Header from '../header.js'
-import SubmitButton from '../SignUp/SubmitButton.js'
 import DeleteButton from './DeleteButton.js'
-import SearchInput from '../SearchResult/SearchInput.js'
-import SortByDropdown from '../SearchResult/SortByDropdown.js'
+// import SearchInput from '../SearchResult/SearchInput.js'
+// import SortByDropdown from '../SearchResult/SortByDropdown.js'
 import InfluCard from '../SearchPage/InfluCard.js'
 import GetCampaignCreators from '../GetCampaignCreators'
 import GetCreatorInfo from '../GetCreatorInfo.js'
@@ -23,18 +22,20 @@ const SingleCampaign = props => {
         <Header userData={props.userData} />
         {console.log(props.campData)}
         {console.log("results:  ", results)}
-        <div>
-          <h1>{props.campData.campaignName}</h1>
-          {/* <SubmitButton label="Edit" /> */}
+        <div className='single-campaign-background'>
+        <div className='max-width-div'>
+        <div className='flex-setup'>
+        <h1>{props.campData.campaignName}</h1>
+          <div>
+            {/* <SubmitButton label="Edit" /> */}
           <DeleteButton
             userData={props.userData}
             campaignName={props.campData.campaignName}
           />
+          </div>
         </div>
         <p>{props.campData.description}</p>
         <p>Created on {props.campData.dateCreated}</p>
-        {/* Add search icon in search input of SearchResult */}
-        {/* <SearchInput name="creator-search" placeholder="Search for a creator" /> */}
         <div>
           <h2>
             {props.campData.creators == null ? 0 : props.campData.creators.length}
@@ -42,7 +43,7 @@ const SingleCampaign = props => {
           </h2>
           {/* <SortByDropdown /> */}
         </div>
-        <div>
+        <div className='influencers-container'>
           {props.campData.creators == null ? (
             <p>This campaign does not contain any influencers</p>
           ) : (
@@ -72,6 +73,8 @@ const SingleCampaign = props => {
             ))
           )}
         </div>
+      </div>
+      </div>
       </div>
     );
 }

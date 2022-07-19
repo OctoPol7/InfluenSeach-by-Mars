@@ -3,17 +3,17 @@ import React, { useState } from "react";
 const Checkbox = (props) => {
 
   return (
-    <>
-      <label htmlFor={props.name}>
-        {props.name}
+    <div className="checkbox-wrapper">
         <input
           type="checkbox"
           id={props.name}
           value={props.name}
           onClick={props.checkboxHandler}
         />
-      </label>
-    </>
+        <label htmlFor={props.name}>
+        {props.name}
+        </label>
+    </div>
   );
 };
 

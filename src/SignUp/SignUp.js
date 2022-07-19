@@ -1,11 +1,9 @@
 import React, {useRef} from 'react'
 import Axios from 'axios'
-
-// import TextInput from './TextInput.js'
-// import EmailInput from './EmailInput.js'
-// import PasswordInput from './PasswordInput.js'
+import { NavLink } from 'react-router-dom'
 import SubmitButton from './SubmitButton.js'
 import UserTypeDropdown from './UserTypeDropdown.js'
+import Logo from "../Logo.svg"
 
 const SignUp = props => {
 
@@ -29,6 +27,12 @@ const SignUp = props => {
     }
 
     return (
+      <div className='signup-background'>
+      <div className='max-width'>
+      <div className="hidden">
+        <img src={Logo} alt="InfluenSearch Logo"></img>
+        <h2>Join Us</h2>
+      </div>
       <div className="signup">
         <h1>Sign Up</h1>
         <form onSubmit={submitHandler}>
@@ -54,8 +58,15 @@ const SignUp = props => {
           </div>
         </form>
         <p>
-          Already a user? <a href="login">Log in</a>
+          Already a user?
+          <NavLink to="/login">
+            <button type="submit">
+              Login
+            </button>
+          </NavLink>
         </p>
+      </div>
+      </div>
       </div>
     );
 }
