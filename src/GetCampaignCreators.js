@@ -3,12 +3,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const GetCampaignCreators = (props) => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     async function getCampaignCreators() {
       const uid = props.userData.uid;
-      const campaignName = "Campaign Name"; //replace with campaign name value
+      const campaignName = props.campaignName; //replace with campaign name value
       const token = props.userData.token;
       const url = `http://localhost:4000/campaigns/${uid}/${campaignName}`;
 
@@ -22,6 +22,9 @@ const GetCampaignCreators = (props) => {
         )
         .then((resData) => {
           console.log(resData);
+          props.grabResults(resData);
+          setIsLoading(false)
+
         })
         .catch((error) => {
           console.log(error);

@@ -1,23 +1,30 @@
 import React from 'react'
 import Tag from './Tag.js'
+import { NavLink } from "react-router-dom";
 
 
 const CurCampCard = props => {
-    return<>
-      <div className='curcamp_card'>
-       
-        <h3>{props.campaignname}</h3>
-        <p>23 Creators</p>
-        <p>created on 23 May, 2022</p>
 
-        <ul>
-          <Tag tagname="Lifestyle"/>
-          <Tag tagname="Vlogging"/>
-          <Tag tagname="Gaming"/>
-        </ul>
+  const toSingleCampaign = () => {
+    props.grabCampData(props.data);
+  }
 
-      </div>
-     </>
+    return (
+      <>
+        
+          <div className="curcamp_card" onClick={toSingleCampaign}>
+            <h3>{props.name}</h3>
+            <p>{props.creators} Creators</p>
+            <p>created on {props.date}</p>
+
+            <ul>
+              {props.tags.map((tag) => (
+                <Tag tagname={tag} />
+              ))}
+            </ul>
+          </div>
+      </>
+    );
 }
 
 

@@ -13,11 +13,7 @@ const AddCampaign = (props) => {
 
       await axios
         .post(url, 
-          {
-            "campaignName": "New Campaign",
-            "description": "This is a test for frontend component",
-            "tags": ["frontend","new","campaigns"]
-          },
+          props.campaign,
           {
             headers: {
               'Authorization': 'Bearer '+ token
@@ -25,7 +21,7 @@ const AddCampaign = (props) => {
           }
         )
         .then((resData) => {
-          console.log(resData);
+          console.log(props.campaign);
         })
         .catch((error) => {
           console.log(error);
@@ -40,6 +36,7 @@ const AddCampaign = (props) => {
     return (
       <>
         <div>Loading...</div>
+        {console.log("i am in add camp")}
       </>
     );
   } else {

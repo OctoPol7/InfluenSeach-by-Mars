@@ -21,6 +21,8 @@ const GetCampaigns = (props) => {
         )
         .then((resData) => {
           console.log(resData);
+          props.grabCampaigns(resData);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);
@@ -29,6 +31,8 @@ const GetCampaigns = (props) => {
     getCampaigns();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
 
   //console.log(search);
   if (isLoading) {
