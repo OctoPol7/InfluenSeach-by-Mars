@@ -172,16 +172,18 @@ const Campaign = props => {
         {modalShow ? (
           <div className="modal_overlay">
             <div className="modal_content">
-              <div className="modal_grid">
-                <h2>Create new campaign</h2>
-                <button type="button" className='close-button' onClick={() => showmodal()}>
+              <div>
+                <h2>Create a campaign</h2>
+                <button type="button" onClick={() => showmodal()}>
                   <img src={CloseIcon} alt="Close"></img>
                 </button>
               </div>
 
               <form className="contnr" onSubmit={onCreateHandler}>
                 <label className="modal_inputs">
+
                   Name your Campaign:
+
                   <input
                     className="modal_search_input"
                     type="text"
@@ -192,7 +194,9 @@ const Campaign = props => {
                 </label>
 
                 <label>
+
                   Description:
+
                   <textarea
                     placeholder="This is a new campaign"
                     rows={5}
@@ -202,6 +206,7 @@ const Campaign = props => {
 
                 <label className="modal_inputs">
                   Add tags or keywords
+
                   {keywordArrayCB.map((keyword) => (
                     <Checkboxx
                       name={keyword.name}
@@ -210,6 +215,7 @@ const Campaign = props => {
                     />
                   ))}
                 </label>
+
 
                 <button className="cbtn" type="submit">
                   Create Campaign
