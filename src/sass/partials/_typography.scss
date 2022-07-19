@@ -21,3 +21,17 @@ body {
 .searchpage .step-details {
     font-size: 20px;
 }
+
+.campaign-page {
+    color: #373F52;
+}
+
+.campaign-page .campstat_card p {
+    font-size: 24px;
+    color: #110035;
+    font-weight: bold;
+}
+
+.campaign-page .campstat_card p:nth-of-type(2) {
+    font-size: 0.95rem;
+}
