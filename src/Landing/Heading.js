@@ -9,12 +9,6 @@ const Heading = (props) => {
         <img className="logo" src={Logo} alt="logo"></img>
         <ul className="nav">
           <li>
-            <NavLink to="/Landing">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/campaign">Campaign</NavLink>
-          </li>
-          <li>
             <NavLink to="/login">
               <button className="btn" type="submit">
                 Launch App

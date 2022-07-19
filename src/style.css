@@ -132,9 +132,11 @@ body {
   padding: 0;
 }
 
-.landing .create-account a {
-  text-decoration: none;
-  color: #3301A0;
+.landing .create-account button {
+  border: none;
+  background-color: #3301A0;
+  color: white;
+  padding: 0.25rem 0.5rem;
 }
 
 .nav li:first-of-type,
@@ -176,6 +178,8 @@ a {
   text-decoration: none;
 }
 
+.landing .create-account button,
+.landing .btn,
 .single-campaign .influencers-container li,
 .single-campaign .flex-setup button,
 .single-campaign .flex-setup input,
@@ -185,6 +189,8 @@ a {
   transition: all 0.25s;
 }
 
+.landing .create-account button:hover,
+.landing .btn:hover,
 .single-campaign .influencers-container li:hover,
 .single-campaign .flex-setup button:hover,
 .single-campaign .flex-setup input:hover,
@@ -205,6 +211,10 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.landing .card img {
+  padding: 1rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -230,7 +240,9 @@ img {
 .searchpage .filtertag button {
   border-radius: 50%;
   border: none;
-} /* HEADER FOOTER =================================== */
+}
+
+/* HEADER FOOTER =================================== */
 .header-background {
   background-color: #E5E8EF;
 }

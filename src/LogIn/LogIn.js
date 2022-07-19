@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import Axios from 'axios'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, NavLink } from 'react-router-dom'
 // import EmailInput from './../SignUp/EmailInput.js'
 // import PasswordInput from './../SignUp/PasswordInput.js'
 import SubmitButton from './../SignUp/SubmitButton.js'
@@ -54,7 +54,12 @@ const LogIn = props => {
             <SubmitButton label="Log In" name="loginButton" />
           </div>
           <p>
-            Not a user yet? <a href="signup">Sign Up</a>
+            Not a user yet? 
+            <NavLink to="/signup">
+            <button type="submit">
+              Sign Up
+            </button>
+            </NavLink>
           </p>
         </form>
 

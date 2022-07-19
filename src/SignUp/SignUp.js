@@ -1,9 +1,6 @@
 import React, {useRef} from 'react'
 import Axios from 'axios'
-
-// import TextInput from './TextInput.js'
-// import EmailInput from './EmailInput.js'
-// import PasswordInput from './PasswordInput.js'
+import { NavLink } from 'react-router-dom'
 import SubmitButton from './SubmitButton.js'
 import UserTypeDropdown from './UserTypeDropdown.js'
 
@@ -54,7 +51,12 @@ const SignUp = props => {
           </div>
         </form>
         <p>
-          Already a user? <a href="login">Log in</a>
+          Already a user?
+          <NavLink to="/login">
+            <button type="submit">
+              Login
+            </button>
+          </NavLink>
         </p>
       </div>
     );
