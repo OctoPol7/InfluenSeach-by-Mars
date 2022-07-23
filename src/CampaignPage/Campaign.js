@@ -43,7 +43,7 @@ const Campaign = props => {
       //    async function newCampaign() {
            const uid = props.userData.uid;
            const token = props.userData.token;
-           const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/new-campaign`;
+           const url = ` http://localhost:4000/campaigns/${uid}/new-campaign`;
 
           axios
              .post(url, newCampaign, {

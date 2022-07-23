@@ -1303,7 +1303,7 @@ const CreatorPage = props => {
       groupCamp.map((camp)=>{
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
-        const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/add-creator`;
+        const url = ` http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
 
         axios
           .patch(
@@ -1465,24 +1465,27 @@ const CreatorPage = props => {
                   controls
                 ></video> */}
 
-                {/* <iframe
+                { results == null || results == undefined || results == " " 
+                ? <div>Video is unavailable</div> 
+                : <iframe
                   id="video"
-                  title={results ? results[0].snippet.localized.title : ""}
+                  title={results ? results[0]?.snippet.localized.title : ""}
                   // width="420"
                   // height="315"
                   src={
                     results
-                      ? `//www.youtube.com/embed/${results[0].id}?rel=0`
+                      ? `//www.youtube.com/embed/${results[0]?.id}?rel=0`
                       : ""
                   }
                   frameborder="0"
                   allowfullscreen
-                ></iframe> */}
+                  ></iframe>
+                  }
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">
                   <ul className="tag_div">
-                    {props.channelInfo.topicIds.map((tag) => (
+                    {props.channelInfo?.topicIds.map((tag) => (
                       <Tag className="tags tag_style" name={tag} />
                     ))}
                   </ul>
@@ -1490,8 +1493,8 @@ const CreatorPage = props => {
               </div>
             </div>
             <div className="graph">
-              {results.map((result) => {
-                <Graph viewCount={result.statistics.viewCount} />;
+              {results?.map((result) => {
+                <Graph viewCount={result?.statistics.viewCount} />;
               })}
             </div>
           </div>

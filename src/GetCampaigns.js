@@ -9,7 +9,7 @@ const GetCampaigns = (props) => {
     async function getCampaigns() {
       const uid = props.userData.uid;
       const token = props.userData.token;
-      const url = ` https://influensearch.herokuapp.com/campaigns/${uid}`;
+      const url = ` http://localhost:4000/campaigns/${uid}`;
 
       await axios
         .get(url,

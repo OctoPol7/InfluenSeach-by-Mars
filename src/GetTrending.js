@@ -8,7 +8,7 @@ const GetSearch = (props) => {
   
   useEffect(() => {
     async function loadSearch() {
-      const url = ` https://influensearch.herokuapp.com/search`;
+      const url = ` http://localhost:4000/search`;
 
       await axios
         .get(url, {
