@@ -1303,7 +1303,7 @@ const CreatorPage = props => {
       groupCamp.map((camp)=>{
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
-        const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/add-creator`;
+        const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
 
         axios
           .patch(
