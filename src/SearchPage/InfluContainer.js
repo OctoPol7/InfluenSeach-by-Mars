@@ -19,7 +19,7 @@ const InfluContainer = props => {
         <h1>Trending Influencers this week</h1>
         <GetTrending grabResults={grabResults} userData={props.userData} />
         <ul className="first-ul">
-          {results.map((result) => (
+          {results?.map((result) => (
             <InfluCard
               sub_count={result.statistics.subscriberCount}
               video_count={result.statistics.videoCount}

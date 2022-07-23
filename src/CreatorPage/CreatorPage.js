@@ -1283,7 +1283,7 @@ const CreatorPage = props => {
       } else {
         console.log("unchecked " + e.target.value);
         let newArray = [];
-        groupCamp.map((tag) => {
+        groupCamp?.map((tag) => {
           if (tag !== e.target.value) {
             newArray.push(e.target.value);
           }
@@ -1300,7 +1300,7 @@ const CreatorPage = props => {
       const uid = props.userData.uid;
       const token = props.userData.token;
 
-      groupCamp.map((camp)=>{
+      groupCamp?.map((camp)=>{
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
         const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
@@ -1373,7 +1373,7 @@ const CreatorPage = props => {
                         {campaigns.length === 0 ? (
                           <></>
                         ) : (
-                          campaigns.map((camp) => (
+                          campaigns?.map((camp) => (
                             <Searchlist
                               title={camp.campaignName}
                               subtitle={`${camp.creators.length} creators`}
@@ -1465,24 +1465,24 @@ const CreatorPage = props => {
                   controls
                 ></video> */}
 
-                {/* <iframe
-                  id="video"
-                  title={results ? results[0].snippet.localized.title : ""}
+                <iframe
+                  
+                  title={results ? results[0]?.snippet.localized.title : ""}
                   // width="420"
                   // height="315"
                   src={
                     results
-                      ? `//www.youtube.com/embed/${results[0].id}?rel=0`
+                      ? `//www.youtube.com/embed/${results[0]?.id}?rel=0`
                       : ""
                   }
                   frameborder="0"
                   allowfullscreen
-                ></iframe> */}
+                ></iframe>
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">
                   <ul className="tag_div">
-                    {props.channelInfo.topicIds.map((tag) => (
+                    {props.channelInfo.topicIds?.map((tag) => (
                       <Tag className="tags tag_style" name={tag} />
                     ))}
                   </ul>
@@ -1490,7 +1490,7 @@ const CreatorPage = props => {
               </div>
             </div>
             <div className="graph">
-              {results.map((result) => {
+              {results?.map((result) => {
                 <Graph viewCount={result.statistics.viewCount} />;
               })}
             </div>

@@ -111,7 +111,7 @@ const Campaign = props => {
         } else {
             console.log("unchecked " + e.target.value);
             let newArray = [];
-            tags.map((tag)=>{
+            tags?.map((tag)=>{
               if (tag!==e.target.value) {
                 newArray.push(e.target.value);
               }
@@ -210,7 +210,7 @@ const Campaign = props => {
                   Add tags or keywords
                   </label>
 
-                  {keywordArrayCB.map((keyword) => (
+                  {keywordArrayCB?.map((keyword) => (
                     <Checkboxx
                       name={keyword.name}
                       id={keyword.cbid}

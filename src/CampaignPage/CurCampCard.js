@@ -18,7 +18,7 @@ const CurCampCard = props => {
             <p>created on {props.date}</p>
 
             <ul>
-              {props.tags.map((tag) => (
+              {props.tags?.map((tag) => (
                 <Tag tagname={tag} />
               ))}
             </ul>

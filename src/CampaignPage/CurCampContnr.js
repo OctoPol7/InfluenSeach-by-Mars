@@ -12,7 +12,7 @@ const CurCampContnr = props => {
 
         <div className="camcard_div">
           {props.campaignArray !== undefined ? (
-            props.campaignArray.map((c) => (
+            props.campaignArray?.map((c) => (
               <NavLink to="/singlecampaign">
                 <CurCampCard
                   data={c}

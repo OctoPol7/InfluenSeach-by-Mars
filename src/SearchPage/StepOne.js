@@ -39,7 +39,7 @@ const StepOne = props => {
         </div>
 
         <div className="search-filters">
-          {props.keywordArray.map((key) => (
+          {props.keywordArray?.map((key) => (
             <FilterTag
               name={key}
               setKeywordArray={props.setKeywordArray}
