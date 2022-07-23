@@ -11,7 +11,7 @@ const RemoveCreatorCampaign = (props) => {
       const campaignName = "Campaign Name"; //replace with campaign name value
       const creatorId = "creator Id"; //replace with creator id
       const token = props.userData.token;
-      const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/${creatorId}/remove-creator`;
+      const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/${creatorId}/remove-creator`;
 
       await axios
         .patch(url,
