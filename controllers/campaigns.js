@@ -6,13 +6,6 @@ const axios = require("axios");
 // function to create a new campaign
 exports.create_campaign = async (req, res, next) => {
     const uid = req.params.uid;
-    // const date = new Date();
-    // const formattedDate = 
-    //   date.getDate() +
-    //   " " +
-    //   date.getMonth() +
-    //   " " +
-    //   date.getFullYear();
     const validateName = await campaigns.find({userId: uid, campaignName: req.body.campaignName})
     .exec()
     .then((result) => {
@@ -47,6 +40,29 @@ exports.create_campaign = async (req, res, next) => {
             });
         }
     })
+}
+// function to edit a campaign
+exports.edit_campaign = (req, res, next) => {
+    const campaign = req.params.campaignName;
+    const uid = req.params.uid;
+    campaigns.updateOne({userId: uid, campaignName: campaign }, {$set:{
+        campaignName: req.body.campaignName,
+        description: req.body.description,
+        tags: req.body.tags,
+    }})
+    .exec()
+    .then(result => {
+        //console.log(campaign);
+        res.status(200).json({
+            message: 'Changes saved',
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
 }
 // function to add a creator to a campaign
 exports.campaign_add_creator = (req, res, next) => {
