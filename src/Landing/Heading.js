@@ -10,14 +10,14 @@ const Heading = (props) => {
         <ul>
           <li>
           <NavLink to="/signup">
-            <button type="submit">
+            <button className="btn" type="submit">
               Sign Up
             </button>
           </NavLink>
           </li>
           <li>
           <NavLink to="/login">
-            <button type="submit">
+            <button className="btn" type="submit">
               Login
             </button>
           </NavLink>

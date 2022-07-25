@@ -8,10 +8,14 @@ img {
     padding: 1rem;
 }
 
+.logo {
+    padding: 1rem;
+}
+
 @media screen and (min-width: 750px) {
     .logo {
         justify-self: start;
-        width: 60%;
+        // width: 60%;
     }
 }
 

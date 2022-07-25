@@ -12,7 +12,7 @@ const Landing = (props) => {
       <div className="container-background">
         <div className="container">
           <div className="container-elements">
-            <h2>Searching for Influncers made easy</h2>
+            <h2>Searching for Influncers made easy</h2> 
             <p>
              InfluenSearch helps marketers and small business owners find the
               right influencers that match their needs. This app provides accurate
@@ -30,7 +30,6 @@ const Landing = (props) => {
         <img  src={Framing} alt="Features of InfluenSearch" />
       </div>
       <Team />
-      <Createaccount />
       <Footer />
     </div>
   );
