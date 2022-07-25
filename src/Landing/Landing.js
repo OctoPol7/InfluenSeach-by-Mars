@@ -1,10 +1,9 @@
 import React from "react";
 import Heading from "./Heading.js";
 import Team from "./Team.js";
-import Createaccount from "./Createaccount.js";
 import Footer from "./Footer.js";
 import Influencers from "../images/Influencers.png";
-import Framing from "../images/Framing.png"
+import Framing from "../images/Framing.png";
 
 const Landing = (props) => {
   return (

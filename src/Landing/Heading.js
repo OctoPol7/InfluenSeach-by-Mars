@@ -7,15 +7,6 @@ const Heading = (props) => {
     <div className="header-background">
       <div className="header header-max-width-div">
         <img className="logo" src={Logo} alt="logo"></img>
-        {/* <ul className="nav">
-          <li>
-            <NavLink to="/login">
-              <button className="btn" type="submit">
-                Launch App
-              </button>
-            </NavLink>
-          </li>
-        </ul> */}
         <ul>
           <li>
           <NavLink to="/signup">
