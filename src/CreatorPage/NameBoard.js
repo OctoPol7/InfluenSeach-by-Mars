@@ -6,10 +6,10 @@ const NameBoard = props => {
     return (
       <>
         <div className="namebord">
-          <h3>{props.info.name}</h3>
+          <p className='channel-name'>{props.info.name}</p>
           <p className="baner">
             {props.info.subCount} Subscribers{" "}
-            <a
+            <a className='channel-link'
               href={`https://www.youtube.com/c/${props.info.name.replace(
                 /\s+/g,
                 ""

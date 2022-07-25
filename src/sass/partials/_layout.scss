@@ -11,6 +11,7 @@ $tag-button-background: #FBE3DC;
 $tag-button-text-color:black;
 $change-button-color:#E4572E;
 $secondary-background-color: #DCE7FB;
+$link-color: #22006A;
 
 
 .login h1,
@@ -612,7 +613,8 @@ $secondary-background-color: #DCE7FB;
     margin-left: 140px;
 }
 .creator .baner{
-    font-size: 13px;
+    font-size: 20px!important;
+    margin-left: 10px;
 }
 .creator .score_card{
     width: 80px;
@@ -784,6 +786,17 @@ $secondary-background-color: #DCE7FB;
     display: grid;
   grid-template-columns: 70% auto;
 }
+.creator .channel-name{
+    font-size: 32px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.creator .channel-link{
+    color:$link-color;
+}
+.creator .cbtn{
+    align-content: flex-end;
+}
 
 //Creator page media query
 
@@ -817,6 +830,31 @@ $secondary-background-color: #DCE7FB;
         display: flex;
         flex-direction: column;
     }  
+    .creator .baner{
+        font-size: 15px!important;
+        margin-left: 10px;
+    }
+    .creator .baner{
+    font-size: 20px!important;
+    margin-left: 10px;  
+    }
+    .creator .popubtn {
+        width: 150px!important;
+        height: 40px; 
+    }
+    .creator .popubtn {
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    align-self: flex-end;
+    margin: 20px;
+    background: #E4572E;
+    color: white;
+    border: none;
+    }
+    .creator .avatar{
+        margin-left:10px !important;
+    }
   }
 
   //ProfileSetting Page
