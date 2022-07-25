@@ -704,7 +704,7 @@ $link-color: #22006A;
 }
 
 .creator .filtr_text_cont{
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .creator .filter_subtitle{
@@ -727,7 +727,7 @@ $link-color: #22006A;
     margin-bottom: 10px;
 }
 .creator .modal_overlay{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -739,7 +739,7 @@ $link-color: #22006A;
 }
 .creator .modal_content{
     width: 400px;
-    height: 500px;
+    // height: 500px;
     background-color: #eeeeee;
     padding: 20px;
     border-radius: 10px;
@@ -747,6 +747,8 @@ $link-color: #22006A;
 .creator .contnr{
     width: 100%;
     padding-top: 20px;
+    background: #F2F5FC;
+   
 }
 .creator .cbtn{
     width: 100%;
@@ -797,6 +799,14 @@ $link-color: #22006A;
 .creator .cbtn{
     align-content: flex-end;
 }
+.creator .modal_content .filter_result{
+    display:flex;
+    flex-flow: row nowrap;
+    padding-left: 0;
+    align-items: flex-start;
+}
+
+
 
 //Creator page media query
 
@@ -855,6 +865,8 @@ $link-color: #22006A;
     .creator .avatar{
         margin-left:10px !important;
     }
+    
+    
   }
 
   //ProfileSetting Page
