@@ -17,7 +17,8 @@ const NameBoard = props => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              visit channel
+              <p>
+              Visit Channel</p>
             </a>
           </p>
         </div>

@@ -6,13 +6,6 @@ const axios = require("axios");
 // function to create a new campaign
 exports.create_campaign = async (req, res, next) => {
     const uid = req.params.uid;
-    // const date = new Date();
-    // const formattedDate = 
-    //   date.getDate() +
-    //   " " +
-    //   date.getMonth() +
-    //   " " +
-    //   date.getFullYear();
     const validateName = await campaigns.find({userId: uid, campaignName: req.body.campaignName})
     .exec()
     .then((result) => {
@@ -22,6 +15,8 @@ exports.create_campaign = async (req, res, next) => {
                 message: "Campaign already exists!",
               });
         } else {
+            //const currentDate = new Date();
+            //const formatedDate = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate();
             const campaign = new campaigns ({
                 _id: new mongoose.Types.ObjectId(),
                 userId: uid,
@@ -48,19 +43,20 @@ exports.create_campaign = async (req, res, next) => {
         }
     })
 }
-// function to add a creator to a campaign
-exports.campaign_add_creator = (req, res, next) => {
+// function to edit a campaign
+exports.edit_campaign = (req, res, next) => {
     const campaign = req.params.campaignName;
     const uid = req.params.uid;
-    campaigns.updateOne({userId: uid, campaignName: campaign }, {$push:{creators: {
-        creatorId: req.body.creatorId,
-        dateJoined: new Date()
-    }}})
+    campaigns.updateOne({userId: uid, campaignName: campaign }, {$set:{
+        campaignName: req.body.campaignName,
+        description: req.body.description,
+        tags: req.body.tags,
+    }})
     .exec()
     .then(result => {
         //console.log(campaign);
         res.status(200).json({
-            message: 'Creator added to campaign',
+            message: 'Changes saved',
         });
     })
     .catch(err => {
@@ -69,6 +65,53 @@ exports.campaign_add_creator = (req, res, next) => {
             error: err
         });
     });
+}
+// function to add a creator to a campaign
+exports.campaign_add_creator = async (req, res, next) => {
+    const campaign = req.params.campaignName;
+    const uid = req.params.uid;
+
+    const findCampaign = await campaigns.find({userId: uid, campaignName: campaign}).exec()
+        .then(result => {
+            return result;
+        })
+        .catch(err => {
+            console.log("campaign not found... ", err)
+        });
+    let creatorsArr = findCampaign.map(creatorsObject => creatorsObject.creators);
+    //console.log(creatorsArr[0]);
+    let creatorsIds = creatorsArr[0].map(creatorId => creatorId.creatorId);
+    let creatorExists = "";
+    //console.log("creators ids... :",creatorsIds);
+    for (i = 0; i < creatorsIds.length; i++){
+        if (creatorsIds[i] == req.body.creatorId){
+            creatorExists = "exists";
+        }
+    }
+    
+    if (creatorExists == "exists"){
+        res.status(409).json({
+            message: "Creator already exists in campaign"
+        });
+    } else {
+        campaigns.updateOne({userId: uid, campaignName: campaign }, {$push:{creators: {
+            creatorId: req.body.creatorId,
+            dateJoined: new Date()
+        }}})
+        .exec()
+        .then(result => {
+            //console.log(campaign);
+            res.status(200).json({
+                message: 'Creator added to campaign',
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+    }
 }
 // function to remove a creator from a campaign
 exports.campaign_remove_creator = (req, res, next) => {
