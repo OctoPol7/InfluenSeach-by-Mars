@@ -6,11 +6,14 @@ const NameBoard = props => {
     return (
       <>
         <div className="namebord">
-          <h3>{props.info.name}</h3>
+          <h3>{props.info?.name}</h3>
           <p className="baner">
-            {props.info.subCount} Subscribers{" "}
+            {props.info?.subCount
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+            Subscribers{" "}
             <a
-              href={`https://www.youtube.com/c/${props.info.name.replace(
+              href={`https://www.youtube.com/c/${props.info?.name.replace(
                 /\s+/g,
                 ""
               )}`}

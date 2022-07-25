@@ -41,18 +41,28 @@ const InfluCard = props => {
             <div className="influ_count_div">
               <div>
                 <p>Subscribers</p>
-                <p>{props.sub_count}</p>
+                <p>
+                  {props.sub_count
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
               </div>
               <div>
                 <p>Video Uploads</p>
-                <p>{props.video_count}</p>
+                <p>
+                  {props.video_count
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
               </div>
             </div>
 
             <ul className="tag_div">
-              {props.topic_ids === null ? <></> : props.topic_ids?.map((tag) => (
-                <Tag name={tag} />
-              ))}
+              {props.topic_ids === null ? (
+                <></>
+              ) : (
+                props.topic_ids?.map((tag) => <Tag name={tag} />)
+              )}
             </ul>
           </div>
         </NavLink>
