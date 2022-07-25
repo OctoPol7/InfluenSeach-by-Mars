@@ -928,7 +928,8 @@ img {
 }
 
 .creator .baner {
-  font-size: 13px;
+  font-size: 20px !important;
+  margin-left: 10px;
 }
 
 .creator .score_card {
@@ -1114,6 +1115,20 @@ img {
   grid-template-columns: 70% auto;
 }
 
+.creator .channel-name {
+  font-size: 32px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.creator .channel-link {
+  color: #22006A;
+}
+
+.creator .cbtn {
+  align-content: flex-end;
+}
+
 @media only screen and (max-width: 600px) {
   .creator .grid_container {
     display: grid;
@@ -1142,6 +1157,31 @@ img {
   .creator .link {
     display: flex;
     flex-direction: column;
+  }
+  .creator .baner {
+    font-size: 15px !important;
+    margin-left: 10px;
+  }
+  .creator .baner {
+    font-size: 20px !important;
+    margin-left: 10px;
+  }
+  .creator .popubtn {
+    width: 150px !important;
+    height: 40px;
+  }
+  .creator .popubtn {
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    align-self: flex-end;
+    margin: 20px;
+    background: #E4572E;
+    color: white;
+    border: none;
+  }
+  .creator .avatar {
+    margin-left: 10px !important;
   }
 }
 .profile {
