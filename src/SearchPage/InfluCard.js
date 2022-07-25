@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Tag from './Tag.js';
+// import Tag from './Tag.js';
 
 
 const InfluCard = props => {
