@@ -9,6 +9,9 @@ const campaignControllers = require("../controllers/campaigns");
 // new campaign route
 router.post('/:uid/new-campaign', checkAuth, campaignControllers.create_campaign);
 
+//route edit a campaign
+router.patch('/:uid/:campaignName/edit', checkAuth, campaignControllers.edit_campaign);
+
 //route to add creator to campaign
 router.patch('/:uid/:campaignName/add-creator', checkAuth, campaignControllers.campaign_add_creator);
 
