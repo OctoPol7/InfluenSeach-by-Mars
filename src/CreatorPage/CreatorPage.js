@@ -1273,8 +1273,8 @@ const CreatorPage = props => {
       },
     ];
 
-    const xtopic = youTubeTopicIds.find((obj) => obj.id === props.channelInfo.topicIds[0]);
-    const xcountry = countryCode.find((obj) => obj.code === props.channelInfo.country);
+    const xtopic = youTubeTopicIds.find((obj) => obj.id === props.channelInfo?.topicIds[0]);
+    const xcountry = countryCode.find((obj) => obj.code === props.channelInfo?.country);
 
     const checkboxHandler = (e) => {
       if (e.target.checked) {
@@ -1297,8 +1297,8 @@ const CreatorPage = props => {
       }, [groupCamp]);
 
     const addCreator = () => {
-      const uid = props.userData.uid;
-      const token = props.userData.token;
+      const uid = props.userData?.uid;
+      const token = props.userData?.token;
 
       groupCamp?.map((camp)=>{
         const campaignName = camp; //replace with campaign name value
@@ -1382,7 +1382,9 @@ const CreatorPage = props => {
                           ))
                         )}
 
-                        <button className="cbtn" onClick={addCreator}>Add to Campaign</button>
+                        <button className="cbtn" onClick={addCreator}>
+                          Add to Campaign
+                        </button>
                         <p
                           onClick={() => setIsAddtoCamp(false)}
                           className="creat_capm_txt"
@@ -1435,11 +1437,15 @@ const CreatorPage = props => {
                 <div className="overviewBlocks">
                   <DisplayBlock
                     title="Video Uploads"
-                    content={props.channelInfo.vidCount}
+                    content={props.channelInfo?.vidCount
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
                     title="Total Views"
-                    content={props.channelInfo.viewCount}
+                    content={props.channelInfo?.viewCount
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
                     title="Country"
@@ -1466,7 +1472,6 @@ const CreatorPage = props => {
                 ></video> */}
 
                 <iframe
-                  
                   title={results ? results[0]?.snippet.localized.title : ""}
                   // width="420"
                   // height="315"
@@ -1475,14 +1480,14 @@ const CreatorPage = props => {
                       ? `//www.youtube.com/embed/${results[0]?.id}?rel=0`
                       : ""
                   }
-                  frameborder="0"
-                  allowfullscreen
+                  frameBorder="0"
+                  allowFullScreen
                 ></iframe>
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">
                   <ul className="tag_div">
-                    {props.channelInfo.topicIds?.map((tag) => (
+                    {props.channelInfo?.topicIds.map((tag) => (
                       <Tag className="tags tag_style" name={tag} />
                     ))}
                   </ul>
@@ -1490,9 +1495,10 @@ const CreatorPage = props => {
               </div>
             </div>
             <div className="graph">
-              {results?.map((result) => {
+              <Graph latestFive={results} />
+              {/* {results?.map((result) => {
                 <Graph viewCount={result.statistics.viewCount} />;
-              })}
+              })} */}
             </div>
           </div>
         </div>
