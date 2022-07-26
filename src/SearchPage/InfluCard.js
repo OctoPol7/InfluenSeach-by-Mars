@@ -42,16 +42,14 @@ const InfluCard = props => {
               <div>
                 <p>Subscribers</p>
                 <p>
-                  {props.sub_count
-                    .toString()
+                  {props.sub_count?.toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </p>
               </div>
               <div>
                 <p>Video Uploads</p>
                 <p>
-                  {props.video_count
-                    .toString()
+                  {props.video_count?.toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </p>
               </div>
