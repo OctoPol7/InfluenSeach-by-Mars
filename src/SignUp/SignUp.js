@@ -1,6 +1,6 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import Axios from 'axios'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect, Route } from 'react-router-dom'
 import SubmitButton from './SubmitButton.js'
 import UserTypeDropdown from './UserTypeDropdown.js'
 import Logo from "../Logo.svg"
@@ -10,6 +10,7 @@ const SignUp = props => {
     const userNameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const [signupStatus, setSignupStatus] = useState(false);
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -22,7 +23,9 @@ const SignUp = props => {
 
         Axios.post(`http://localhost:4000/user/signup`, user)
         .then(()=>{
-            alert("Congratulations! " + user.userName +" successfully registered ")
+            alert("Congratulations! " + user.userName +" successfully registered ");
+            console.log(signupStatus);
+            setSignupStatus(true);
         });
     }
 
@@ -65,6 +68,9 @@ const SignUp = props => {
             </button>
           </NavLink>
         </p>
+        {signupStatus === true ? <Route path="/signup">
+            <Redirect to="/login"/>
+          </Route> : <></> }
       </div>
       </div>
       </div>

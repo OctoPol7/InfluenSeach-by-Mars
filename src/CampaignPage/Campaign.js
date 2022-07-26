@@ -14,7 +14,7 @@ import GetCampaigns from '../GetCampaigns'
 
 const Campaign = props => {
 
-  const campaignNameRefe = useRef();
+  const campaignNameRef = useRef();
   const descriptionRef = useRef();
   
   const [tags, setTags] = useState([]);
@@ -34,7 +34,7 @@ const Campaign = props => {
       e.preventDefault();
 
       const newCampaign = {
-        campaignName: campaignNameRefe.current.value,
+        campaignName: campaignNameRef.current.value,
         description: descriptionRef.current.value,
         tags: tags,
       };
@@ -190,7 +190,7 @@ const Campaign = props => {
                     type="text"
                     name="name"
                     placeholder="Campaign name"
-                    ref={campaignNameRefe}
+                    ref={campaignNameRef}
                   />
               
                 <label>

@@ -50,7 +50,8 @@ const App = (props) => {
     console.log(channelInfo);
     console.log(channelId);
     console.log(campData);
-  }, [channelInfo, channelId, campData]);
+    console.log(userData);
+  }, [channelInfo, channelId, campData, userData]);
 
   return (
     <div className="App">
@@ -77,7 +78,7 @@ const App = (props) => {
           grabChannelInfo={grabChannelInfo}
         />
       </Route>
-      <Route path="/signup" exact={true}>
+      <Route path="/signup" exact={true} grabUserData={grabUserData}>
         <SignUp />
       </Route>
       <Route path="/login" exact={true}>
@@ -87,7 +88,7 @@ const App = (props) => {
         <GetSearch userData={userData} />
       </Route>
       <Route path="/singlecampaign" exact={true}>
-        <SingleCampaign userData={userData} campData={campData}/>
+        <SingleCampaign userData={userData} campData={campData} />
       </Route>
       <Route path="/campaign" exact={true}>
         <Campaign userData={userData} grabCampData={grabCampData} />
@@ -100,12 +101,13 @@ const App = (props) => {
           userData={userData}
           channelInfo={channelInfo}
           channelId={channelId}
+          grabCampData={grabCampData}
         />
       </Route>
       {/* <Route path="/profile" exact={true}>
         <ProfileSetting />
       </Route> */}
-      <Route path="/profile">
+      <Route path="/profile" exact={true}>
         <ProfileSetting />
       </Route>
     </div>

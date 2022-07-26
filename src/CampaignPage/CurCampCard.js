@@ -11,7 +11,6 @@ const CurCampCard = props => {
 
     return (
       <>
-        
           <div className="curcamp_card" onClick={toSingleCampaign}>
             <h3>{props.name}</h3>
             <p>{props.creators} Creators</p>
