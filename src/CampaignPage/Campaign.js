@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import Header from '../header.js'
 import Checkboxx from './Checkboxx'
 import CampStatContnr from './CampStatContner';
@@ -22,7 +22,6 @@ const Campaign = props => {
   const [resultsLength, setResultsLength] = useState();
   const [message, setMessage] = useState();
   const [modalShow, setModalShow] = useState(false);
-  const [active, setActive] = useState(0);
     // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
@@ -96,12 +95,6 @@ const Campaign = props => {
       {name:"Beauty",
       cbid:"/m/041xxh"}
     ]
-    
-    useEffect(() => {
-      return 
-        console.log(tags);
-        console.log("results : ", results);
-    }, [tags, results]);
 
     const checkboxHandler = (e) => {
         if (e.target.checked) {

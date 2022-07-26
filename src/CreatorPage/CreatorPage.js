@@ -3,9 +3,7 @@ import Header from '../header.js'
 import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
 import NameBoard from './NameBoard.js';
-import Inputs from './Inputs';
 import Searchlist from './Searchlist';
-import Tags from './Tags';
 import ScoreCard from './ScoreCard.js';
 import DisplayBlock from './DisplayBlock';
 import Graph from './Graph.js';
@@ -13,7 +11,7 @@ import GetCreatorInfo from '../GetCreatorInfo.js'
 import Tag from '../SearchPage/Tag.js';
 import GetCampaigns from '../GetCampaigns'
 import axios from 'axios';
-import { Redirect, Route } from 'react-router-dom';
+// import { Redirect, Route } from 'react-router-dom';
 import Checkboxx from '../CampaignPage/Checkboxx'
 
 
