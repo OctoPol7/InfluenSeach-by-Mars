@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Tag from './Tag.js';
+// import Tag from './Tag.js';
 
 
 const InfluCard = props => {
@@ -25,7 +25,7 @@ const InfluCard = props => {
       <li onClick={channelInfoHandler}>
         <NavLink to="/creator">
           <div className="influ_div">
-            <div>
+            <div className='center-image'>
               <img
                 className="pro_pic"
                 src={
