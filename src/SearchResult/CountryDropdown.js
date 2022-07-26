@@ -940,7 +940,7 @@ const CountryDropdown = props => {
      },
 
      {
-        "country": "United States of America (the)",
+        "country": "USA",
         "code": "US"
      },
      {
