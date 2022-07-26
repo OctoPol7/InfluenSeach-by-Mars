@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <div className="header-background">
       <div className="header header-max-width-div">
-        <img className="logo" src={Logo} alt="logo"></img>
+      <NavLink to="/search"><img className="logo" src={Logo} alt="logo"></img></NavLink>
         <ul className="nav">
           <li>
             <NavLink to="/search">Search</NavLink>
@@ -14,9 +14,6 @@ const Header = (props) => {
           <li>
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/singlecampaign">sCampaign</NavLink>
-          </li> */}
           <div className="no-active">
             <NavLink to="/profile">
               {/* {console.log(props.userData.userName)} */}
