@@ -18,16 +18,32 @@
 }
 
 .header {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // justify-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+     a {
+        flex-shrink: 1;
+     }
 }
 
 .header ul {
+    
+    display: flex;
+    flex-flow: row nowrap;
     list-style-type: none;
     padding: 0;
     margin-top: 0;
+
+    li:last-child {
+        display: flex;
+        flex-flow: row nowrap;
+    }
 }
+
+
 
 .header .nav {
     margin-bottom: 1rem;

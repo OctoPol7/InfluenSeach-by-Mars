@@ -331,6 +331,8 @@ $link-color: #22006A;
     align-items:center;
     background: linear-gradient(126.5deg, #FFFFFF 0%, #F2F5FC 96.54%);
     box-shadow: 5px 8px 15px rgba(20, 41, 90, 0.1);
+    max-width: 400px;
+    margin: auto;
 }
 
 .searchpage .center-image,
@@ -411,7 +413,7 @@ $link-color: #22006A;
     .campaign-page .curcamp_card ul,
     .searchpage .tag_div,
     .search-result .tag_div {
-        height: 3.5rem;
+        height: 3.25rem;
         overflow: hidden;
     }
 

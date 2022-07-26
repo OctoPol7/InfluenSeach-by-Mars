@@ -17,7 +17,7 @@ const Header = (props) => {
           <li className="no-active">
             <NavLink to="/profile">
               {/* {console.log(props.userData.userName)} */}
-              Hello <strong>{props.userData.userName}!</strong>
+              Hello {props.userData.userName}!
             </NavLink>
           </li>
         </ul>
