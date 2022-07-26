@@ -1,10 +1,9 @@
 import React from "react";
 import Heading from "./Heading.js";
 import Team from "./Team.js";
-import Createaccount from "./Createaccount.js";
 import Footer from "./Footer.js";
 import Influencers from "../images/Influencers.png";
-import Framing from "../images/Framing.png"
+import Framing from "../images/Framing.png";
 
 const Landing = (props) => {
   return (
@@ -13,15 +12,15 @@ const Landing = (props) => {
       <div className="container-background">
         <div className="container">
           <div className="container-elements">
-            <h2>Searching for Influncers made easy</h2>
+            <h2>Searching for Influncers made easy</h2> 
             <p>
              InfluenSearch helps marketers and small business owners find the
               right influencers that match their needs. This app provides accurate
-              statistics for youtube influnecers and let you plan and create new
+              statistics for youtube influencers and let you plan and create new
               marketing campaigns.
             </p>
           </div>
-          <img src={Influencers} alt="Pics of Influencers" />
+          <img src={Influencers} alt="Influencers" />
         </div>
       </div>
       <div>
@@ -31,7 +30,6 @@ const Landing = (props) => {
         <img  src={Framing} alt="Features of InfluenSearch" />
       </div>
       <Team />
-      <Createaccount />
       <Footer />
     </div>
   );

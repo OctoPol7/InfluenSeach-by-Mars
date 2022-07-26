@@ -4,7 +4,6 @@ import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
 import NameBoard from './NameBoard.js';
 import Searchlist from './Searchlist';
-import ScoreCard from './ScoreCard.js';
 import DisplayBlock from './DisplayBlock';
 import Graph from './Graph.js';
 import GetCreatorInfo from '../GetCreatorInfo.js'
@@ -1422,7 +1421,7 @@ const CreatorPage = props => {
                 showmodal={showmodal}
               />
               <CreatorImage info={props.channelInfo} />
-              <ScoreCard />
+              {/* <ScoreCard /> */}
               <div className="textcont">
                 <NameBoard info={props.channelInfo} />
               </div>
@@ -1466,7 +1465,7 @@ const CreatorPage = props => {
                           onClick={() => setIsAddtoCamp(false)}
                           className="creat_capm_txt"
                         >
-                          Create new Capmapign
+                          Create new Campaign
                         </p>
                       </div>
                     </div>
