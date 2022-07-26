@@ -14,12 +14,12 @@ const Header = (props) => {
           <li>
             <NavLink to="/campaign">Campaign</NavLink>
           </li>
-          <div className="no-active">
+          <li className="no-active">
             <NavLink to="/profile">
               {/* {console.log(props.userData.userName)} */}
               Hello <strong>{props.userData.userName}!</strong>
             </NavLink>
-          </div>
+          </li>
         </ul>
       </div>
     </div>
