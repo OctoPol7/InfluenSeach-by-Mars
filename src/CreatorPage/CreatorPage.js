@@ -1218,7 +1218,7 @@ const CreatorPage = props => {
       },
 
       {
-        country: "United States of America (the)",
+        country: "USA",
         code: "US",
       },
       {
