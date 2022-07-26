@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import Header from '../header.js'
 import Checkboxx from './Checkboxx'
 import CampStatContnr from './CampStatContner';
@@ -14,7 +14,7 @@ import GetCampaigns from '../GetCampaigns'
 
 const Campaign = props => {
 
-  const campaignNameRefe = useRef();
+  const campaignNameRef = useRef();
   const descriptionRef = useRef();
   
   const [tags, setTags] = useState([]);
@@ -22,7 +22,6 @@ const Campaign = props => {
   const [resultsLength, setResultsLength] = useState();
   const [message, setMessage] = useState();
   const [modalShow, setModalShow] = useState(false);
-  const [active, setActive] = useState(0);
     // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
@@ -34,7 +33,7 @@ const Campaign = props => {
       e.preventDefault();
 
       const newCampaign = {
-        campaignName: campaignNameRefe.current.value,
+        campaignName: campaignNameRef.current.value,
         description: descriptionRef.current.value,
         tags: tags,
       };
@@ -96,12 +95,6 @@ const Campaign = props => {
       {name:"Beauty",
       cbid:"/m/041xxh"}
     ]
-    
-    useEffect(() => {
-      return 
-        console.log(tags);
-        console.log("results : ", results);
-    }, [tags, results]);
 
     const checkboxHandler = (e) => {
         if (e.target.checked) {
@@ -111,7 +104,7 @@ const Campaign = props => {
         } else {
             console.log("unchecked " + e.target.value);
             let newArray = [];
-            tags.map((tag)=>{
+            tags?.map((tag)=>{
               if (tag!==e.target.value) {
                 newArray.push(e.target.value);
               }
@@ -190,7 +183,7 @@ const Campaign = props => {
                     type="text"
                     name="name"
                     placeholder="Campaign name"
-                    ref={campaignNameRefe}
+                    ref={campaignNameRef}
                   />
               
                 <label>
@@ -210,7 +203,7 @@ const Campaign = props => {
                   Add tags or keywords
                   </label>
 
-                  {keywordArrayCB.map((keyword) => (
+                  {keywordArrayCB?.map((keyword) => (
                     <Checkboxx
                       name={keyword.name}
                       id={keyword.cbid}

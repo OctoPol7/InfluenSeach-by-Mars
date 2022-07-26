@@ -1012,7 +1012,7 @@ const CountryDropdown = props => {
           value={props.location}
           onChange={changeLocation}
         >
-          {countryCode.map((country) => (
+          {countryCode?.map((country) => (
             <option value={JSON.stringify(country)} name={country.country}>
               {country.country}
             </option>

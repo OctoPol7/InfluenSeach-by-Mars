@@ -17,7 +17,7 @@ exports.get_creator_details = async (req, res) => {
       })
 
      // store response result channel videos id's in an array
-    let videosId = channelVideosResult.map(video => video.id.videoId);
+    let videosId = channelVideosResult?.map(video => video.id.videoId);
     console.log("Videos Id's: ",videosId);
 
     const getVideosMetrics = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videosId}&key=${apiKey}`;

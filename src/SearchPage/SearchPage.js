@@ -1,10 +1,11 @@
 
 import React, { useEffect } from "react"
-// import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 import Header from '../header.js'
 import SearchContainer from './SearchContainer.js'
 import InfluContainer from './InfluContainer.js'
+import LogIn from "../LogIn/LogIn.js";
 // import SearchResult from "../SearchResult/SearchResult";
 
 
@@ -38,6 +39,13 @@ const SearchPage = props => {
 
     return (
       <div className="searchpage">
+        {props.userData === undefined ? (
+          <Route path="/search" exact={true}>
+            <LogIn />
+          </Route>
+        ) : (
+          <></>
+        )}
         <Header userData={props.userData} />
         <SearchContainer
           keywordArray={props.keywordArray}

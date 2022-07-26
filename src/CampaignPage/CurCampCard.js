@@ -11,14 +11,13 @@ const CurCampCard = props => {
 
     return (
       <>
-        
           <div className="curcamp_card" onClick={toSingleCampaign}>
             <h3>{props.name}</h3>
             <p>{props.creators} Creators</p>
             <p>created on {props.date}</p>
 
             <ul>
-              {props.tags.map((tag) => (
+              {props.tags?.map((tag) => (
                 <Tag tagname={tag} />
               ))}
             </ul>

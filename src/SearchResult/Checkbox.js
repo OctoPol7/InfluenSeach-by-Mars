@@ -6,7 +6,7 @@ const Checkbox = (props) => {
   async function unCheckbox(e) {
     let newArray = [];
 
-    await props.keywordArray.map((keyword) => {
+    await props.keywordArray?.map((keyword) => {
       if (keyword !== e.target.value) {
         console.log(keyword);
         newArray.push(keyword);

@@ -87,7 +87,7 @@ const SearchResult = props => {
             </div>
             <div className="one-line">
               <ul>
-                {props.keywordArray.map((key) => (
+                {props.keywordArray?.map((key) => (
                   <FilterTag
                     name={key}
                     setKeywordArray={props.setKeywordArray}
@@ -122,7 +122,7 @@ const SearchResult = props => {
             </div>
             <div className="choose-topic">
               <h3>Topics</h3>
-              {topicArray.map((topic)=> {
+              {topicArray?.map((topic)=> {
                 return <Checkbox
                   name={topic}
                   setKeywordArray={props.setKeywordArray}
@@ -176,7 +176,7 @@ const SearchResult = props => {
             </div>
 
             <div className="results">
-              {results.map((result) => (
+              {results?.map((result) => (
                 <InfluCard
                   sub_count={result.statistics.subscriberCount}
                   video_count={result.statistics.videoCount}

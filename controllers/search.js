@@ -23,7 +23,7 @@ exports.search_creators = async (req, res) => {
       console.log(error)
     })
     // store response result channel id's in an array
-    let channelIds = searchResult.map(channel => channel.snippet.channelId);
+    let channelIds = searchResult?.map(channel => channel.snippet.channelId);
     // get channels statistics
     const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,topicDetails,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;
     let channelsDetails = await axios.get(getChannels).then((response) => {
@@ -54,7 +54,7 @@ exports.trending_creators = async(req, res)=>{
       console.log(error)
     })
     // store response result channel id's in an array
-    let channelIds = searchResult.map(channel => channel.snippet.channelId);
+    let channelIds = searchResult?.map(channel => channel.snippet.channelId);
   
     // get trending channels data
     const getChannels = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet,topicDetails,contentDetails,statistics,brandingSettings,contentOwnerDetails&id=${channelIds}&key=${apiKey}`;

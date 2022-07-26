@@ -1048,7 +1048,7 @@ const StepTwo = props => {
               <option>Select a country</option>
             )}
 
-            {countryCode.map((country) => (
+            {countryCode?.map((country) => (
               <option value={JSON.stringify(country)} name={country.country}>
                 {country.country}
               </option>
@@ -1056,7 +1056,7 @@ const StepTwo = props => {
           </select>
 
           <div className="search-filters">
-            {props.keywordArray.map((key) => (
+            {props.keywordArray?.map((key) => (
               <FilterTag
                 name={key}
                 setKeywordArray={props.setKeywordArray}

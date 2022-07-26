@@ -1,18 +1,17 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, useRef} from 'react';
 import Header from '../header.js'
 import AddToCampainButton from './AddToCampainButton.js';
 import CreatorImage from './CreatorImage.js';
 import NameBoard from './NameBoard.js';
-import Inputs from './Inputs';
 import Searchlist from './Searchlist';
-import Tags from './Tags';
-// import ScoreCard from './ScoreCard.js';
 import DisplayBlock from './DisplayBlock';
 import Graph from './Graph.js';
 import GetCreatorInfo from '../GetCreatorInfo.js'
 import Tag from '../SearchPage/Tag.js';
 import GetCampaigns from '../GetCampaigns'
 import axios from 'axios';
+// import { Redirect, Route } from 'react-router-dom';
+import Checkboxx from '../CampaignPage/Checkboxx'
 
 
 
@@ -22,6 +21,10 @@ const CreatorPage = props => {
     const [results, setResults] = useState([]);
     const [campaigns, setCampaigns] = useState([]);
     const [groupCamp, setGroupCamp] = useState([]);
+    const [tags, setTags] = useState([]);
+
+    const campaignNameRef = useRef();
+    const descriptionRef = useRef();
 
     function showmodal(value) {
     setIsAddtoCamp(true)
@@ -29,13 +32,13 @@ const CreatorPage = props => {
     }
 
     const grabResults = (resData) => {
-      console.log("FROM Creator ");
+      console.log("Results FROM Creator ");
       console.log(resData.data);
       setResults(resData.data);
     };
 
     const grabCampaigns = (resData) => {
-      console.log("FROM Creator ");
+      console.log("Campaigns FROM Creator ");
       console.log(resData.data);
       setCampaigns(resData.data);
     };
@@ -1273,8 +1276,8 @@ const CreatorPage = props => {
       },
     ];
 
-    const xtopic = youTubeTopicIds.find((obj) => obj.id === props.channelInfo.topicIds[0]);
-    const xcountry = countryCode.find((obj) => obj.code === props.channelInfo.country);
+    const xtopic = youTubeTopicIds.find((obj) => obj.id === props.channelInfo?.topicIds[0]);
+    const xcountry = countryCode.find((obj) => obj.code === props.channelInfo?.country);
 
     const checkboxHandler = (e) => {
       if (e.target.checked) {
@@ -1283,7 +1286,7 @@ const CreatorPage = props => {
       } else {
         console.log("unchecked " + e.target.value);
         let newArray = [];
-        groupCamp.map((tag) => {
+        groupCamp?.map((tag) => {
           if (tag !== e.target.value) {
             newArray.push(e.target.value);
           }
@@ -1297,10 +1300,11 @@ const CreatorPage = props => {
       }, [groupCamp]);
 
     const addCreator = () => {
-      const uid = props.userData.uid;
-      const token = props.userData.token;
+      const uid = props.userData?.uid;
+      const token = props.userData?.token;
 
-      groupCamp.map((camp)=>{
+      groupCamp?.map((camp)=>{
+        let index = 0;
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
         const url = `http://localhost:4000/campaigns/${uid}/${campaignName}/add-creator`;
@@ -1318,13 +1322,85 @@ const CreatorPage = props => {
             }
           )
           .then((resData) => {
-            console.log(resData.data.message);
+            console.log(campaigns[index]);
+            props.grabCampData(campaigns[index]);
+            index++;
+            alert(props.channelInfo.name +" is added to "+ groupCamp.join(', '))
+            setModalShow(false);
           })
           .catch((error) => {
             console.log(error);
           });
       })
     }
+
+    const onCreateHandler = (e) => {
+      e.preventDefault();
+
+      const newCampaign = {
+        campaignName: campaignNameRef.current.value,
+        description: descriptionRef.current.value,
+        tags: tags,
+      };
+
+      //  useEffect(() => {
+      //    async function newCampaign() {
+      const uid = props.userData.uid;
+      const token = props.userData.token;
+      const url = `http://localhost:4000/campaigns/${uid}/new-campaign`;
+
+      axios
+        .post(url, newCampaign, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
+        .then((resData) => {
+          console.log(resData.data.message);
+          showmodal();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    const keywordArrayCB = [
+      { name: "Lifestyle", cbid: "/m/019_rr" },
+
+      { name: "Music", cbid: "/m/04rlf" },
+
+      { name: "Entertainment", cbid: "/m/02jjt" },
+
+      { name: "Gaming", cbid: "/m/0bzvm2" },
+
+      { name: "Sport", cbid: "/m/06ntj" },
+
+      { name: "Tourism", cbid: "/m/07bxq" },
+
+      { name: "Technology", cbid: "/m/07c1v" },
+
+      { name: "Health", cbid: "/m/0kt51" },
+
+      { name: "Food", cbid: "/m/02wbm" },
+
+      { name: "Beauty", cbid: "/m/041xxh" },
+    ];
+
+    const checkboxHandlerX = (e) => {
+      if (e.target.checked) {
+        console.log("checked " + e.target.value);
+        setTags((prevState) => [...prevState, e.target.value]);
+      } else {
+        console.log("unchecked " + e.target.value);
+        let newArray = [];
+        tags?.map((tag) => {
+          if (tag !== e.target.value) {
+            newArray.push(e.target.value);
+          }
+        });
+        setTags(newArray);
+      }
+    };
     
     return (
       <>
@@ -1370,19 +1446,21 @@ const CreatorPage = props => {
                           userData={props.userData}
                           grabCampaigns={grabCampaigns}
                         />
-                        {campaigns.length === 0 ? (
+                        {campaigns?.length === 0 ? (
                           <></>
                         ) : (
-                          campaigns.map((camp) => (
+                          campaigns?.map((camp) => (
                             <Searchlist
                               title={camp.campaignName}
-                              subtitle={`${camp.creators.length} creators`}
+                              subtitle={`${camp.creators?.length} creators`}
                               checkboxHandler={checkboxHandler}
                             />
                           ))
                         )}
 
-                        <button className="cbtn" onClick={addCreator}>Add to Campaign</button>
+                        <button className="cbtn" onClick={addCreator}>
+                          Add to Campaign
+                        </button>
                         <p
                           onClick={() => setIsAddtoCamp(false)}
                           className="creat_capm_txt"
@@ -1403,27 +1481,43 @@ const CreatorPage = props => {
                         </h3>
                       </div>
 
-                      <div className="contnr">
-                        <h4>Campaign Name</h4>
+                      <form className="contnr" onSubmit={onCreateHandler}>
+                        <label className="modal_inputs">
+                          Name your Campaign:
+                        </label>
 
-                        <Inputs placeholder="Name" />
+                        <input
+                          className="modal_search_input"
+                          type="text"
+                          name="name"
+                          placeholder="Campaign name"
+                          ref={campaignNameRef}
+                        />
 
-                        <h4>Create Description</h4>
+                        <label>Description:</label>
 
                         <textarea
-                          placeholder="Type text below.."
+                          placeholder="This is a new campaign"
                           rows={5}
-                          className="textarea"
+                          ref={descriptionRef}
                         ></textarea>
 
-                        <h4>Add target Keywords</h4>
-                        <div className="modal_inputs">
-                          <Tags name="test" /> <Tags name="test" />{" "}
-                          <Tags name="test" /> <Tags name="test" />
-                        </div>
+                        <label className="modal_inputs">
+                          Add tags or keywords
+                        </label>
 
-                        <button className="cbtn">Create</button>
-                      </div>
+                        {keywordArrayCB?.map((keyword) => (
+                          <Checkboxx
+                            name={keyword.name}
+                            id={keyword.cbid}
+                            checkboxHandler={checkboxHandlerX}
+                          />
+                        ))}
+
+                        <button className="cbtn" type="submit">
+                          Create Campaign
+                        </button>
+                      </form>
                     </div>
                   )}
                 </div>
@@ -1435,11 +1529,15 @@ const CreatorPage = props => {
                 <div className="overviewBlocks">
                   <DisplayBlock
                     title="Video Uploads"
-                    content={props.channelInfo.vidCount}
+                    content={props.channelInfo?.vidCount
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
                     title="Total Views"
-                    content={props.channelInfo.viewCount}
+                    content={props.channelInfo?.viewCount
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
                     title="Country"
@@ -1465,24 +1563,23 @@ const CreatorPage = props => {
                   controls
                 ></video> */}
 
-                {/* <iframe
-                  id="video"
-                  title={results ? results[0].snippet.localized.title : ""}
+                <iframe
+                  title={results ? results[0]?.snippet.localized.title : ""}
                   // width="420"
                   // height="315"
                   src={
                     results
-                      ? `//www.youtube.com/embed/${results[0].id}?rel=0`
+                      ? `//www.youtube.com/embed/${results[0]?.id}?rel=0`
                       : ""
                   }
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe> */}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">
                   <ul className="tag_div">
-                    {props.channelInfo.topicIds.map((tag) => (
+                    {props.channelInfo?.topicIds.map((tag) => (
                       <Tag className="tags tag_style" name={tag} />
                     ))}
                   </ul>
@@ -1490,9 +1587,10 @@ const CreatorPage = props => {
               </div>
             </div>
             <div className="graph">
-              {results.map((result) => {
+              <Graph latestFive={results} />
+              {/* {results?.map((result) => {
                 <Graph viewCount={result.statistics.viewCount} />;
-              })}
+              })} */}
             </div>
           </div>
         </div>

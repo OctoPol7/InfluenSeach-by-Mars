@@ -56,7 +56,7 @@ const SingleCampaign = props => {
           {results == null || results == undefined || results == "" ? (
             <p>No influencers in this campaign</p>
           ) : (
-            results.map((creator) => (
+            results?.map((creator) => (
               <>
                 <InfluCard
                   sub_count={creator.statistics.subscriberCount}
