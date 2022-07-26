@@ -1562,7 +1562,7 @@ const CreatorPage = props => {
                   className="video"
                   controls
                 ></video> */}
-
+                <div className='iframe-center'>
                 <iframe
                   title={results ? results[0]?.snippet.localized.title : ""}
                   // width="420"
@@ -1574,7 +1574,7 @@ const CreatorPage = props => {
                   }
                   frameBorder="0"
                   allowFullScreen
-                ></iframe>
+                ></iframe></div>
 
                 <h4 className="ml20">Common Tags</h4>
                 <div className="tag_cntnr">

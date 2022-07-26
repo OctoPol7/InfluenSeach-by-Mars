@@ -28,11 +28,14 @@ const Graph = props => {
           style={{
             padding: "1rem",
             borderRadius: "12px",
-            backgroundColor: "#f8dfff",
             textAlign: "center",
             display: "flex",
             justifyContent: "space-around",
             height: "20rem",
+            border: '1px solid lightgrey',
+            maxWidth: '800px',
+            margin: '0 auto',
+            marginTop: '1rem'
           }}
         >
           {props.latestFive?.map((vid) => (
@@ -58,7 +61,7 @@ const Graph = props => {
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </p>
-                <p style={{ height: "2rem", overflow: "hidden" }}>
+                <p style={{ height: "2rem", overflow: "hidden" }} >
                   {vid.snippet.title.slice(0, 20)}
                 </p>
                 {/* <p>
