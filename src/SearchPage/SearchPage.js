@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react"
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Header from '../header.js'
 import SearchContainer from './SearchContainer.js'

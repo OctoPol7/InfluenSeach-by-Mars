@@ -15,32 +15,32 @@ const Cardimage = (props) => {
         <p>Chumpol</p>
         <p>Full Stack Developer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Tanya} alt="Tanya"></img>
         <p>Tanya</p>
         <p>Front-End Developer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Roberto} style={{height: "auto", width:"800px"}} alt="Roberto"></img>
         <p>Roberto</p>
         <p>Back-End Developer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Thushara} alt="Thushara"></img>
         <p>Thushara</p>
         <p>Front-End Developer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Saurabh} alt="Saurabh"></img>
         <p>Saurabh</p>
         <p>Full Stack Developer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Sid} alt="Siddharth"></img>
         <p>Siddharth</p>
         <p>UI/UX Designer</p>
       </div>
-      <div class="card">
+      <div className="card">
         <img src={Yash} alt="Yash"></img>
         <p>Yash</p>
         <p>UI/UX Designer</p>
