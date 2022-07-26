@@ -108,7 +108,7 @@ const App = (props) => {
         <ProfileSetting />
       </Route> */}
       <Route path="/profile" exact={true}>
-        <ProfileSetting />
+        <ProfileSetting userData={userData} />
       </Route>
     </div>
   );

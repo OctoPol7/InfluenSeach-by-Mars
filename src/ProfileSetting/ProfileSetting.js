@@ -11,42 +11,44 @@ import Change from './Change'
 
 const ProfileSetting = props => {
     
-    return<>
-    <div className='profile'>
-        <div className='grid_container'>
-            <div className='user-data'>
-                <UserImage />
-                <UserDetails />
+    return (
+      <>
+        <div className="profile">
+          <div className="grid_container">
+            <div className="user-data">
+              <UserImage />
+              <UserDetails userData={props.userData} />
             </div>
-            <div className='items'>
-                <div className='heading'>
+            <div className="items">
+              <div className="heading">
                 <h2>Settings</h2>
+              </div>
+              <h3>Email Notification</h3>
+              <div className="email-notification settings">
+                <EmailNotification />
+                <div className="toggle-button">
+                  <EmailStates />
                 </div>
-                <h3>Email Notification</h3>
-                <div className='email-notification settings'>
-                    <EmailNotification />
-                    <div className='toggle-button'>
-                        <EmailStates />
-                    </div>
-                </div>
-                <h3>Email</h3>
-                <div className='email settings'>
-                    <Email />
-                    <Change />
-                </div>
-                <h3>Password</h3>
-                <div className='password settings'>
-                    <Password />
-                    <Change />
-                </div>
-                <h3>Delete My account</h3>
-                <div className='delete settings'>
-                     <Delete />
-                </div>
+              </div>
+              <h3>Email</h3>
+              <div className="email settings">
+                <Email />
+                <Change />
+              </div>
+              <h3>Password</h3>
+              <div className="password settings">
+                <Password />
+                <Change />
+              </div>
+              <h3>Delete My account</h3>
+              <div className="delete settings">
+                <Delete />
+              </div>
             </div>
-     </div>
-    </div>
-     </>
+          </div>
+        </div>
+      </>
+    );
 }
 
 
