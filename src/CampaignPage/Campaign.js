@@ -212,10 +212,11 @@ const Campaign = props => {
                   ))}
               
 
-
+                <div className='center-button'>
                 <button className="cbtn" type="submit">
                   Create Campaign
                 </button>
+                </div>
   
               </form>
               {message}
