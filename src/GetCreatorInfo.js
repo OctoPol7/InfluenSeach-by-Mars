@@ -9,7 +9,7 @@ const GetCreatorInfo = (props) => {
   useEffect(() => {
     async function loadSearch() {
       const channelId = props.channelId;
-      const url = `http://localhost:4000/creatordetails/${channelId}`;
+      const url = `https://influensearch.herokuapp.com/creatordetails/${channelId}`;
 
       console.log(
         `${channelId}`

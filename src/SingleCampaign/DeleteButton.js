@@ -11,7 +11,7 @@ const DeleteButton = props => {
         const uid = props.userData.uid;
         const campaignName = props.campaignName; //replace with campaign name value
         const token = props.userData.token;
-        const url = `http://localhost:4000/campaigns/${uid}/archive-campaign/${campaignName}`;
+        const url = `https://influensearch.herokuapp.com/campaigns/${uid}/archive-campaign/${campaignName}`;
 
       
         axios
