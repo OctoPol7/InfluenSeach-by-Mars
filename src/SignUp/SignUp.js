@@ -21,7 +21,7 @@ const SignUp = props => {
           password: passwordRef.current.value
         };
 
-        Axios.post(`https://influensearch.herokuapp.com/user/signup`, user)
+        Axios.post(`http://localhost:7000/user/signup`, user)
         .then(()=>{
             alert("Congratulations! " + user.userName +" successfully registered ");
             console.log(signupStatus);

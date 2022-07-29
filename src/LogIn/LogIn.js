@@ -22,7 +22,7 @@ const LogIn = props => {
       };
 
 
-      Axios.post(`https://influensearch.herokuapp.com/user/login`, user)
+      Axios.post(`http://localhost:7000/user/login`, user)
         .then((res) => {
           props.grabUserData(res.data);
 

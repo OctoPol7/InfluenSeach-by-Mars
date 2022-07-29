@@ -10,7 +10,7 @@ const ArchiveCampaign = (props) => {
       const uid = props.userData.uid;
       const campaignName = props.campaignName; //replace with campaign name value
       const token = props.userData.token;
-      const url = `https://influensearch.herokuapp.com/campaigns/${uid}/archive-campaign/${campaignName}`;
+      const url = `http://localhost:7000/campaigns/${uid}/archive-campaign/${campaignName}`;
 
       
       await axios
