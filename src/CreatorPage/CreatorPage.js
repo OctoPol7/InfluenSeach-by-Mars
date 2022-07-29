@@ -1529,14 +1529,12 @@ const CreatorPage = props => {
                 <div className="overviewBlocks">
                   <DisplayBlock
                     title="Video Uploads"
-                    content={props.channelInfo?.vidCount
-                      .toString()
+                    content={props.channelInfo?.vidCount?.toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
                     title="Total Views"
-                    content={props.channelInfo?.viewCount
-                      .toString()
+                    content={props.channelInfo?.viewCount?.toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   />
                   <DisplayBlock
