@@ -12,7 +12,7 @@ const Landing = (props) => {
       <div className="container-background">
         <div className="container">
           <div className="container-elements">
-            <h2>Searching for Influncers made easy</h2> 
+            <h2>Searching for Influencers made easy</h2> 
             <p>
              InfluenSearch helps marketers and small business owners find the
               right influencers that match their needs. This app provides accurate
