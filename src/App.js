@@ -28,7 +28,7 @@ const App = (props) => {
     console.log(data);
   }
 
-  console.log("This is UserData: ... ", userData);
+  //console.log("This is UserData: ... ", userData);
   
   const grabChannelInfo = (info) => {
     console.log(info);
