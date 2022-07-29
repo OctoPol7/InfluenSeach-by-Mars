@@ -968,7 +968,7 @@ const StepTwo = props => {
         "code": "AE"
      },
      {
-        "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+        "country": "United Kingdom",
         "code": "GB"
      },
      {
