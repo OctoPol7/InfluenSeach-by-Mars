@@ -8,28 +8,18 @@ const CurCampContnr = props => {
   const [curCamps, setCurCamps] = useState([]);
   const [arcCamps, setArcCamps] = useState([]);
 
-  // const manageCurCamp = () => {
-  //   props.campaignArray
-  //     ?.map((c) => {
-  //       if (c.active === true) {
-  //         setCurCamps((prevState) => [...prevState, c ]);
-  //       }
-  //     })
-  //     .then(() => console.log(curCamps));
-  // } 
-  // manageCurCamp();
-
-
 return (
   <div>
     <h2>Current Campaigns</h2>
     {/* <SortByDropdown /> */}
-
     <div className="camcard_div">
       {props.campaignArray !== undefined ? (
                props.campaignArray?.map((c) => (
+         c.active?       
+      (
+        <div>
       <NavLink to="/singlecampaign">
-        <CurCampCard
+          <CurCampCard
           data={c}
           name={c.campaignName}
           tags={c.tags}
@@ -37,12 +27,19 @@ return (
           creators={c.creators.length}
           grabCampData={props.grabCampData}
         />
+        
       </NavLink>
+      </div>
+      ):(<> </>)
       ))
              ) : (
-               <></>
+               <>
+                <div>
+                  <h2>You have not created any campaigns.</h2>
+                </div>
+               </>
              )}
-    </div>
+  </div>
   </div>
 );
    
