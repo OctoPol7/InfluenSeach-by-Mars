@@ -50,15 +50,14 @@ const Graph = props => {
               <div style={{ flexShrink: 1, height: "100%" }}>
                 <BarChart
                   maxValue={maxValue}
-                  value={vid.statistics.viewCount}
+                  value={vid.statistics?.viewCount}
                 />
               </div>
               <div style={{ flexShrnk: 1 }}>
                 {/* <p>{`${JSON.stringify(vid.statistics)}.${viewStat}`}</p> */}
                 <p>
                   Views:{" "}
-                  {vid.statistics.viewCount
-                    .toString()
+                  {vid.statistics?.viewCount.toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </p>
                 <p style={{ height: "2rem", overflow: "hidden" }} >
