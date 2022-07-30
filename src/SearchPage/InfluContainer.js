@@ -21,13 +21,13 @@ const InfluContainer = props => {
         <ul className="first-ul">
           {results ? results?.map((result) => (
             <InfluCard
-              sub_count={result.statistics.subscriberCount}
-              video_count={result.statistics.videoCount}
-              view_count={result.statistics.viewCount}
-              influ_name={result.brandingSettings.channel.title}
-              influ_img={result.snippet.thumbnails.default.url}
-              topic_ids={result.topicDetails.topicIds}
-              country={result.brandingSettings.channel.country}
+              sub_count={result.statistics?.subscriberCount}
+              video_count={result.statistics?.videoCount}
+              view_count={result.statistics?.viewCount}
+              influ_name={result.brandingSettings?.channel.title}
+              influ_img={result.snippet?.thumbnails.default.url}
+              topic_ids={result.topicDetails?.topicIds}
+              country={result.brandingSettings?.channel.country}
               channel_id={result.id}
               grabChannelInfo={props.grabChannelInfo}
             />
