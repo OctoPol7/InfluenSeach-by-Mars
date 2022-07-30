@@ -34,5 +34,3 @@ app.use("/creatordetails", creatorRoute);
 //Routes which should handle requests to DB
 app.use("/user", userRoutes);
 app.use("/campaigns", campaignsRoute);
-
-//module.exports = app;

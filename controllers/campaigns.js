@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const apiKey = process.env.KEY;
 const axios = require("axios");
 
+const monthNames = ["January ", "February ", "March ", "April ", "May ", "June ",
+  "July ", "August ", "September ", "October ", "November ", "December "
+];
+
 // function to create a new campaign
 exports.create_campaign = async (req, res, next) => {
     const uid = req.params.uid;
@@ -15,14 +19,14 @@ exports.create_campaign = async (req, res, next) => {
                 message: "Campaign already exists!",
               });
         } else {
-            //const currentDate = new Date();
-            //const formatedDate = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate();
+            const currentDate = new Date();
+            const formatedDate = monthNames[(currentDate.getMonth())] + currentDate.getDate() + ', ' + currentDate.getFullYear();
             const campaign = new campaigns ({
                 _id: new mongoose.Types.ObjectId(),
                 userId: uid,
                 campaignName: req.body.campaignName,
                 description: req.body.description,
-                dateCreated: new Date(),
+                dateCreated: formatedDate,
                 tags: req.body.tags,
                 active: true,
                 creators: []
@@ -94,9 +98,11 @@ exports.campaign_add_creator = async (req, res, next) => {
             message: "Creator already exists in campaign"
         });
     } else {
+        const currentDate = new Date();
+        const formatedDate = monthNames[(currentDate.getMonth())] + currentDate.getDate() + ', ' + currentDate.getFullYear();
         campaigns.updateOne({userId: uid, campaignName: campaign }, {$push:{creators: {
             creatorId: req.body.creatorId,
-            dateJoined: new Date()
+            dateJoined: formatedDate
         }}})
         .exec()
         .then(result => {

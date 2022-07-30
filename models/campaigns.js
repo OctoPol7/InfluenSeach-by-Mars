@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const creatorSchema = mongoose.Schema({
     creatorId: {type: String, required: true},
-    dateJoined: {type: Date, required: true}
+    dateJoined: {type: String, required: true}
   }
 );
 
@@ -23,7 +23,7 @@ const campaignsSchema = mongoose.Schema({
       required: true,
     },
     dateCreated: {
-      type: Date
+      type: String
     },
     tags: [String],
     active: {
