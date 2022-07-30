@@ -6,7 +6,6 @@ import CreateBtn from './CreateBtn';
 import CurCampContner from './CurCampContnr';
 import axios from 'axios';
 import CloseIcon from '../CloseIcon.png'
-// import AddCampaign from '../AddCampaign.js';
 import GetCampaigns from '../GetCampaigns'
 
 
@@ -22,10 +21,8 @@ const Campaign = props => {
   const [resultsLength, setResultsLength] = useState();
   const [message, setMessage] = useState();
   const [modalShow, setModalShow] = useState(false);
-    // const [keywords, setKeywords] = useState([]);
 
     const showmodal = () => {
-        // console.log(modalShow);
         setModalShow(prevState=> !prevState);
     }
 
@@ -38,11 +35,9 @@ const Campaign = props => {
         tags: tags,
       };
       
-      //  useEffect(() => {
-      //    async function newCampaign() {
            const uid = props.userData.uid;
            const token = props.userData.token;
-           const url = `http://localhost:7000/campaigns/${uid}/new-campaign`;
+           const url = `https://influensearch.herokuapp.com/campaigns/${uid}/new-campaign`;
 
           axios
              .post(url, newCampaign, {
@@ -58,11 +53,6 @@ const Campaign = props => {
                console.log(error);
              });
          }
-        //  newCampaign();
-         // eslint-disable-next-line react-hooks/exhaustive-deps
-      //  }, []);
-      // console.log(newCampaign)
-      // }
 
     const keywordArrayCB = [
       {name:"Lifestyle",
@@ -144,16 +134,6 @@ const Campaign = props => {
         <div className='campaign-page-background'>
         <div className='max-width'>
         <CampStatContnr allCam={resultsLength} active={counter} />
-        {/* <div>
-        <form>
-            <input
-              className="search_input"
-              type="text"
-              placeholder="Search for a campaign"
-            />
-            <button type="submit">Create New Campaign</button>
-          </form>
-        </div> */}
         <CurCampContner
           campaignArray={results}
           grabCampData={props.grabCampData}

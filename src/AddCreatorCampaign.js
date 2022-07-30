@@ -10,7 +10,7 @@ const AddCreatorCampaign = (props) => {
       const uid = props.userData.uid;
       const campaignName = "Campaign Name"; //replace with campaign name value
       const token = props.userData.token;
-      const url = ` http://localhost:7000/campaigns/${uid}/${campaignName}/add-creator`;
+      const url = ` https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/add-creator`;
 
       await axios
         .patch(url, 

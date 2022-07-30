@@ -1307,7 +1307,7 @@ const CreatorPage = props => {
         let index = 0;
         const campaignName = camp; //replace with campaign name value
         console.log(campaignName);
-        const url = `http://localhost:7000/campaigns/${uid}/${campaignName}/add-creator`;
+        const url = `https://influensearch.herokuapp.com/campaigns/${uid}/${campaignName}/add-creator`;
 
         axios
           .patch(
@@ -1347,7 +1347,7 @@ const CreatorPage = props => {
       //    async function newCampaign() {
       const uid = props.userData.uid;
       const token = props.userData.token;
-      const url = `http://localhost:7000/campaigns/${uid}/new-campaign`;
+      const url = `https://influensearch.herokuapp.com/campaigns/${uid}/new-campaign`;
 
       axios
         .post(url, newCampaign, {

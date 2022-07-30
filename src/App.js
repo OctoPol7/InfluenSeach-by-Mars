@@ -31,9 +31,9 @@ const App = (props) => {
   //console.log("This is UserData: ... ", userData);
   
   const grabChannelInfo = (info) => {
-    console.log(info);
-    console.log(info.id);
-    console.log(` http://localhost:7000/creatordetails/${info.id}`);
+    //console.log(info);
+    //console.log(info.id);
+    console.log(` https://influensearch.herokuapp.com/creatordetails/${info.id}`);
     if (info !== undefined) channelInfoHandler(info);
   }
 
@@ -49,8 +49,8 @@ const App = (props) => {
   useEffect(() => {
     console.log(channelInfo);
     console.log(channelId);
-    console.log(campData);
-    console.log(userData);
+    //console.log(campData);
+    //console.log(userData);
   }, [channelInfo, channelId, campData, userData]);
 
   return (
@@ -93,9 +93,6 @@ const App = (props) => {
       <Route path="/campaign" exact={true}>
         <Campaign userData={userData} grabCampData={grabCampData} />
       </Route>
-      {/* <Route path="/newcampaign" exact={true}>
-        <AddCampaign userData={userData} />
-      </Route> */}
       <Route path="/creator" exact={true}>
         <CreatorPage
           userData={userData}
@@ -104,9 +101,6 @@ const App = (props) => {
           grabCampData={grabCampData}
         />
       </Route>
-      {/* <Route path="/profile" exact={true}>
-        <ProfileSetting />
-      </Route> */}
       <Route path="/profile" exact={true}>
         <ProfileSetting userData={userData} />
       </Route>
