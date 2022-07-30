@@ -556,7 +556,7 @@ $link-color: #22006A;
 
     .landing .container {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr 1.75fr;
     }
 
     .landing .container p {
@@ -565,7 +565,7 @@ $link-color: #22006A;
 
     .landing .container img {
         padding-right: 1rem;
-        padding-left: 1rem;
+        padding-left: 3rem;
         place-self: center;
     }
 
