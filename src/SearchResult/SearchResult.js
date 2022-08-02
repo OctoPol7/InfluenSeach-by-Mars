@@ -82,8 +82,8 @@ const SearchResult = props => {
 
         <div className="searched-keywords">
           <div className="max-width-div">
-            <div className='reset-button-layout'>
-            <h2>Your current search:</h2>
+            <div className="reset-button-layout">
+              <h2>Your current search:</h2>
             </div>
             <div className="one-line">
               <ul>
@@ -122,14 +122,16 @@ const SearchResult = props => {
             </div>
             <div className="choose-topic">
               <h3>Topics</h3>
-              {topicArray?.map((topic)=> {
-                return <Checkbox
-                  name={topic}
-                  setKeywordArray={props.setKeywordArray}
-                  keywordHandler={keywordHandler}
-                  checkboxHandler={checkboxHandler}
-                  setSearchPhrase={setSearchPhrase}
-                />;
+              {topicArray?.map((topic) => {
+                return (
+                  <Checkbox
+                    name={topic}
+                    setKeywordArray={props.setKeywordArray}
+                    keywordHandler={keywordHandler}
+                    checkboxHandler={checkboxHandler}
+                    setSearchPhrase={setSearchPhrase}
+                  />
+                );
               })}
               {/* <Checkbox
                 name="Lifestyle"
@@ -180,9 +182,12 @@ const SearchResult = props => {
                 <InfluCard
                   sub_count={result.statistics.subscriberCount}
                   video_count={result.statistics.videoCount}
+                  view_count={result.statistics?.viewCount}
                   influ_name={result.brandingSettings.channel.title}
                   influ_img={result.snippet.thumbnails.default.url}
                   topic_ids={result.topicDetails.topicIds}
+                  country={result.brandingSettings?.channel.country}
+                  channel_id={result.id}
                   grabChannelInfo={props.grabChannelInfo}
                 />
               ))}
